@@ -1,0 +1,51 @@
+
+/* Les images */
+.popular-img{
+    height: 280px;
+    width: 280px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center !important;
+    margin: auto;
+}
+.popular-img img{
+    height: 280px;
+    width: 280px;
+    /* width: auto !important; */
+    flex-shrink: 0;
+    /* min-width: 100%; */
+    /* min-height:100%; */
+    object-fit: cover;
+}
+
+
+/* Page best avec ls avis */
+.card-best {
+    /* height: 250px; */
+    background-color: white;
+    border-radius: 10px;
+
+}
+.best-body{
+  display: flex;
+  /* height: 250px; */
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 15px;
+}
+.fond-gris {
+    border-radius: 10px;
+}
+
+i {
+    color: #FFD75C;
+}
+.h-body{
+    height: 100px;
+}
+
+
+/* icon */
+.ti-plus, .ti-minus{
+    color: red;
+}

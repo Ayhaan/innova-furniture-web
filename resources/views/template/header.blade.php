@@ -1,0 +1,79 @@
+<!-- Header Start -->
+<div class="header-area">
+    <div class="main-header header-sticky">
+        <div class="container-fluid">
+            <div class="row menu-wrapper align-items-center justify-content-between">
+                <div class="header-left d-flex align-items-center">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="index.html"><img height="140px" src="{{ asset("img/innova/innovalogo.jpg") }}" alt=""></a>
+                    </div>
+                    <!-- Logo-2 -->
+                    <div class="logo2">
+                        <a href="index.html"><img height="80px" src="{{ asset("img/innovaImg/logo.jfif") }}" alt=""></a>
+                    </div>
+                    <!-- Main-menu -->
+                    <div class="main-menu  d-none d-lg-block">
+                        <nav>
+                            <ul id="navigation">
+                                <li><a href="{{ route('home') }}">Home</a></li> 
+                                {{-- <li><a href="{{ route('product') }}">Product</a></li> --}}
+                                <li><a href="###">Product</a>
+                                    <ul class="submenu">
+                                        <li><a href="{{ route('indoor') }}">indoor</a></li>
+                                        <li><a href={{ route('outdoor') }}>outdoor</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ route('about') }}">About</a></li>
+                                <li><a href="#">F.A.Q</a></li>
+                                {{-- <li><a href="blog.html">Blog</a>
+                                    <ul class="submenu">
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="blog_details.html">Blog Details</a></li>
+                                        <li><a href="elements.html">Elements</a></li>
+                                    </ul>
+                                </li> --}}
+                                <li><a href="{{ route('contact') }}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>   
+                </div>
+                <div class="header-right1 d-flex align-items-center">
+                    <div class="search">
+                        <ul class="d-flex align-items-center">
+                            <li>
+                                <!-- Search Box -->
+                                <form action="#" class="form-box f-right ">
+                                    <input type="text" name="Search" placeholder="Search products">
+                                    <div class="search-icon">
+                                        <i class="ti-search"></i>
+                                    </div>
+                                </form>
+                            </li>
+                            <li>
+                                @if (Auth::user())
+                                <a href="{{ route('admin') }}" class="account-btn" >My Account</a>
+                                @else 
+                                <a href="{{ route('login') }}" class="account-btn" >Login</a>   
+                                @endif
+                            </li>
+                            @if (Auth::user())
+                                <li>
+                                    <div class="card-stor">
+                                        <img src={{ asset("img/icon/card.svg") }} alt="">
+                                        <span>0</span>
+                                    </div>
+                                </li>    
+                            @endif
+                        </ul>
+                    </div>
+                </div>
+                <!-- Mobile Menu -->
+                <div class="col-12">
+                    <div class="mobile_menu d-block d-lg-none"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
