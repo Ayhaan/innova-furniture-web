@@ -1,64 +1,71 @@
 <footer>
     <div class="footer-wrapper">
         <!-- Footer Start-->
-        <div class="footer-area footer-padding">
-            <div class="container ">
+        <div class="footer-area footer-padding pr-0">
+            <div class="container-fluid ">
                 <div class="row justify-content-between">
-                    <div class="col-xl-4 col-lg-3 col-md-8 col-sm-8">
-                        <div class="single-footer-caption mb-50">
-                            <div class="single-footer-caption mb-30">
-                                <!-- logo -->
-                                <div class="footer-logo mb-35">
-                                    <a href="index.html"><img src={{ asset("img/logo/logo2_footer.png") }} alt=""></a>
-                                </div>
-                                <div class="footer-tittle">
-                                    <div class="footer-pera">
-                                        <p>Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis
-                                            viverra ornare, eros dolor interdum nulla.</p>
-                                    </div>
-                                </div>
-                                <!-- social -->
-                                <div class="footer-social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                </div>
+                    <div class="col-12 slider">
+                        <div class="slide-track">
+                            <div class="slide">
+                                <img src={{ asset("img/partners/bambi.jfif") }} height="100" width="250" alt="" />
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Quick links</h4>
-                                <ul>
-                                    <li><a href="#">Image Licensin</a></li>
-                                    <li><a href="#">Style Guide</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                </ul>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+                                {{-- <img src={{ asset("img/partners/bambi.jfif") }} height="100" width="250" alt="" /> --}}
+
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Shop Category</h4>
-                                <ul>
-                                    <li><a href="#">Image Licensin</a></li>
-                                    <li><a href="#">Style Guide</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                </ul>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+                                {{-- <img src={{ asset("img/partners/bauwens.jfif") }} height="100" width="250" alt="" /> --}}
+
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Pertners</h4>
-                                <ul>
-                                    <li><a href="#">Image Licensin</a></li>
-                                    <li><a href="#">Style Guide</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                </ul>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+                                {{-- <img src={{ asset("img/partners/bambi.jfif") }} height="100" width="250" alt="" /> --}}
+
+
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+                                {{-- <img src={{ asset("img/partners/eiken.jfif") }} height="100" width="250" alt="" /> --}}
+
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+                                {{-- <img src={{ asset("img/partners/lands.jfif") }} height="100" width="250" alt="" /> --}}
+
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+                                {{-- <img src={{ asset("img/partners/meubar.jfif") }} height="100" width="250" alt="" /> --}}
+
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+                                {{-- <img src={{ asset("img/partners/neyt.jfif") }} height="100" width="250" alt="" /> --}}
+
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+                                {{-- <img src={{ asset("img/partners/rousseau.jfif") }} height="100" width="250" alt="" /> --}}
+
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+                                {{-- <img src={{ asset("img/partners/wieman.jfif") }} height="100" width="250" alt="" /> --}}
+
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
                             </div>
                         </div>
                     </div>
@@ -70,6 +77,23 @@
             <div class="container">
                 <div class="footer-border">
                     <div class="row d-flex align-items-center">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-8">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30 d-flex justify-content-center align-items-center">
+                                    <!-- logo -->
+                                    <div class="footer-logo mx-5">
+                                        <a href="{{ route('home') }}"><img height="80px" src={{ asset("img/innovaImg/logo-hd.png") }} alt="logo-hd"></a>
+                                    </div>
+                          
+                                    <!-- social -->
+                                    <div class="footer-social mx-35">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="ti-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-xl-12 ">
                             <div class="footer-copy-right text-center">
                                 <p>

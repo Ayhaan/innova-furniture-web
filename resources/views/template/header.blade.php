@@ -6,11 +6,11 @@
                 <div class="header-left d-flex align-items-center">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.html"><img height="140px" src="{{ asset("img/innova/innovalogo.jpg") }}" alt=""></a>
+                        <a href="index.html"><img class="img-fluid" src="{{ asset("img/innovaImg/logo-hd.png") }}" alt="logo-hd"></a>
                     </div>
                     <!-- Logo-2 -->
                     <div class="logo2">
-                        <a href="index.html"><img height="80px" src="{{ asset("img/innovaImg/logo.jfif") }}" alt=""></a>
+                        <a href="index.html"><img height="80px" src="{{ asset("img/innovaImg/logo-hd.png") }}" alt="logo-hd"></a>
                     </div>
                     <!-- Main-menu -->
                     <div class="main-menu  d-none d-lg-block">

@@ -670,13 +670,13 @@
 {{-- </div> --}}
 
 
-<section id="portfolio" class="portfolio section-bg">
+<div id="portfolio" class="portfolio section-bg">
     <div class="container">
 
 
 
         <div class="row" data-aos="fade-up">
-            <div class="col-lg-12 d-flex justify-content-center">
+            <div class="filter-parent col-lg-12 d-flex justify-content-center">
                 <ul id="portfolio-flters">
                     <li data-filter="*" class="filter-active">All</li>
                     @foreach ($cat as $item)
@@ -803,4 +803,4 @@
         </div>
 
     </div>
-</section>
+</div>
