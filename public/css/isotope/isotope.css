@@ -204,16 +204,16 @@
 
 /* IMG */
 .img-parent {
-    height: 340px;
-    width: 340px;
+    height: 265px;
+    width: 265px;
     display: flex !important;
     align-items: center;
     justify-content: center !important;
     margin: auto;
 }
 .img-parent img {
-    height: 340px;
-    width: 340px;
+    height: 265px;
+    width: 265px;
     flex-shrink: 0;
 
     object-fit: cover;

@@ -268,3 +268,12 @@
 
 
 })(jQuery);
+
+
+// Mon code JS pour le dropdown FAQ
+const faqs_m = document.querySelectorAll('.faq')
+faqs_m.forEach(el => {
+    el.addEventListener('click', () => {
+        el.classList.toggle('active')
+    })
+});

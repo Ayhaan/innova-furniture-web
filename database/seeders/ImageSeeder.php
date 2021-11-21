@@ -37,6 +37,11 @@ class ImageSeeder extends Seeder
                 "created_at" => now()
             ],
             [
+                "img" => "table.jfif",
+                "product_id" => 1,
+                "created_at" => now()
+            ],
+            [
                 "img" => "chambre-1.jfif",
                 "product_id" => 2,
                 "created_at" => now()

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="contact">
     <div class="col-12">
         <h2 class="contact-title">Get in Touch</h2>
     </div>

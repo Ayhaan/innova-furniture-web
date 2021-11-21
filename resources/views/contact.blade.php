@@ -1,9 +1,10 @@
 @extends('layouts.index')
 
 @section('content')
-<header>
-    @include('template.loader')
-    @include('template.header')
+    <header>
+        @include('template.loader')
+        @include('template.header')
+    </header>
     <main>
         @include('template.banner')
         <section class="contact-section">
@@ -15,5 +16,4 @@
         </section>
     </main>
     @include('template.footer')
-</header>
 @endsection

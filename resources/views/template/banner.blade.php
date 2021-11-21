@@ -9,8 +9,8 @@
                             <h1 data-animation="fadeInUp" data-delay=".4s" >{{ Route::current()->getName() }}</h1>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">{{ Route::current()->getName() }}</a></li> 
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="">{{ Route::current()->getName() }}</a></li> 
                                 </ol>
                             </nav>
                         </div>

@@ -16,7 +16,10 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->string('user');
-            $table->string('commentaire');
+            $table->string('email');
+            $table->bigInteger('number')->nullable();
+            $table->text('commentaire');
+            $table->boolean('validate');
             $table->date('date');
             $table->foreignId('product_id')->constrained('products', 'id');
             $table->timestamps();
