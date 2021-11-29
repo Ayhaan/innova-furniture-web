@@ -9,8 +9,9 @@
 }
 .icon-search{
     background: none;
-    border: noneit;
+    border: none;
 }
+
 /* Les images */
 .popular-img {
     height: 280px;
@@ -94,9 +95,20 @@ i {
 .lSPager li img {
     object-fit: cover;
 }
-.product_slider_img li {
+/* .product_slider_img li { */
     /* background-color: red; */
     /* width: 25%; */
+/* } */
+/* pirce range sur product indoor */
+#portfolio .categories-wrapper .btn-range{
+    background-color: transparent;
+    border: solid rgb(170, 0, 0) 1px;
+    margin-left: 10px;
+    border-radius: 5px;
+    /* font-size: 15px; */
+}
+#portfolio .categories-wrapper .btn-range i{
+    color: black;
 }
 
 /* footer icon social */

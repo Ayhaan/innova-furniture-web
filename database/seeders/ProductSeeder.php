@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
                 // "img" => "img/innovaImg/salon-1.jfif",
                 "popular" => true,
                 // "like" => true,
-                "price" => 150,
+                "price" => 1050,
                 // "categories" => 'Sofa',
                 "description" => 'lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem',
                 "created_at" => now()
@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
                 // "img" => "img/innovaImg/chambre-1.jfif",
                 "popular" => true,
                 // "like" => true,
-                "price" => 150,
+                "price" => 350,
                 // "categories" => 'Bed',
                 "description" => 'lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem',
                 "created_at" => now()
@@ -43,7 +43,7 @@ class ProductSeeder extends Seeder
                 // "img" => "img/innovaImg/chambre-1.jfif",
                 "popular" => true,
                 // "like" => true,
-                "price" => 150,
+                "price" => 50,
                 // "categories" => 'Bed',
                 "description" => 'lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem',
                 "created_at" => now()
@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder
                 // "img" => "img/innovaImg/tapis.jfif",
                 "popular" => true,
                 // "like" => false,
-                "price" => 150,
+                "price" => 750,
                 // "categories" => 'Decore',
                 "description" => 'lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem',
                 "created_at" => now()
@@ -65,7 +65,7 @@ class ProductSeeder extends Seeder
                 // "img" => "img/innovaImg/table.jfif",
                 "popular" => false,
                 // "like" => false,
-                "price" => 150,
+                "price" => 350,
                 // "categories" => 'Table',
                 "description" => 'lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem',
                 "created_at" => now()

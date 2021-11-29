@@ -13,7 +13,7 @@
                                 dolor interdum nulla.</p>
                             <!-- Hero-btn -->
                             <div class="hero__btn" data-animation="fadeInUp" data-delay=".7s">
-                                <a href="industries.html" class="btn hero-btn">Discover More</a>
+                                <a href="{{ route('indoor') }}" class="btn hero-btn text-white">Discover More</a>
                             </div>
                         </div>
                     </div>

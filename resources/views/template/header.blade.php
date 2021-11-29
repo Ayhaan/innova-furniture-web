@@ -6,7 +6,7 @@
                 <div class="header-left d-flex align-items-center">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.html"><img class="img-fluid" src="{{ asset('img/innovaImg/logo-hd.png') }}"
+                        <a href="index.html"><img  src="{{ asset('img/innovaImg/logo-hd.png') }}"
                                 alt="logo-hd"></a>
                     </div>
                     <!-- Logo-2 -->

@@ -277,3 +277,12 @@ faqs_m.forEach(el => {
         el.classList.toggle('active')
     })
 });
+
+//Mon code JS pour le range
+// let a = document.querySelectorAll('.nice-select li')
+// let b = document.querySelector('.range-form')
+// a.forEach(el => {
+//     el.addEventListener('click', () => {
+//       b.submit();
+//     })
+// });

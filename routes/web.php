@@ -7,31 +7,31 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
+
 // Front
 Route::get('/', [AllController::class, 'home'])->name('home');
 Route::get('/about', [AllController::class, 'about'])->name('about');
 Route::get('/contact', [AllController::class, 'contact'])->name('contact');
 Route::get('/product-indoor', [AllController::class, 'productIndoor'])->name('indoor');
-Route::get('/product-outdoor', [AllController::class, 'productOutdoor'])->name('outdoor');
 Route::get('/product-indoor/{product}', [AllController::class, 'productShow'])->name('product');
+Route::get('/product-outdoor', [AllController::class, 'productOutdoor'])->name('outdoor');
+    //range price
+Route::post('/product-indoor/range', [AllController::class, 'range'])->name('ayhan');
 Route::get('/faq', [AllController::class, "faq"])->name('faq');
 Route::get('/moving', [AllController::class, "moving"])->name('moving');
     //Search
 Route::get('/product/search', [AllController::class, 'search'])->name('search');
 
 
-Route::get('/test', function () {
-    // dd('test');
-    return view("template/product/test");
-});
+// BACK
 
-// Back
 Route::get('/admin/dashboard', [AdminController::class, 'admin'])->middleware(['auth'])->name('admin');
-
+    // Products
+Route::get('/admin/products-indoor', [ProductController::class, 'index'])->name('product.index'); 
+    
     // Comments
 Route::post('/admin/comment/store', [CommentController::class, 'store'])->name('comment.store');
 
-    // Products 
 
 // Auth
 require __DIR__.'/auth.php';

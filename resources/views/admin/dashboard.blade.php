@@ -1,5 +1,9 @@
 @extends('layouts.back')
 
+@section('title-page')
+    <h3>Recapitulatif innova</h3>
+@endsection
 @section('content')
-    <div class="text">Dashboard</div>
+    @include('partials.mini-stats')
+
 @endsection
