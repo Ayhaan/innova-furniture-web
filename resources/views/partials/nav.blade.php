@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="/admin"><img src="{{ asset("img/innova/innovalogo.jpg") }}" alt="innova-logo" srcset="">Furniture  </a>
+                    <a href="/"><img src="{{ asset("img/innova/innovalogo.jpg") }}" alt="innova-logo" srcset="">Furniture  </a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -22,7 +22,7 @@
                 </li>
                 <li class="sidebar-item ">
                     <a href="index.html" class='sidebar-link'>
-                        <i class="bi bi-people"></i>
+                        <i class="bi bi-people-fill"></i>
                         <span>Users</span>
                     </a>
                 </li>
@@ -32,13 +32,13 @@
                 <li class="sidebar-title">Products</li>
                 <li class="sidebar-item  {{ request()->path() == 'admin/products-indoor' ? 'active' : '' }}">
                     <a href="{{ route('product.index') }}" class="sidebar-link ">
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-collection-fill"></i>
                         <span>Indoor</span>
                     </a>
                 </li>
                 <li class="sidebar-item  ">
                     <a href="index.html" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-collection-fill"></i>
                         <span>Outdoor</span>
                     </a>
                 </li>
@@ -71,13 +71,13 @@
 
                 <li class="sidebar-item  ">
                     <a href="ui-file-uploader.html" class='sidebar-link'>
-                        <i class="bi bi-cloud-arrow-up-fill"></i>
+                        <i class="bi bi-question-square-fill"></i>
                         <span>FAQ</span>
                     </a>
                 </li>
                 <li class="sidebar-item  ">
                     <a href="ui-file-uploader.html" class='sidebar-link'>
-                        <i class="bi bi-cloud-arrow-up-fill"></i>
+                        <i class="bi bi-file-ppt-fill"></i>
                         <span>Parteners</span>
                     </a>
                 </li>
@@ -85,13 +85,13 @@
                 <li class="sidebar-title">Click and Collect</li>
                 <li class="sidebar-item  ">
                     <a href="ui-file-uploader.html" class='sidebar-link'>
-                        <i class="bi bi-cloud-arrow-up-fill"></i>
+                        <i class="bi bi-bag-check-fill"></i>                        
                         <span>General</span>
                     </a>
                 </li>
                 <li class="sidebar-item  ">
                     <a href="ui-file-uploader.html" class='sidebar-link'>
-                        <i class="bi bi-cloud-arrow-up-fill"></i>
+                        <i class="bi bi-bar-chart-fill"></i>
                         <span>Stat</span>
                     </a>
                 </li>

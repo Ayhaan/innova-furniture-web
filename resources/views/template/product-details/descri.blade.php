@@ -37,7 +37,7 @@
                             @foreach (json_decode($product->specification->data) as $key => $value)
                                 <tr>
                                     <td>
-                                        <h5>{{ $key }}</h5>
+                                        <h5>{{ $key }} !!</h5>
                                     </td>
                                     <td>
                                         <h5>{{ $value }}</h5>

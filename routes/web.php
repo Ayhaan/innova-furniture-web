@@ -28,6 +28,15 @@ Route::get('/product/search', [AllController::class, 'search'])->name('search');
 Route::get('/admin/dashboard', [AdminController::class, 'admin'])->middleware(['auth'])->name('admin');
     // Products
 Route::get('/admin/products-indoor', [ProductController::class, 'index'])->name('product.index'); 
+Route::get('/admin/product/{product}/show', [ProductController::class, 'show'])->name('product.show');
+Route::get('admin/product/create', [ProductController::class, 'create'])->name('product.create');
+Route::post('admin/product/store-product', [ProductController::class, 'store'])->name('product.store');
+Route::get('admin/product/store-product/rollback/{name}', [ProductController::class, 'rollback'])->name('product.rollback');
+Route::get('admin/product/store-product/cancel', [ProductController::class, 'cancel'])->name('product.cancel');
+// Route::post('admin/product/store-image', [ProductController::class, 'storeImage'])->name('product-image.store');
+// Route::post('admin/product/store-detail', [ProductController::class, 'storeSpeci'])->name('product-detail.store');
+
+
     
     // Comments
 Route::post('/admin/comment/store', [CommentController::class, 'store'])->name('comment.store');
