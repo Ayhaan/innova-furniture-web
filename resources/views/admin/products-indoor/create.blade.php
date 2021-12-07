@@ -8,7 +8,6 @@
 @section('content')
 
     <section id="multiple-column-form">
-        @dump($page)
         <div class="row match-height">
             <div class="col-12">
                 <div class="card">
@@ -74,16 +73,15 @@
                                                 <label for="first-name-column">Name Furniture</label>
                                                 <input type="text" id="first-name-column" class="form-control"
                                                     placeholder="Furniture" name="name" value="{{ $provisoire ? $provisoire->name : "" }}">
-                                                {{-- <input type="text" id="first-name-column" class="form-control"
-                                                    placeholder="Furniture" name="name" value=""> --}}
+                                               
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <label for="first-name-column">Type</label>
                                             <fieldset class="form-group">
                                                 <select class="form-select" id="basicSelect" name="type">
-                                                    <option>indoor</option>
-                                                    <option>oudoor</option>
+                                                    <option {{ $provisoire ? $provisoire->type == "indoor" ? "selected" : "" : "" }}>indoor</option>
+                                                    <option {{ $provisoire ? $provisoire->type == "outdoor" ? "selected" : "" : "" }}>outdoor</option>
                                                 </select>
                                             </fieldset>
                                         </div>
@@ -91,15 +89,15 @@
                                             <div class="form-group">
                                                 <label for="city-column">Pric€</label>
                                                 <input type="number" id="city-column" class="form-control"
-                                                    placeholder="10k ?" name="price">
+                                                    placeholder="10k ?" name="price" value="{{ $provisoire ? $provisoire->price : "" }}">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12">
                                             <label for="first-name-column">Popular</label>
                                             <fieldset class="form-group">
                                                 <select class="form-select" id="basicSelect" name="popular">
-                                                    <option value="1">true</option>
-                                                    <option value="0">false</option>
+                                                    <option {{ $provisoire ? $provisoire->popular == 1 ? "selected": "" : "" }} value="1">true</option>
+                                                    <option {{ $provisoire ? $provisoire->popular == 0 ? "selected": "" : "" }} value="0">false</option>
                                                 </select>
                                             </fieldset>
                                         </div>
@@ -108,7 +106,7 @@
                                                 <label for="exampleFormControlTextarea1"
                                                     class="form-label">Description</label>
                                                 <textarea name="description" class="form-control"
-                                                    id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                    id="exampleFormControlTextarea1" rows="3">{{ $provisoire ? $provisoire->description : "" }}</textarea>
                                             </div>
                                         </div>
                                         <div class="col-12 d-flex justify-content-end">

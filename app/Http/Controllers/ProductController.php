@@ -54,8 +54,8 @@ class ProductController extends Controller
             if (Provisoire::count() === 0) {
                 $provisoire = new Provisoire();
                 $provisoire->name = "ppp";
-                $provisoire->type = "indoor";
-                $provisoire->popular = 1;
+                $provisoire->type = "outdoor";
+                $provisoire->popular = 0;
                 $provisoire->price = 30;
                 $provisoire->description = 'lorem lorem lorem';
                 $provisoire->save();
@@ -175,9 +175,7 @@ class ProductController extends Controller
             $provisoire = Provisoire::first();
             $provisoire->delete();
             return redirect()->to('/admin/products-indoor');
-
         }
-        
     }
     /**
      * Display the specified resource.
