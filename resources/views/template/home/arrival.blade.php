@@ -20,8 +20,12 @@
                             <div class="popular-img">
                                 @foreach ($item->images as $img)
                                     @if ($loop->first)
-                                        <img src="{{ asset('img/innovaImg/' . $img->img) }}" alt="">
-
+                                        @if (File::exists(public_path('img/productUpload/' . $img->img)))
+                                            <img src="{{ asset('img/productUpload/' . $img->img) }}" alt="">
+                                        @else
+                                            <img src="{{ asset('img/innovaImg/' . $img->img) }}" alt="">
+                                            
+                                        @endif
                                     @endif
 
                                 @endforeach

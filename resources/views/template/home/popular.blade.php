@@ -13,15 +13,23 @@
             </div>
         </div>
         <div class="row">
-            @forelse ($products as $item)
-                @if ($item->popular)
+            @forelse ($random_product as $item)
+                {{-- @if ($item->popular && $loop->iteration <= 4) --}}
+                {{-- @dump($loop) --}} 
+                
+                    
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s"
                             data-wow-delay=".1s">
                             <div class="popular-img">
                                 @foreach ($item->images as $img)
                                     @if ($loop->first)
-                                        <img src="{{ asset('img/innovaImg/' . $img->img) }}" alt="">
+                                        @if (File::exists(public_path('img/productUpload/' . $img->img)))
+                                            <img src="{{ asset('img/productUpload/' . $img->img) }}" alt="">
+                                        @else
+                                            <img src="{{ asset('img/innovaImg/' . $img->img) }}" alt="">
+                                        @endif
+
 
                                     @endif
 
@@ -36,7 +44,7 @@
                         </div>
                     </div>
 
-                @endif
+                {{-- @endif --}}
             @empty
                 <h3>Geen producteren
                 </h3>

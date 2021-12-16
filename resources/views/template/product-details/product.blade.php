@@ -5,14 +5,26 @@
                 <div class="product_slider_img">
                     <div id="vertical">
                         <div data-thumb="{{ asset("img/innovaImg/" . $product->images[0]->img) }}">
-                            <img src="{{ asset("img/innovaImg/" . $product->images[0]->img) }}"  class="w-100">
+                            @if (File::exists(public_path('img/productUpload/' . $product->images[0]->img)))
+                                <img src="{{ asset("img/productUpload/" . $product->images[0]->img) }}"  class="w-100">
+                            @else
+                                <img src="{{ asset("img/innovaImg/" . $product->images[0]->img) }}"  class="w-100">
+                                
+                            @endif
                         </div>
 
-
                         @for ($i = 1; $i < count($product->images); $i++)
-                            <div data-thumb="{{ asset("img/innovaImg/" . $product->images[$i]->img) }}">
-                                <img src={{ asset("img/innovaImg/" . $product->images[$i]->img) }}  class="w-100">
-                            </div>
+                            @if (File::exists(public_path('img/productUpload/' . $product->images[$i]->img)))
+                                <div data-thumb="{{ asset("img/productUpload/" . $product->images[$i]->img) }}">
+                                    <img src={{ asset("img/productUpload/" . $product->images[$i]->img) }}  class="w-100">
+                                </div>
+                            @else
+                                <div data-thumb="{{ asset("img/innovaImg/" . $product->images[$i]->img) }}">
+                                    <img src={{ asset("img/innovaImg/" . $product->images[$i]->img) }}  class="w-100">
+                                </div>
+                                
+                            @endif
+                            {{-- @dump("test") --}}
                         @endfor
                     </div>
                 </div>

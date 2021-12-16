@@ -1,0 +1,102 @@
+/*  ----------------------------- --------------ADD PRODUCT ----------------------------- */
+/* ----------------------------- Etape ----------------------------- */
+#etape-product i {
+    color: #25396f;
+    /* font-size: 20px; */
+    /* margin: 0 5px; */
+}
+#etape-product .block {
+    margin: 0 5px;
+}
+
+/*  -----------------------------CSS card img + btn delete ----------------------------- */
+.block-image {
+    overflow: hidden !important;
+    position: relative;
+   
+}
+.block-image .block-img {
+    width: 100%;
+}
+.block-image .block-img img {
+    width: 100%;
+}
+
+.block-image .block-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.block-image .block-btn-addcart {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -45px;
+    /* width: 100px; */
+    transition: 0.4s;
+    /* padding: 40px; */
+}
+.block-image .block-btn-addcart a {
+    border-radius: 23px;
+    /* background-color: #1111; */
+    /* width: 100%; */
+    height: 40px;
+    font-size: 25px;
+    color: white;
+    transition: 0.3s;
+}
+.block-image .block-btn-addcart a:hover  {
+    color: #d83c49;
+}
+
+.block-image .block-overlay:hover {
+    opacity: 1;
+}
+
+.block-image .block-overlay:hover .block-btn-addcart {
+    bottom: 40%;
+}
+
+/* ----------------------------- DETAILS product ----------------------------- */
+.add-speci {
+    display: block;
+    margin: auto;
+}
+.add-speci i {
+    font-size: 35px;
+    color: #25396f;
+    transition: 0.3s;
+}
+.add-speci i:hover {
+    color: #162652;
+}
+.hr-speci {
+    width: 30%;
+    margin: 20px auto;
+}
+.group-speci {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+.group-speci div {
+    width: 45%;
+}
+.minus-speci {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    color: #f3616d;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.minus-speci:hover {
+    color: #d83c49;
+}

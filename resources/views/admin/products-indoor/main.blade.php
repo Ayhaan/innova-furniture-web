@@ -33,7 +33,13 @@
                 <tbody>
                     @foreach ($products as $item)
                     <tr>
-                        <td ><img height="60px" src="{{ asset('img/innovaImg/'.$item->images[0]->img ) }}" alt="a"></td>
+                        @if (File::exists(public_path('img/productUpload/' . $item->images[0]->img)))
+                                <td ><img height="60px" src="{{ asset('img/productUpload/'.$item->images[0]->img ) }}" alt="a"></td>
+                            @else
+                                
+                                <td ><img height="60px" src="{{ asset('img/innovaImg/'.$item->images[0]->img ) }}" alt="a"></td>
+                                
+                            @endif
                         <td >{{ $item->name }}</td>
                         <td>{{ $item->price }}€</td>
                         <td>{{ count($item->comments) }}</td>

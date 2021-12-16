@@ -18,7 +18,9 @@ class AllController extends Controller
         $spec = Specification::all();
         // dd($spec->data);
         $products = Product::all();
-        return view('home', compact('products', 'spec'));
+        $products_popular = $products->where('popular');
+        $random_product = $products_popular->random(4);
+        return view('home', compact('products', 'spec', 'random_product'));
     }
     //Product
     public function productIndoor()

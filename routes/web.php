@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,7 +31,12 @@ Route::get('/admin/dashboard', [AdminController::class, 'admin'])->middleware(['
 Route::get('/admin/products-indoor', [ProductController::class, 'index'])->name('product.index'); 
 Route::get('/admin/product/{product}/show', [ProductController::class, 'show'])->name('product.show');
 Route::get('admin/product/create', [ProductController::class, 'create'])->name('product.create');
+
 Route::post('admin/product/store-product', [ProductController::class, 'store'])->name('product.store');
+    // products-image-crop (apart)
+Route::post('crop',[ProductController::class, 'store_image'])->name('crop.store');
+Route::get('img-all',[ProductController::class, 'getimage'])->name('img.get');
+Route::get('remove-img/{i}', [ProductController::class, "destroy_img"])->name('img.destroy');
 Route::get('admin/product/store-product/rollback/{name}', [ProductController::class, 'rollback'])->name('product.rollback');
 Route::get('admin/product/store-product/cancel', [ProductController::class, 'cancel'])->name('product.cancel');
 // Route::post('admin/product/store-image', [ProductController::class, 'storeImage'])->name('product-image.store');

@@ -7,9 +7,15 @@ use App\Models\Product;
 use App\Models\Image;
 use App\Models\Provisoire;
 use App\Models\Specification;
+use Hamcrest\Core\IsNot;
+use Hamcrest\Core\IsNull;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rules\Exists;
 
+use function PHPUnit\Framework\isNull;
 
 class ProductController extends Controller
 {
@@ -73,21 +79,13 @@ class ProductController extends Controller
             return view('admin/products-indoor/create', compact("page"));
         } elseif ($page === 'images') {   // ETAPE 2
             $page = "speci";
-            //continue à traiter les images dans la tablea provisoire
-            $provisoire = Provisoire::first();
-            $provisoire->img1 = 'edit';
-            $provisoire->img2 = 'salon-1.jfif';
-            $provisoire->img3 = 'salon-1.jfif';
-            $provisoire->img4 = 'salon-1.jfif';
-            $provisoire->img5 = 'salon-1.jfif';
-            $provisoire->save();
             return view('admin/products-indoor/create', compact("page"));
 
         } elseif ($page === "speci") {    // ETAPE 3
-            //récupere les données dans la tablea provisoire et les palces dans chacun de ses table respective
+            // //récupere les données dans la tablea provisoire et les palces dans chacun de ses table respective
             $provisoire = Provisoire::first();
 
-            // $product mis à jour
+            // // $product mis à jour
             $product = new Product();
             $product->name = $provisoire->name;
             $product->type = $provisoire->type;
@@ -96,23 +94,27 @@ class ProductController extends Controller
             $product->description = $provisoire->description;
             $product->save();
             $product->categories()->attach([1,3]);
-            // dd('test');
 
             // $images mis à jour
-            $images = new Image();
-            $images->product_id = $product->id;
-            $images->img = $provisoire->img1;
-            $images->save();
-            $images = new Image();
-            $images->product_id = $product->id;
-            $images->img = $provisoire->img2;
-            $images->save();
-
+            $productImg =  DB::table('provisoires')->select('img1', 'img2', 'img3' ,'img4', 'img5')->get();
+            // chope les données des img en sql
+            //transforme en tableau
+            $arrayImg = (array) $productImg[0];
+            //boucle sur le tableau avec les données et utilise la $key pour faire référence
+            foreach ($arrayImg as $key => $value) {
+                if ($value != null) {
+                    $images = new Image();
+                    $images->product_id = $product->id;
+                    $images->img = $provisoire->$key;
+                    $images->save();
+                }
+            }
+   
             // Nettoyage de la tablea provisoire
             $provisoire->delete();
 
 
-            //Logique JSON pour les spécifications 
+            // Logique JSON pour les spécifications 
             // récup les input et enelve les deux 1er input qui me sert à rien
             $input = $request->input();
             $input_slice = array_slice($input, 2);
@@ -134,7 +136,7 @@ class ProductController extends Controller
             }
             // dd($arraySpeci, $arrayRep);
 
-            //Créer le tableau final qui va stock les donne traité en : "spec => rep" 
+            // //Créer le tableau final qui va stock les donne traité en : "spec => rep" 
             $jsonData = array();
             for ($i = 0; $i < count($input_slice) / 2; $i++) {
                 $jsonData[$arraySpeci[$i]] =$arrayRep[$i] ;
@@ -147,9 +149,74 @@ class ProductController extends Controller
             $speci->data = $jsonData; 
             $speci->product_id = $product->id; 
             $speci->save();
-            return 'valider';
+            return redirect()->to('admin/products-indoor');
         }
     }
+    public function store_image(Request $request)  // ETAPE 2 IMG librarie
+    {
+
+        $provisoire = Provisoire::first();
+        // dd('test');
+        $productImg =  DB::table('provisoires')->select('img1', 'img2', 'img3' ,'img4', 'img5')->get();
+        // dd(gettype($test[0]));
+        $arrayImg = (array) $productImg[0];
+        // dd($array);
+
+        $path = 'img/productUpload/';
+        $file = $request->file('image');
+        $new_image_name = 'UIMG'.date('Ymd').uniqid().'.jpg';
+        $upload = $file->move(public_path($path), $new_image_name);
+
+        foreach ($arrayImg as $key => $value) {
+            if ($value == null) {
+                $provisoire->$key = $new_image_name;
+                break;
+            }
+        }
+
+        // dd('test'); 
+        $provisoire->save();
+        if($upload){
+            return response()->json(['status'=>1, 'msg'=>'Image has been cropped successfully.', 'name'=>$new_image_name]);
+        }else{
+              return response()->json(['status'=>0, 'msg'=>'Something went wrong, try again later']);
+        }
+    }
+    public function getimage()  // ETAPE 2 IMG librairie suite
+    {
+        // $imgAll = Provisoire::first();
+        // dd($imgAll->img1);
+        $img = Provisoire::first()->select(array('img1', 'img2', 'img3', 'img4', 'img5'))->get();
+        return $img;
+    }
+    public function destroy_img($id)
+    {
+        $provisoire = Provisoire::first();
+        //récupère les jsutes les img
+        $productImg =  DB::table('provisoires')->select('img1', 'img2', 'img3' ,'img4', 'img5')->get();
+        $arrayImg = (array) $productImg[0];
+        //transforme l 'id en nbr 
+        $nbr = intval($id);
+        // ajout +1 pour se calcler sur les noms des columns (img1, img2) car le 'id commence pas 0
+        $nbr_img = $nbr +1;
+
+        //boucle sur tableau avec selection des images
+        foreach ($arrayImg as $key => $value) {
+            //utilise le bon nbr pour verifier si == à la bonne key afin de choper la bonne colum à traiter
+            if ("img" . $nbr_img == $key) {
+                //delete storage
+                $destination = "/img/productUpload/".$value;
+                Storage::disk('public')->delete($destination);
+                //delete DB
+                $arrayImg[$key] = null;
+                $provisoire->$key = null;
+                $provisoire->save();
+
+            } 
+        }        
+        $page = "images";
+        return view('admin/products-indoor/create', compact("page"));
+}
 
     public function rollback($name)
     {
@@ -173,6 +240,18 @@ class ProductController extends Controller
             
         } else {
             $provisoire = Provisoire::first();
+            
+            //supp image dans le storage
+            $productImg =  DB::table('provisoires')->select('img1', 'img2', 'img3' ,'img4', 'img5')->get();
+            $arrayImg = (array) $productImg[0];
+            foreach ($arrayImg as $key => $value) {
+                //verifie pour traiter les données ajouter pour le produit en cours
+                if ($value != null) {
+                    $destination = "img/productUpload/".$value;
+                    Storage::disk('public')->delete($destination);
+                }
+            }
+            //supp dans la db
             $provisoire->delete();
             return redirect()->to('/admin/products-indoor');
         }
