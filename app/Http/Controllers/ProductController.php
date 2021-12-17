@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Exists;
+use Spatie\QueryBuilder\QueryBuilder;
 
 use function PHPUnit\Framework\isNull;
 
@@ -29,7 +30,18 @@ class ProductController extends Controller
         $products = Product::paginate(3);
         return view('admin/products-indoor/main', compact('products'));
     }
-
+    public function search(Request $request)
+    {
+        $value = array_values(request()->filter)[0];
+        if ($value) {
+            $products = QueryBuilder::for(Product::class)
+                ->allowedFilters('name')
+                ->get();
+            return view('admin/products-indoor/main', compact('products', 'value'));
+        } else {
+            return redirect()->back()->with('warning', 'champs vide...');
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -216,8 +228,7 @@ class ProductController extends Controller
         }        
         $page = "images";
         return view('admin/products-indoor/create', compact("page"));
-}
-
+    }
     public function rollback($name)
     {
         if ($name === 'product') {

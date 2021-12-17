@@ -100,3 +100,14 @@
 .minus-speci:hover {
     color: #d83c49;
 }
+
+/* Show product */
+#carouselShowProduct .carousel-inner{
+    height: 400px !important;
+}
+#carouselShowProduct .carousel-inner img{
+    height: auto;
+}
+.comment-party .card{
+    width: 45%;
+}

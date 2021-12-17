@@ -12,7 +12,6 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 mt-5">
                     <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                         <h2>{{ count($products) }} Product(s) found for : "{{ $value }}"</h2>
-                        <p></p>
                     </div>
 
                 </div>

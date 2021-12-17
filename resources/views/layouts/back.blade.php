@@ -58,9 +58,6 @@
         // let ratio = 16/9;
         // // select.addEventListener("change", function() {
         // // });
-
-
-
         $('#image-crop').ijaboCropTool({
            preview : '.image-previewer',
            setRatio: 16/9,
@@ -72,7 +69,8 @@
            onSuccess:function(message, element, status){
             //   alert(message);
               getallimage()
-              console.log(ratio);
+              optimizeImg()
+            //   console.log(ratio);
            },
            onError:function(message, element, status){
              alert(message);
@@ -91,7 +89,7 @@
                     let myImg = [img1, img2, img3, img4, img5]
                     // console.log(myImg);
                     myImg.forEach((el,i) => {
-                        console.log(el);
+                        // console.log(el);
                         if (el != null) {
                             //création card structure + btn delete
                             let col = document.createElement('div')
@@ -128,6 +126,16 @@
                             
                         }
                     });
+                    let nbrImg = document.querySelectorAll('.block-overlay').length
+                    console.log(nbrImg );    
+                    let imgCount = document.querySelector('.img-count')
+                    let imgInput = document.querySelector('#image-crop')
+                    if (nbrImg === 5) {
+                        imgCount.textContent = "Vous avez atteint le maximum ! "
+                        imgInput.setAttribute("disabled", "")
+                    }else{
+                        imgCount.textContent = `${nbrImg} / 5 images`
+                    }
                     
                 }
                 // console.log(data);

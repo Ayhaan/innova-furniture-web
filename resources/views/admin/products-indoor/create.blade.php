@@ -53,10 +53,8 @@
                                 role="document">
                                 <div class="modal-content">
 
-                                    <div class="modal-body">
-                                        <p>
-                                            <a href="{{ route('product.cancel') }}">Definitive</a>
-                                        </p>
+                                    <div class="modal-body d-flex justify-content-center py-4">
+                                            <a class="btn btn-outline-danger" href="{{ route('product.cancel') }}">Definitive</a>
                                     </div>
 
                                 </div>
@@ -133,7 +131,7 @@
                                 <h2 class="text-center mb-0">Images product</h2>
 
                                 {{-- <h3>images products</h3> --}}
-                                <p class="form-label text-center mb-4">Possibilité d'ajouter 5 images</p>
+                                <p class="form-label text-center mb-4 img-count" >0 / 5 images</p>
                                 <div class="input-croper">
                                         {{-- <select class="form-select w-25 mx-auto"  id="ratio-cropper">
                                         <option value="1">1</option>

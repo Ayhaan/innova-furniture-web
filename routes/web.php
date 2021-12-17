@@ -31,7 +31,7 @@ Route::get('/admin/dashboard', [AdminController::class, 'admin'])->middleware(['
 Route::get('/admin/products-indoor', [ProductController::class, 'index'])->name('product.index'); 
 Route::get('/admin/product/{product}/show', [ProductController::class, 'show'])->name('product.show');
 Route::get('admin/product/create', [ProductController::class, 'create'])->name('product.create');
-
+Route::get('/admin/product/search', [ProductController::class, 'search'])->name('search.back');
 Route::post('admin/product/store-product', [ProductController::class, 'store'])->name('product.store');
     // products-image-crop (apart)
 Route::post('crop',[ProductController::class, 'store_image'])->name('crop.store');
@@ -42,8 +42,9 @@ Route::get('admin/product/store-product/cancel', [ProductController::class, 'can
 // Route::post('admin/product/store-image', [ProductController::class, 'storeImage'])->name('product-image.store');
 // Route::post('admin/product/store-detail', [ProductController::class, 'storeSpeci'])->name('product-detail.store');
 
+    // Users
+Route::get('/admin/users', [AdminController::class, "users"])->name('users.index');
 
-    
     // Comments
 Route::post('/admin/comment/store', [CommentController::class, 'store'])->name('comment.store');
 

@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-md-8">
                         <h6 class="text-muted font-semibold">count users</h6>
-                        <h6 class="font-extrabold mb-0">112.000</h6>
+                        <h6 class="font-extrabold mb-0">{{ count($users) }}</h6>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-8">
                         <h6 class="text-muted font-semibold">Count products</h6>
-                        <h6 class="font-extrabold mb-0">183.000</h6>
+                        <h6 class="font-extrabold mb-0">{{ count($products) }}</h6>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-8">
                         <h6 class="text-muted font-semibold">Count comments</h6>
-                        <h6 class="font-extrabold mb-0">80.000</h6>
+                        <h6 class="font-extrabold mb-0">{{ count($comments) }}</h6>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="col-md-8">
                         <h6 class="text-muted font-semibold">Count CAC</h6>
-                        <h6 class="font-extrabold mb-0">112</h6>
+                        <h6 class="font-extrabold mb-0">soon</h6>
                     </div>
                 </div>
             </div>

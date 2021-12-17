@@ -10,13 +10,17 @@
         <div class="card-header">
             <div class="d-flex justify-content-between">
                 <a href="{{ route('product.create') }}"><button class="btn btn-primary">Add product</button></a>
-                <form action=""  class="form-group d-flex">
-                    <input class="form-control w-auto" type="text" placeholder="product ?">
+                <form action="{{ route('search.back') }}"  class="form-group d-flex">
+                    <input name="filter[name]" class="form-control w-auto" type="text" placeholder="product ?">
                     <button class="btn"><i class="bi bi-search"></i></button>
                 </form>
+                
 
             </div>
         </div>
+        @if (isset($value))
+             <h4 class="text-center">{{ count($products) }} Product(s) found for : "{{ $value }}"</h4>
+        @endif
         <div class="card-body">
             <table class="table table-striped" id="table1">
                 <thead>
@@ -49,10 +53,11 @@
                                 {{ $categ->name }},
                             @endforeach
                         </td>
-                        <td>
+                        <td class="">
                             <a href="{{ route('product.show', $item->id) }}">
                                 <button class="btn btn-primary">show</button>
                             </a>
+
                         </td>
                     </tr>
                 @endforeach
@@ -60,9 +65,11 @@
                 </tbody>
             </table>
         </div>
-        <div class="mx-auto">
-            {{ $products->links('vendor.pagination.bootstrap-4') }}
-        </div>
+        @if (!isset($value))
+            <div class="mx-auto">
+                {{ $products->links('vendor.pagination.bootstrap-4') }}
+            </div>    
+        @endif
     </div>
       
 @endsection

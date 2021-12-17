@@ -21,7 +21,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item ">
-                    <a href="index.html" class='sidebar-link'>
+                    <a href="{{ route('users.index') }}" class='sidebar-link'>
                         <i class="bi bi-people-fill"></i>
                         <span>Users</span>
                     </a>
@@ -29,8 +29,8 @@
 
     
 
-                <li class="sidebar-title">Products</li>
-                <li class="sidebar-item  {{ request()->path() == 'admin/products-indoor' ? 'active' : '' }}">
+                <li class="sidebar-title">Innova Web</li>
+                {{-- <li class="sidebar-item  {{ request()->path() == 'admin/products-indoor' ? 'active' : '' }}">
                     <a href="{{ route('product.index') }}" class="sidebar-link ">
                         <i class="bi bi-collection-fill"></i>
                         <span>Indoor</span>
@@ -41,34 +41,32 @@
                         <i class="bi bi-collection-fill"></i>
                         <span>Outdoor</span>
                     </a>
-                </li>
+                </li> --}}
 
-                <li class="sidebar-item  has-sub">
+                <li class="sidebar-item {{ request()->path() == 'admin/products-indoor' ? 'active' : '' }} has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-pen-fill"></i>
-                        <span>Comments</span>
+                        <span>Products</span>
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="form-editor-quill.html">Quill</a>
+                            <a href="{{ route('product.index') }}">Indoor</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="form-editor-ckeditor.html">CKEditor</a>
+                            <a href="form-editor-ckeditor.html">Outdoor</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="form-editor-summernote.html">Summernote</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="form-editor-tinymce.html">TinyMCE</a>
+                            <a href="form-editor-summernote.html">Comments</a>
                         </li>
                     </ul>
                 </li>
-
-          
-
-                <li class="sidebar-title">Extra UI</li>
-
-
+                <li class="sidebar-item  ">
+                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                        <i class="bi bi-file-ppt-fill"></i>
+                        <span>Customers opignion</span>
+                    </a>
+                </li>
+    
                 <li class="sidebar-item  ">
                     <a href="ui-file-uploader.html" class='sidebar-link'>
                         <i class="bi bi-question-square-fill"></i>
@@ -81,6 +79,29 @@
                         <span>Parteners</span>
                     </a>
                 </li>
+                <li class="sidebar-item  ">
+                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                        <i class="bi bi-info-circle-fill"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  ">
+                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                        <i class="bi bi-rainbow"></i>
+                        <span>Moving</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  ">
+                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+
+          
+
+
+
 
                 <li class="sidebar-title">Click and Collect</li>
                 <li class="sidebar-item  ">
