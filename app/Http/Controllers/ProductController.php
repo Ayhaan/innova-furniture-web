@@ -185,14 +185,19 @@ class ProductController extends Controller
                 break;
             }
         }
-
-        // dd('test'); 
         $provisoire->save();
-        if($upload){
-            return response()->json(['status'=>1, 'msg'=>'Image has been cropped successfully.', 'name'=>$new_image_name]);
-        }else{
-              return response()->json(['status'=>0, 'msg'=>'Something went wrong, try again later']);
+        if ($request->notcrop) {
+            $page = "images";
+            return view('admin/products-indoor/create', compact('page'));
+        }else {
+            if($upload){
+                return response()->json(['status'=>1, 'msg'=>'Image has been cropped successfully.', 'name'=>$new_image_name]);
+            }else{
+                  return response()->json(['status'=>0, 'msg'=>'Something went wrong, try again later']);
+            }
+
         }
+
     }
     public function getimage()  // ETAPE 2 IMG librairie suite
     {

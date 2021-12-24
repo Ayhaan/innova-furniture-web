@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -56,4 +56,79 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+@extends('layouts.index')
+@section('content')
+<main class="login-bg">
+    @if ($errors->any())
+        <div  class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{  $error  }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <!-- Register Area Start -->
+    <div class="register-form-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="register-form text-center">
+                        <!-- Login Heading -->
+                        <div class="register-heading">
+                            <span>Sign Up</span>
+                            <p>Create your account to get full access</p>
+                        </div>
+                        <!-- Single Input Fields -->
+                        <form method="POST" action="{{ route('register') }}" class="input-box">
+                            @csrf
+                            <div class="row">
+                                <div class="single-input-fields col-6">
+                                    <label>Name</label>
+                                    <input name="name" type="text" placeholder="Enter name">
+                                </div>
+                                <div class="single-input-fields col-6">
+                                    <label>First name</label>
+                                    <input name="firstname" type="text" placeholder="Enter first name">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="single-input-fields col-6">
+                                    <label>City</label>
+                                    <input name="city" type="text" placeholder="Merchtem ?">
+                                </div>
+                                <div class="single-input-fields col-6">
+                                    <label>Postal code </label>
+                                    <input name="postalcode" type="text" placeholder="1785 ?">
+                                </div>
+
+                            </div>
+                            <div class="single-input-fields">
+                                <label>Email Address</label>
+                                <input name="email" type="email" placeholder="Enter email address">
+                            </div>
+                            <div class="single-input-fields">
+                                <label>Password</label>
+                                <input name="password" type="password" placeholder="Enter Password">
+                            </div>
+                            <div class="single-input-fields">
+                                <label>Confirm Password</label>
+                                <input name="password_confirmation" type="password" placeholder="Confirm Password">
+                            </div>
+                            <!-- form Footer -->
+                            <div class="register-footer">
+                                <p> Already have an account? <a href="{{ route('login') }}"> Login</a> here</p>
+                                <button class="submit-btn3">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register Area End -->
+</main>
+@endsection

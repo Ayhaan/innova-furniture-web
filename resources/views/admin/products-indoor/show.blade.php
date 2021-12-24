@@ -3,7 +3,7 @@
 @section('title-page')
     <h3 class="d-flex justify-content-between flex-wrap">
         Product : {{ $product->name }}
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#small">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#small">
             Delete this product
         </button>
     
@@ -58,10 +58,10 @@
                     @endforeach
                 </p>
                 <p><b>Date add</b> : {{ $product->created_at }}</p>
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#image">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#image">
                     Edit image
                 </button>
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#informations">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#informations">
                     Edit informations
                 </button>
             </div>
@@ -71,7 +71,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12">
             <h5 class="text-center">Spécifications product</h5>
             <div class="d-flex justify-content-center mb-4">
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#speci">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#speci">
                     Edit specification
                 </button>
             </div>
@@ -97,10 +97,10 @@
         <div class="col-lg-6 col-md-6 col-sm-12 comment-party">
             <h5 class="text-center">Comments product : {{ count($product->comments) }}</h5>
             <div class="d-flex justify-content-center mb-4">
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#commentnocheck">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentnocheck">
                     Comment no check (nbr)
                 </button>
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#commentall">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentall">
                     All comment
                 </button>
             </div>

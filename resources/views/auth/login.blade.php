@@ -34,10 +34,6 @@
 
             <!-- Remember Me -->
             <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -67,9 +63,11 @@
                         <form class="login-form"  method="POST" action="{{ route('login') }}">
                             @csrf
                             <!-- Login Heading -->
-                            <div class="login-heading">
-                                <span>Innova Furniture</span>
-                                <p>Login</p>
+                            <div class="login-heading d-flex align-items-center justify-content-center">
+                                <img height="110px" src="{{ asset('img\innovaImg\logo-hd.png') }}" alt="logo">
+                            
+                                <span class="m-0">Innova Furniture</span>
+                                {{-- <p>Login</p> --}}
                             </div>
                             <!-- Single Input Fields -->
                             <div class="input-box">
@@ -79,15 +77,32 @@
                                 </div>
                                 <div class="single-input-fields">
                                     <label>Password</label>
-                                    <input type="password" placeholder="Enter Password"
+                                    
+                                    <input class="@error('password') is-invalid @enderror" type="password" placeholder="Enter Password"
                                         name="password"
                                         required autocomplete="current-password">
+                                       
+                                </div>
+                                <div class="single-input-fields login-check">
+                                    <input type="checkbox" id="remember_me"  name="remember">
+                                    <label for="remember_me">Remember me</label>
+
+                                 
+                    
+                                    @if (Route::has('password.request'))
+                                    <a class="f-right" href="{{ route('password.request') }}">
+                                        Forgot your password?
+                                    </a>
+                                @endif
                                 </div>
                           
                             </div>
                             <!-- form Footer -->
                             <div class="login-footer ">
+                                <p>Don’t have an account? <a href="{{ route('register') }}">Sign Up</a>  here</p>
+
                                 <button class="submit-btn3">Login</button>
+                          
                             </div>
                         </form>
                     </div>

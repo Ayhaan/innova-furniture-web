@@ -6,21 +6,28 @@
                     <div id="vertical">
                         <div data-thumb="{{ asset("img/innovaImg/" . $product->images[0]->img) }}">
                             @if (File::exists(public_path('img/productUpload/' . $product->images[0]->img)))
-                                <img src="{{ asset("img/productUpload/" . $product->images[0]->img) }}"  class="w-100">
+                                <a href="{{ asset("img/productUpload/" . $product->images[0]->img) }}" data-gall="portfolioGallery" class="venobox" title="">
+                                    <img src="{{ asset("img/productUpload/" . $product->images[0]->img) }}"  class="w-100">
+                                </a>
                             @else
-                                <img src="{{ asset("img/innovaImg/" . $product->images[0]->img) }}"  class="w-100">
-                                
+                                <a href="{{ asset("img/innovaImg/" . $product->images[0]->img) }}" data-gall="portfolioGallery" class="venobox" title="">
+                                    <img src="{{ asset("img/innovaImg/" . $product->images[0]->img) }}"  class="w-100">
+                                </a>
                             @endif
                         </div>
 
                         @for ($i = 1; $i < count($product->images); $i++)
                             @if (File::exists(public_path('img/productUpload/' . $product->images[$i]->img)))
                                 <div data-thumb="{{ asset("img/productUpload/" . $product->images[$i]->img) }}">
-                                    <img src={{ asset("img/productUpload/" . $product->images[$i]->img) }}  class="w-100">
+                                    <a href="{{ asset("img/productUpload/" . $product->images[$i]->img) }}" data-gall="portfolioGallery" class="venobox" title="">
+                                        <img src={{ asset("img/productUpload/" . $product->images[$i]->img) }}  class="w-100">
+                                    </a>
                                 </div>
                             @else
                                 <div data-thumb="{{ asset("img/innovaImg/" . $product->images[$i]->img) }}">
-                                    <img src={{ asset("img/innovaImg/" . $product->images[$i]->img) }}  class="w-100">
+                                    <a href="{{ asset("img/innovaImg/" . $product->images[$i]->img) }}" data-gall="portfolioGallery" class="venobox" title="">
+                                        <img src={{ asset("img/innovaImg/" . $product->images[$i]->img) }}  class="w-100">
+                                    </a>
                                 </div>
                                 
                             @endif

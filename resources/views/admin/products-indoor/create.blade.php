@@ -131,7 +131,12 @@
                                 <h2 class="text-center mb-0">Images product</h2>
 
                                 {{-- <h3>images products</h3> --}}
-                                <p class="form-label text-center mb-4 img-count" >0 / 5 images</p>
+                                <p class="form-label text-center my-2 img-count" >0 / 5 images</p>
+                                <div class="center mb-4">
+                                    <input type="checkbox" id="cbx" style="display:none"/>
+                                    <label for="cbx" class="toggle"><span></span></label> 
+                                    <span>crop ?</span>   
+                                  </div>
                                 <div class="input-croper">
                                         {{-- <select class="form-select w-25 mx-auto"  id="ratio-cropper">
                                         <option value="1">1</option>
@@ -141,7 +146,13 @@
                                         <option value="78">7:8</option>
                                         <option value="16/9">16:9</option>
                                     </select> --}}
-                                    <input class="form-control w-50 m-auto my-3" type="file" name="image" id="image-crop">
+                                    <form class="d-flex align-items-center justify-content-center cbx-ciblig" action="{{ route('crop.store') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <input class="form-control w-50 mx-4 my-3 image-add-store " type="file" name="image">
+                                        <input class="d-none" type="text" name="notcrop" value="true" readonly >
+                                        <button class="btn btn-primary">Add</button>
+                                    </form>
+                                    <input class="form-control w-50 m-auto my-3 image-add-store cbx-ciblig d-none" type="file" name="image" id="image-crop">
                                 </div>
 
                                 {{-- Zone où les images se raj avec jquery --}}
@@ -239,12 +250,12 @@
         let action = document.querySelector('#action-speci')
         // console.log(btn_add_speci);
 
+        //Count qui va counter le nbr de input créer et mettre a jour le name de chaque input
+        let count = 3
         btn_add_speci.addEventListener('click', () => {
             //création minus
             let minus = document.createElement('i')
             minus.className = 'bi bi-dash-circle-fill minus-speci'
-            //Chope le nbr excat de input (+1 pour le faite qu'on add un new form group)
-            let nbr = document.querySelectorAll('.group-speci').length +1
             let hr = document.createElement('hr');
             hr.classList.add('hr-speci')
 
@@ -263,7 +274,7 @@
                 one_input.classList.add('form-control')
                 one_input.setAttribute('type', "text")
                 //condition pour fournir le name
-                i % 2 == 1 ? one_input.setAttribute('name', `speci${nbr}`) : one_input.setAttribute('name', `rep${nbr}`) ;
+                i % 2 == 1 ? one_input.setAttribute('name', `speci${count}`) : one_input.setAttribute('name', `rep${count}`) ;
                 
     
                 one_div_form.append(one_label, one_input)
@@ -281,7 +292,8 @@
                     e.target.parentNode.remove();
                 })    
             });
-            console.log(minusAll);
+            // console.log(minusAll);
+            count++
         })
 
     </script>

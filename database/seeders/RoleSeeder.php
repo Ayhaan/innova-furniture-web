@@ -20,7 +20,7 @@ class RoleSeeder extends Seeder
                 "created_at" => now(),
             ],
             [
-                'name' => "client",
+                'name' => "user",
                 "created_at" => now(),
             ],
         ]);

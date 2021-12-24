@@ -25,23 +25,28 @@
 </head>
 
 <body>
-    <main id="app">
-        @include('partials.nav')
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
-            <div class="page-heading">
-                @yield('title-page')
-            </div>
-            <div class="page-content">
-                @yield('content')
-            </div>
+    @if (auth()->user()->role_id === 1)
+        <main id="app">
+            @include('partials.nav')
+            <div id="main">
+                <header class="mb-3">
+                    <a href="#" class="burger-btn d-block d-xl-none">
+                        <i class="bi bi-justify fs-3"></i>
+                    </a>
+                </header>
+                <div class="page-heading">
+                    @yield('title-page')
+                </div>
+                <div class="page-content">
+                    @yield('content')
+                </div>
 
-        </div>
-    </main>
+            </div>
+        </main>
+    @else 
+        @include('partials.page-client')
+    @endif
+    
 
     {{-- JS croper image --}}
     <script src={{ asset('js/croper/jquery-3.5.1.min.js') }}></script>
@@ -129,10 +134,11 @@
                     let nbrImg = document.querySelectorAll('.block-overlay').length
                     console.log(nbrImg );    
                     let imgCount = document.querySelector('.img-count')
-                    let imgInput = document.querySelector('#image-crop')
+                    let imgInput = document.querySelectorAll('.image-add-store')
                     if (nbrImg === 5) {
                         imgCount.textContent = "Vous avez atteint le maximum ! "
-                        imgInput.setAttribute("disabled", "")
+                        imgInput[0].setAttribute("disabled", "")
+                        imgInput[1].setAttribute("disabled", "")
                     }else{
                         imgCount.textContent = `${nbrImg} / 5 images`
                     }
@@ -142,6 +148,25 @@
             });       
         }
         window.onload = getallimage();
+    </script>
+    {{-- script oui ou non crop image --}}
+    <script>
+        let cbx = document.querySelector('#cbx')
+        let cibling = document.querySelectorAll('.cbx-ciblig')
+        console.log(cbx);
+        cbx.addEventListener('change', function () {
+            if (this.checked) {
+                cibling[0].classList.add('d-none')
+                cibling[1].classList.remove('d-none')
+                cibling[1].classList.add('d-block')
+            } else {
+                cibling[0].classList.remove('d-none')
+                cibling[0].classList.add('d-block')
+                cibling[1].classList.add('d-none')
+                cibling[1].classList.remove('d-block')
+
+            }
+        })
     </script>
 </body>
 

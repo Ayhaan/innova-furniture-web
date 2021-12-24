@@ -10,6 +10,11 @@
                 </div>
             </div>
         </div>
+        <form class="text-center" method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <button class="btn btn-primary">Logout</button>
+        </form>
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
@@ -121,6 +126,7 @@
 
             </ul>
         </div>
+   
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
     </div>
 </div>

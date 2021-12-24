@@ -51,20 +51,25 @@
                 <div class="portfolio-wrap img-parent">
                     @foreach ($item->images as $img)
                         @if ($loop->first)
-                            {{-- @dump($img->img) --}}
-                            <img src="{{ asset('img/innovaImg/' . $img->img) }}" class="img-fluid" alt="">
-                            {{-- <img src="{{ asset("img/gallery/about1.png" ) }}" class="img-fluid" alt=""> --}}
-
+                            @if (File::exists(public_path('img/productUpload/' . $img->img)))
+                                <a href="{{ asset('img/productUpload/' . $img->img) }}" data-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
+                                    <img src="{{ asset('img/productUpload/' . $img->img) }}" alt="{{ $item->name }}">
+                                </a>
+                            @else
+                                <a href="{{ asset('img/innovaImg/' . $img->img) }}" ata-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
+                                    <img src="{{ asset('img/innovaImg/' . $img->img) }}" alt="{{ $item->name }}">
+                                </a>
+                            @endif
                         @endif
 
                     @endforeach
                     {{-- @dump($item->images[0]->img) --}}
                     <div class="portfolio-links">
-                        <a href="{{ asset('img/innovaImg/' . $item->images[0]->img) }}"
+                        {{-- <a href="{{ asset('img/innovaImg/' . $item->images[0]->img) }}"
                             data-gall="portfolioGallery" class="venobox" title="{{ $item->name }}"><i
-                                class="bx bx-plus"></i></a>
+                                class="bx bx-plus"></i></a> --}}
                         <a href="{{ route('product', $item->id) }}" title="More Details"><i
-                                class="bx bx-link"></i></a>
+                            class="bx bx-plus"></i></a>
                     </div>
                 </div>
             </div>
