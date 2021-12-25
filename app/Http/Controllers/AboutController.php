@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Faq;
+use App\Models\About;
 use Illuminate\Http\Request;
 
-class FaqController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class FaqController extends Controller
      */
     public function index()
     {
-        $faq = Faq::paginate(2);
-        return view('admin.faq.main', compact('faq'));
+        $abouts = About::all();
+        return view('admin.about.main', compact("abouts"));
     }
 
     /**
@@ -36,20 +36,16 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        $faq = new Faq();
-        $faq->ask = $request->ask;
-        $faq->reponse = $request->reponse;
-        $faq->save();
-        return redirect()->back()->with('success', 'Ask create ! ');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Faq  $faq
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function show(Faq $faq)
+    public function show(About $about)
     {
         //
     }
@@ -57,10 +53,10 @@ class FaqController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Faq  $faq
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faq $faq)
+    public function edit(About $about)
     {
         //
     }
@@ -69,28 +65,24 @@ class FaqController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Faq  $faq
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faq $faq)
+    public function update(Request $request, About $about)
     {
-        $faq->ask = $request->ask;
-        $faq->reponse = $request->reponse;
-        $faq->save();
-        return redirect()->back()->with('success', 'Ask update ! ');
-
+        $about->data = $request->data;
+        $about->save();
+        return redirect()->back()->with('success', "Data update !");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Faq  $faq
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faq $faq)
+    public function destroy(About $about)
     {
-        $faq->delete();
-        return redirect()->back()->with('warning', 'Ask delete !');
-
+        //
     }
 }

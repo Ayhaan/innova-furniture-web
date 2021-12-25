@@ -6,12 +6,12 @@
                 <div class="header-left d-flex align-items-center">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.html"><img  src="{{ asset('img/innovaImg/logo-hd.png') }}"
+                        <a href="{{ route('home') }}"><img  src="{{ asset('img/innovaImg/logo-hd.png') }}"
                                 alt="logo-hd"></a>
                     </div>
                     <!-- Logo-2 -->
                     <div class="logo2">
-                        <a href="index.html"><img height="80px" src="{{ asset('img/innovaImg/logo-hd.png') }}"
+                        <a href="{{ route('home') }}"><img height="80px" src="{{ asset('img/innovaImg/logo-hd.png') }}"
                                 alt="logo-hd"></a>
                     </div>
                     <!-- Main-menu -->

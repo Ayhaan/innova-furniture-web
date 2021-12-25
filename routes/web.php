@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TestimonialController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -44,9 +47,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Comments
     Route::post('/admin/comment/store', [CommentController::class, 'store'])->name('comment.store');
         //OPIGNION
+    Route::resource('/admin/testimonial', TestimonialController::class);
         //FAQ
-        //Parteners
-        //About
+    Route::resource('/admin/faq', FaqController::class);
+    //Parteners
+    //About
+    Route::resource('/admin/about', AboutController::class);
         //Moving
         //Contact
         

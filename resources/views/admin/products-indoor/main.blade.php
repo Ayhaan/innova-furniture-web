@@ -53,7 +53,7 @@
                                 {{ $categ->name }},
                             @endforeach
                         </td>
-                        <td class="">
+                        <td >
                             <a href="{{ route('product.show', $item->id) }}">
                                 <button class="btn btn-primary">show</button>
                             </a>

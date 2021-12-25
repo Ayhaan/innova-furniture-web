@@ -95,5 +95,21 @@
     <script src={{ asset("js/isotope/aos.js") }}></script>
     <script src={{ asset("js/isotope/main.js") }}></script>
 
+    <script>
+        let links_tel = document.querySelectorAll('.portfolio-links')
+        let btn_anim = document.querySelectorAll('.venobox')
+        btn_anim.forEach((el, i) => {
+            
+            el.addEventListener('click', () => {
+                // btn_anim.forEach((item, i) => {
+                //     console.log('feux');
+                //     links_tel[i].style.bottom = "-60px"
+                //     links_tel[i].style.opacity = 0
+                // });
+                links_tel[i].style.bottom = 0
+                links_tel[i].style.opacity = 1
+            })
+        });
+    </script>
 </body>
 </html>

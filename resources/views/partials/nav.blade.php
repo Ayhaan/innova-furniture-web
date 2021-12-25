@@ -65,15 +65,15 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item  ">
-                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                <li class="sidebar-item  {{ request()->path() == 'admin/testimonial' ? 'active' : '' }}">
+                    <a href="{{ route('testimonial.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-ppt-fill"></i>
-                        <span>Customers opignion</span>
+                        <span>Testimonials</span>
                     </a>
                 </li>
     
-                <li class="sidebar-item  ">
-                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                <li class="sidebar-item  {{ request()->path() == 'admin/faq' ? 'active' : '' }}">
+                    <a href="{{ route('faq.index') }}" class='sidebar-link'>
                         <i class="bi bi-question-square-fill"></i>
                         <span>FAQ</span>
                     </a>
@@ -84,15 +84,15 @@
                         <span>Parteners</span>
                     </a>
                 </li>
-                <li class="sidebar-item  ">
-                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                <li class="sidebar-item {{ request()->path() == 'admin/about' ? 'active' : '' }}">
+                    <a href="{{ route('about.index') }}" class='sidebar-link'>
                         <i class="bi bi-info-circle-fill"></i>
                         <span>About</span>
                     </a>
                 </li>
                 <li class="sidebar-item  ">
                     <a href="ui-file-uploader.html" class='sidebar-link'>
-                        <i class="bi bi-rainbow"></i>
+                        <i class="bi bi-truck"></i>
                         <span>Moving</span>
                     </a>
                 </li>

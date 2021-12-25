@@ -113,6 +113,13 @@
     opacity: 1;
     bottom: 0;
 }
+@media (max-width: 800px) {
+    .portfolio .portfolio-wrap:target .portfolio-links {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio Details

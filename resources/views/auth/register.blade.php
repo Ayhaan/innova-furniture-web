@@ -61,15 +61,7 @@
 @extends('layouts.index')
 @section('content')
 <main class="login-bg">
-    @if ($errors->any())
-        <div  class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{  $error  }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+  
     <!-- Register Area Start -->
     <div class="register-form-area">
         <div class="container">
@@ -78,7 +70,12 @@
                     <div class="register-form text-center">
                         <!-- Login Heading -->
                         <div class="register-heading">
-                            <span>Sign Up</span>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="{{ route('home') }}">
+                                    <img height="110px" src="{{ asset('img\innovaImg\logo-hd.png') }}" alt="logo">
+                                </a>
+                                <span class="m-0">Sign Up</span>
+                            </div>
                             <p>Create your account to get full access</p>
                         </div>
                         <!-- Single Input Fields -->
@@ -87,32 +84,50 @@
                             <div class="row">
                                 <div class="single-input-fields col-6">
                                     <label>Name</label>
-                                    <input name="name" type="text" placeholder="Enter name">
+                                    <input name="name" type="text" value="{{ old('name') }}" placeholder="Enter name" class="@error('name') is-invalid @enderror">
+                                    @error('name')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="single-input-fields col-6">
                                     <label>First name</label>
-                                    <input name="firstname" type="text" placeholder="Enter first name">
+                                    <input name="firstname" type="text" value="{{ old('firstname') }}" placeholder="Enter first name" class="@error('firstname') is-invalid @enderror">
+                                    @error('firstname')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="single-input-fields col-6">
                                     <label>City</label>
-                                    <input name="city" type="text" placeholder="Merchtem ?">
+                                    <input name="city" type="text" value="{{ old('city') }}" placeholder="Merchtem ?" class="@error('city') is-invalid @enderror">
+                                    @error('city')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="single-input-fields col-6">
                                     <label>Postal code </label>
-                                    <input name="postalcode" type="text" placeholder="1785 ?">
+                                    <input name="postalcode" type="text" value="{{ old('postalcode') }}" placeholder="1785 ?" class="@error('postalcode') is-invalid @enderror">>
+                                    @error('postalcode')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                             </div>
                             <div class="single-input-fields">
                                 <label>Email Address</label>
-                                <input name="email" type="email" placeholder="Enter email address">
+                                <input name="email" type="email" value="{{ old('email') }}" placeholder="Enter email address" class="@error('email') is-invalid @enderror">
+                                @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="single-input-fields">
                                 <label>Password</label>
-                                <input name="password" type="password" placeholder="Enter Password">
+                                <input name="password" type="password"  placeholder="Enter Password">
+                                @error('password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="single-input-fields">
                                 <label>Confirm Password</label>

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Categories;
 use App\Models\Faq;
 use App\Models\Product;
 use App\Models\Specification;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -16,11 +18,11 @@ class AllController extends Controller
     public function home()
     {
         $spec = Specification::all();
-        // dd($spec->data);
+        $testi = Testimonial::all()->random(3);
         $products = Product::all();
         $products_popular = $products->where('popular');
         $random_product = $products_popular->random(4);
-        return view('home', compact('products', 'spec', 'random_product'));
+        return view('home', compact('products', 'spec', 'random_product', "testi"));
     }
     //Product
     public function productIndoor()
@@ -88,7 +90,8 @@ class AllController extends Controller
     //About
     public function about()
     {
-        return view('about');
+        $abouts = About::all();
+        return view('about', compact('abouts'));
     }
     //Contact
     public function contact()

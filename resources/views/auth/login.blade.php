@@ -54,17 +54,23 @@
 
 @extends('layouts.index')
 @section('content')
+
     <main class="login-bg">
+ 
         <!-- login Area Start -->
         <div class="login-form-area">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8">
+                     
                         <form class="login-form"  method="POST" action="{{ route('login') }}">
                             @csrf
                             <!-- Login Heading -->
                             <div class="login-heading d-flex align-items-center justify-content-center">
-                                <img height="110px" src="{{ asset('img\innovaImg\logo-hd.png') }}" alt="logo">
+                                <a href="{{ route('home') }}">
+                                    <img height="110px" src="{{ asset('img\innovaImg\logo-hd.png') }}" alt="logo">
+                                
+                                </a>
                             
                                 <span class="m-0">Innova Furniture</span>
                                 {{-- <p>Login</p> --}}
@@ -73,12 +79,14 @@
                             <div class="input-box">
                                 <div class="single-input-fields">
                                     <label>Email</label>
-                                    <input type="text" placeholder="Email address" name="email" value="{{ old('email') }}" required autofocus>
+                                    <input  type="text" placeholder="Email address" name="email" value="{{ old('email') }}" required autofocus>
+                                    
+                                
                                 </div>
                                 <div class="single-input-fields">
                                     <label>Password</label>
                                     
-                                    <input class="@error('password') is-invalid @enderror" type="password" placeholder="Enter Password"
+                                    <input  type="password" placeholder="Enter Password"
                                         name="password"
                                         required autocomplete="current-password">
                                        
@@ -95,7 +103,15 @@
                                     </a>
                                 @endif
                                 </div>
-                          
+                                @if ($errors->any())
+                                    <div  class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{  $error  }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                             </div>
                             <!-- form Footer -->
                             <div class="login-footer ">
@@ -104,6 +120,7 @@
                                 <button class="submit-btn3">Login</button>
                           
                             </div>
+                            
                         </form>
                     </div>
                 </div>

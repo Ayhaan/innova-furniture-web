@@ -221,10 +221,17 @@ or at least read this note: http://i.imgur.com/7C0ws9e.gif
     max-width: 100%;
     height: auto;
 }
+
 .vbox-figlio{
     box-shadow: 0 0 12px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     max-width: 100%;
     text-align: initial;
+}
+@media (max-width: 800px) {
+    .vbox-container img{
+        height: auto !important;
+      
+    }
 }
 img.vbox-figlio{
     -webkit-user-select: none;

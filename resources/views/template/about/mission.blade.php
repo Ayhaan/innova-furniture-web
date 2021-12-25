@@ -1,38 +1,32 @@
 <div class="about-area section-padding40">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="section-tittle mb-60 text-center pt-10">
-                    <h2>Mission</h2>
-                    <p class="pera">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        @foreach ($abouts as $item)
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-tittle mb-60 text-center pt-10">
+                        @if ($loop->iteration == 1)
+                            <h2>Mission</h2>
+                        
+                        @elseif ($loop->iteration == 2)
+                            <h2>Vision</h2>
+                        @else
+                            <h2>Valeur</h2> 
+                        @endif
+                        <p class="pera">{{ $item->data }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="about-img pb-bottom">
+                        @if ($loop->iteration == 1)
+                            <img src={{ asset("img/gallery/about1.png") }} alt="" class="w-100">
+                    
+                        @elseif ($loop->iteration == 2)
+                            <img src={{ asset("img/gallery/about2.png") }} alt="" class="w-100">
+                        @endif
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="about-img pb-bottom">
-                    <img src={{ asset("img/gallery/about1.png") }} alt="" class="w-100">
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="section-tittle mb-60 text-center pt-10">
-                    <h2>Vison</h2>
-                    <p class="pera">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="about-img pb-bottom">
-                    <img src={{ asset("img/gallery/about2.png") }} alt="" class="w-100">
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="section-tittle text-center pt-10">
-                    <h2>Valeur</h2>
-                    <p class="pera">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </div>
-            </div>
-        </div>
+            
+        @endforeach
     </div>
 </div>
