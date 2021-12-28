@@ -72,9 +72,9 @@
     border-radius: 10px;
 }
 
-i {
+/* i {
     color: #ffd75c;
-}
+} */
 .h-body {
     height: 100px;
 }
@@ -402,7 +402,7 @@ i {
 }
 .moving ul li {
     text-transform: capitalize;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 .div-img {
     position: relative;

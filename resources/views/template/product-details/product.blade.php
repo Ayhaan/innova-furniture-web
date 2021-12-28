@@ -43,7 +43,7 @@
                     <ul class="list">
                         <li>
                             <a class="active" href="#">
-                                <span>Category</span> :
+                                <span>{{ __('messages.cat') }}</span> :
                                  @foreach ($product->categories as $item)
                                     {{ $item->name }}
                                 @endforeach
@@ -57,7 +57,7 @@
                         {{-- FAIRE une description coupé  --}}
                         {{$product->description}}
                     </p>
-                @auth
+                {{-- @auth
                     
                 <div class="card_area">
                     <div class="product_count d-inline-block">
@@ -67,7 +67,7 @@
                     </div>
                     <div class="add_to_cart">
                         <a href="#" class="btn">Click And Collect</a>
-                        {{-- <a href="#" class="like_us"> <i class="ti-heart"></i> </a> --}}
+                        <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
                     </div>
                     <div class="social_icon">
                         <a href="https://fr-fr.facebook.com/innovafurnituremerchtem/" class="fb" target="_blank"><i class="ti-facebook"></i></a>
@@ -87,7 +87,14 @@
                         <a href="https://www.linkedin.com/company/innovafurnituremerchtem/" class="li" target="_blank"><i class="ti-linkedin"></i></a>
                     </div>
                 </div>
-                @endauth
+                @endauth --}}
+                <div class="card_area" style="padding-top: 20px;border-top: 1px dotted #d5d5d5;margin: 20px 0">
+                    <div class="social_icon mt-1">
+                        <a href="https://fr-fr.facebook.com/innovafurnituremerchtem/" class="fb" target="_blank"><i class="ti-facebook"></i></a>
+                        <a href="https://www.instagram.com/innovafurnituremerchtem/" class="li" target="_blank"><i class="ti-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/innovafurnituremerchtem/" class="li" target="_blank"><i class="ti-linkedin"></i></a>
+                    </div>
+                </div>
                         
                 </div>
             </div>

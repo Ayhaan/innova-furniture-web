@@ -1,5 +1,9 @@
 @extends('layouts.index')
 
+@section('title-page')
+    <title>Innova - Product</title>
+@endsection
+
 @section('content')
 <header>
     @include('template.loader')
@@ -14,8 +18,8 @@
                 <div class="col-xl-7 col-lg-8 col-md-10">
                     <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="1s"
                         data-wow-delay=".2s">
-                        <h2>Product indoor</h2>
-                        <p id="countProduct">{{ count($products) }} product found</p>
+                        <h2>{{ __('messages.title_product') }}r</h2>
+                        <p id="countProduct">{{ count($products) }} {{ __('messages.found') }}</p>
                     </div>
 
                 </div>
@@ -68,7 +72,7 @@
                             <div class="dropdown">
                                 <button class="dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    Other
+                                    {{ __('messages.other') }}
                                 </button>
                                 <ul class="dropdown-menu" id="portfolio-flters">
                                     @foreach ($cat as $item)

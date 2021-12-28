@@ -44,7 +44,7 @@
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
     color: rgb(170, 0, 0);
-    border-bottom: 2px solid rgb(170, 0, 0);
+    /* border-bottom: 2px solid rgb(170, 0, 0); */
     width: max-content;
 }
 

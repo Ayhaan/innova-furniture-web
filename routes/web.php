@@ -30,6 +30,8 @@ Route::get('/product/search', [AllController::class, 'search'])->name('search');
 Route::post('admin/contact/store', [ContactController::class, 'store'])->name('contact.store');
     // add comments
 Route::post('/admin/comment/store', [CommentController::class, 'store'])->name('comment.store');
+    //change lang
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 //---------------------------- BACK ADMIN ----------------------------
 Route::get('/admin/dashboard', [AdminController::class, 'admin'])->middleware(['auth'])->name('admin');

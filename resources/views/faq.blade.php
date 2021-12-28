@@ -1,5 +1,10 @@
 @extends('layouts.index')
 
+@section('title-page')
+    <title>Innova - FAQ</title>
+@endsection
+
+
 @section('content')
     <header>
         @include('template.loader')
@@ -36,9 +41,15 @@
 
         </div>
         <div class="text-center">
-            <p class="h1 py-5 my-5">Hebt u nog vragen? <br>
-                Bel ons <a class="a-perso" href="tel:+32468040237">+32 468 04 02 37</a> of stuur ons een <a
-                    class="a-perso" href="{{ route('contact') . '#contact' }}">mail</a>.
+            <p class="h1 py-5 my-5">
+                {{ __('messages.faq.ask') }}
+                <br>
+                {{ __('messages.faq.call') }}
+
+                <a class="a-perso" href="tel:+32468040237">+32 468 04 02 37</a>
+                {{ __('messages.faq.send') }}
+
+                <a class="a-perso" href="{{ route('contact') . '#contact' }}">mail</a>.
             </p>
         </div>
 

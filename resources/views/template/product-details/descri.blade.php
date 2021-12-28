@@ -3,15 +3,15 @@
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                    aria-selected="true">Description</a>
+                    aria-selected="true">{{ __('messages.descri') }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                    aria-controls="profile" aria-selected="false">Specification</a>
+                    aria-controls="profile" aria-selected="false">{{ __('messages.speci') }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                    aria-controls="contact" aria-selected="false">Comments</a>
+                    aria-controls="contact" aria-selected="false">{{ __('messages.comments') }}</a>
             </li>
             {{-- <li class="nav-item">
                 <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab"
@@ -76,7 +76,7 @@
                     </div>
                     <div class="col-lg-6" >
                         <div class="review_box" >
-                            <h4>Post a comment</h4>
+                            <h4>{{ __('messages.post') }}</h4>
                             <form class="row contact_form" action="{{ route('comment.store') }}" method="post"
                                 id="contactForm" novalidate="novalidate">
                                 @csrf
@@ -84,7 +84,7 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
                                             id="name" name="name"
-                                            placeholder=" {{ Auth::check() ? Auth::user()->name . ' ' . Auth::user()->firstname : 'Your Full name' }}"
+                                            placeholder=" {{ Auth::check() ? Auth::user()->name . ' ' . Auth::user()->firstname : __('messages.form.name') }}"
                                             {{ Auth::check() ? 'readonly' : '' }} value="{{ old('name') }}" />
                                         @error('name')
                                             <span class="invalid-feedback">
@@ -99,7 +99,7 @@
                                     <div class="form-group">
                                         <input type="email" class="form-control @error('email') is-invalid @enderror"
                                             id="email" name="email"
-                                            placeholder=" {{ Auth::check() ? Auth::user()->email : 'Email Address' }}"
+                                            placeholder=" {{ Auth::check() ? Auth::user()->email : __('messages.form.email') }}"
                                             {{ Auth::check() ? 'readonly' : '' }} value="{{ old('email') }}" />
                                         @error('email')
                                             <span class="invalid-feedback">
@@ -124,7 +124,7 @@
                                     <div class="form-group">
                                         <textarea class="form-control @error('message') is-invalid @enderror"
                                             name="message" id="message" rows="4"
-                                            placeholder="Message">{{ old('message') }}</textarea>
+                                            placeholder={{ __('messages.form.message') }}>{{ old('message') }}</textarea>
                                         @error('message')
                                             <span class="invalid-feedback">
                                                 <strong>{{ $message }}</strong>
@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="col-md-12 text-right">
                                     <button type="submit" value="submit" class="btn">
-                                        Submit Now
+                                        {{ __('messages.form.btn') }}
                                     </button>
                                 </div>
                             </form>

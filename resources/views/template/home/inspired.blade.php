@@ -5,10 +5,9 @@
                 <div class="instra-tittle mb-40">
                     <div class="section-tittle">
                         <img src={{ asset("img/gallery/insta.png") }} alt="">
-                        <h2>Get Inspired with Instagram</h2>
-                        <P class="mb-35">Suspendisse varius enim in eros elementum tristique. Duis cursus, mi
-                            quis viverra ornare, eros dolor interdum nulla.</P>
-                        <a href="product.html" class="border-btn">Follow Us!</a>
+                        <h2>{{ __('messages.insta') }}</h2>
+                        <P class="mb-35">{{__('messages.insta_into')}}.</P>
+                        <a href="product.html" class="border-btn">{{ __('messages.insta_btn') }}</a>
                     </div>
                 </div>
             </div>

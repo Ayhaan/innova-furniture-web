@@ -1,5 +1,10 @@
 @extends('layouts.index')
 
+@section('title-page')
+    <title>Innova Furniture</title>
+@endsection
+
+
 @section('content')
     <header>
         @include('template.loader')

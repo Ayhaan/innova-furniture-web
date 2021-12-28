@@ -4,9 +4,8 @@
         <div class="row justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-10">
                 <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                    <h2>Arrival</h2>
-                    <P>Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare,
-                        eros dolor interdum nulla.</P>
+                    <h2>{{ __('messages.arrival') }}</h2>
+                    <P>{{__('messages.arrival_into')}}</P>
                 </div>
             </div>
         </div>

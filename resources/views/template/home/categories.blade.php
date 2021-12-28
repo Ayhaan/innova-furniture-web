@@ -7,8 +7,8 @@
                         <img src={{ asset("img/icon/services1.svg") }} alt="">
                     </div>
                     <div class="cat-cap">
-                        <h5>Fast & Free Delivery</h5>
-                        <p>Livraison et montage réalisable</p>
+                        <h5>{{ __('messages.delivery') }}</h5>
+                        <p>{{ __('messages.delivery_into') }}</p>
                     </div>
                 </div>
             </div>
@@ -18,8 +18,8 @@
                         <img src={{ asset("img/icon/services2.svg") }} alt="">
                     </div>
                     <div class="cat-cap">
-                        <h5>Secure Payment</h5>
-                        <p>Free delivery on all orders</p>
+                        <h5>{{ __('messages.payment') }}</h5>
+                        <p>{{ __('messages.payment_into') }}</p>
                     </div>
                 </div>
             </div>
@@ -29,8 +29,8 @@
                         <img src={{ asset("img/icon/services3.svg") }} alt="">
                     </div>
                     <div class="cat-cap">
-                        <h5>Garantie</h5>
-                        <p>Remboursement possible</p>
+                        <h5>{{ __('messages.guarantee') }}e</h5>
+                        <p>{{ __('messages.guarantee_into') }}</p>
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@
                         <img src={{ asset("img/icon/services4.svg") }} alt="">
                     </div>
                     <div class="cat-cap">
-                        <h5>Support en ligne</h5>
-                        <p>Joignable via le site</p>
+                        <h5>{{ __('messages.support') }}</h5>
+                        <p>{{ __('messages.support_into') }}</p>
                     </div>
                 </div>
             </div>

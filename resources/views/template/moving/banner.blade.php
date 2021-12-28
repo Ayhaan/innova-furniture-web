@@ -8,7 +8,7 @@
                             <h1  data-animation="fadeInUp" data-delay=".4s" >Innova {{ Route::current()->getName() }}</h1>
                             <nav  aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="/">{{ __('messages.home') }}</a></li>
                                     <li class="breadcrumb-item"><a href="">Innova {{ Route::current()->getName() }}</a></li> 
                                 </ol>
                             </nav>

@@ -18,30 +18,33 @@
                     <div class="main-menu  d-none d-lg-block">
                         <nav>
                             <ul id="navigation">
-                                <li><a href="{{ route('home') }}">Home</a></li>
+                                <li><a href="{{ route('home') }}">{{ __('messages.home') }}</a></li>
                                 {{-- <li><a href="{{ route('product') }}">Product</a></li> --}}
-                                <li><a href="###">Products</a>
+                                <li><a href="###">{{ __('messages.products') }}</a>
                                     <ul class="submenu">
                                         <li><a href="{{ route('indoor') }}">indoor</a></li>
                                         <li><a href={{ route('outdoor') }}>outdoor</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('about') }}">About</a></li>
+                                <li><a href="{{ route('about') }}">{{ __('messages.about') }}</a></li>
                                 <li><a href="{{ route('faq') }}">F.A.Q</a></li>
                                 <li><a href="{{ route('moving') }}">Moving</a></li>
-                                {{-- <li><a href="blog.html">Blog</a>
-                                    <ul class="submenu">
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="blog_details.html">Blog Details</a></li>
-                                        <li><a href="elements.html">Elements</a></li>
-                                    </ul>
-                                </li> --}}
                                 <li><a href="{{ route('contact') }}">Contact</a></li>
+                                <li class="ml-2"><a href="###">{{ Config::get('languages')[App::getLocale()] }}</a>
+                                    <ul class="submenu">
+                                        @foreach (Config::get('languages') as $lang => $language)
+                                            @if ($lang != App::getLocale())
+                                                    <li><a href="{{ route('lang.switch', $lang) }}">{{$language}}</a></li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <div class="header-right1 d-flex align-items-center">
+                 
                     <div class="search">
                         <ul class="d-flex align-items-center">
                             <li>
