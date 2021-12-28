@@ -49,7 +49,7 @@
                             <div class="form-check">
                                 <div class="custom-control custom-checkbox text-start">
                                     <input type="checkbox" class="form-check-input form-check-danger"  name="cbxTesti" id="cbx-testi">
-                                    <label class="form-check-label" for="cbx-testi">Remove ?</label>
+                                    <label class="form-check-label" for="cbx-testi">Just remove ?</label>
                                 </div>
                             </div>
                         @else
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-sm-12">
                         <div class="mb-3">
-                            <label for="formFile" class="form-label">Edit or add an image ?</label>
+                            <label for="formFile" class="form-label">Add an image ? (optional)</label>
                             <input class="form-control" name="img"  type="file" id="formFile" >
                         </div>
                     </div>

@@ -9,6 +9,7 @@
     {{-- <link rel="preconnect" href="https://fonts.gstatic.com"> --}}
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/email.css') }}">
 
     <link rel="stylesheet" href={{ asset('vendors-admin/iconly/bold.css') }}>
     
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href={{ asset('vendors-admin/bootstrap-icons/bootstrap-icons.css') }}>
     <link rel="stylesheet" href={{ asset('css/admin/app.css') }}>
     <link rel="stylesheet" href={{ asset('css/back.css') }}>
+
     {{-- <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon"> --}}
 
 
@@ -58,6 +60,7 @@
     <script src={{ asset('js/admin/pages/dashboard.js') }}></script>
     <script src={{ asset('js/admin/main.js') }}></script>
     
+    {{-- Script qui lance le crop --}}
     <script>
         // let select = document.querySelector("#ratio-cropper")
         // let ratio = 16/9;
@@ -82,13 +85,16 @@
            }
         });
     </script>
+    {{-- Scrip qui affiche les images add --}}
     <script>
         function getallimage() {
             // let tab = []; 
             $.get("/img-all", function(data){
                 if (data.length > 0) {
                     let div = document.querySelector('#div-all-img')
-                    div.innerHTML = ""
+                    if (div) {
+                        div.innerHTML = ""
+                    }
                     // console.log(data);
                     const {img1, img2, img3, img4, img5} = data[0];
                     let myImg = [img1, img2, img3, img4, img5]
@@ -126,21 +132,24 @@
                             block_img.append(overlay)
                             block.append(block_img)
                             col.append(block)
-                            div.append(col)
+                            if (div) {
+                                div.append(col)
+                            }
 
                             
                         }
                     });
                     let nbrImg = document.querySelectorAll('.block-overlay').length
-                    console.log(nbrImg );    
                     let imgCount = document.querySelector('.img-count')
                     let imgInput = document.querySelectorAll('.image-add-store')
-                    if (nbrImg === 5) {
-                        imgCount.textContent = "Vous avez atteint le maximum ! "
-                        imgInput[0].setAttribute("disabled", "")
-                        imgInput[1].setAttribute("disabled", "")
-                    }else{
-                        imgCount.textContent = `${nbrImg} / 5 images`
+                    if (nbrImg) {
+                        if (nbrImg === 5) {
+                            imgCount.textContent = "Vous avez atteint le maximum ! "
+                            imgInput[0].setAttribute("disabled", "")
+                            imgInput[1].setAttribute("disabled", "")
+                        }else{
+                            imgCount.textContent = `${nbrImg} / 5 images`
+                        }
                     }
                     
                 }
@@ -153,21 +162,39 @@
     <script>
         let cbx = document.querySelector('#cbx')
         let cibling = document.querySelectorAll('.cbx-ciblig')
-        console.log(cbx);
-        cbx.addEventListener('change', function () {
-            if (this.checked) {
-                cibling[0].classList.add('d-none')
-                cibling[1].classList.remove('d-none')
-                cibling[1].classList.add('d-block')
-            } else {
-                cibling[0].classList.remove('d-none')
-                cibling[0].classList.add('d-block')
-                cibling[1].classList.add('d-none')
-                cibling[1].classList.remove('d-block')
-
-            }
-        })
+        // console.log(cbx);
+        if (cbx) {
+            cbx.addEventListener('change', function () {
+                if (this.checked) {
+                    cibling[0].classList.add('d-none')
+                    cibling[1].classList.remove('d-none')
+                    cibling[1].classList.add('d-block')
+                } else {
+                    cibling[0].classList.remove('d-none')
+                    cibling[0].classList.add('d-block')
+                    cibling[1].classList.add('d-none')
+                    cibling[1].classList.remove('d-block')
+    
+                }
+            })
+        }
     </script>
+    {{-- script qui active l'active dans la page contact --}}
+     <script>
+        let btn_contact = document.querySelectorAll('.accordion-button')
+        btn_contact.forEach(el => {
+            el.addEventListener('click', () => {
+                btn_contact.forEach(ele => {
+                    ele.classList.remove('activeContact')
+                });
+
+                el.classList.add('activeContact')
+
+            })
+        });
+    </script>
+
+
 </body>
 
 </html>

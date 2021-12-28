@@ -60,7 +60,7 @@
 
 @extends('layouts.index')
 @section('content')
-<main class="login-bg">
+<main class="login-bg" style="height: auto !important">
   
     <!-- Register Area Start -->
     <div class="register-form-area">
@@ -76,20 +76,20 @@
                                 </a>
                                 <span class="m-0">Sign Up</span>
                             </div>
-                            <p>Create your account to get full access</p>
+                            <p>Create your account </p>
                         </div>
                         <!-- Single Input Fields -->
                         <form method="POST" action="{{ route('register') }}" class="input-box">
                             @csrf
                             <div class="row">
-                                <div class="single-input-fields col-6">
+                                <div class="single-input-fields col-sm-12 col-md-6">
                                     <label>Name</label>
                                     <input name="name" type="text" value="{{ old('name') }}" placeholder="Enter name" class="@error('name') is-invalid @enderror">
                                     @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="single-input-fields col-6">
+                                <div class="single-input-fields col-sm-12 col-md-6">
                                     <label>First name</label>
                                     <input name="firstname" type="text" value="{{ old('firstname') }}" placeholder="Enter first name" class="@error('firstname') is-invalid @enderror">
                                     @error('firstname')
@@ -99,16 +99,16 @@
 
                             </div>
                             <div class="row">
-                                <div class="single-input-fields col-6">
+                                <div class="single-input-fields col-sm-12 col-md-6">
                                     <label>City</label>
                                     <input name="city" type="text" value="{{ old('city') }}" placeholder="Merchtem ?" class="@error('city') is-invalid @enderror">
                                     @error('city')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="single-input-fields col-6">
+                                <div class="single-input-fields col-sm-12 col-md-6">
                                     <label>Postal code </label>
-                                    <input name="postalcode" type="text" value="{{ old('postalcode') }}" placeholder="1785 ?" class="@error('postalcode') is-invalid @enderror">>
+                                    <input name="postalcode" type="text" value="{{ old('postalcode') }}" placeholder="1785 ?" class="@error('postalcode') is-invalid @enderror">
                                     @error('postalcode')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -136,9 +136,11 @@
                             <!-- form Footer -->
                             <div class="register-footer">
                                 <p> Already have an account? <a href="{{ route('login') }}"> Login</a> here</p>
+                                {{-- <p> By creating an account, you agree to Innova Furniture Conditions of Use </p> --}}
                                 <button class="submit-btn3">Sign Up</button>
                             </div>
                         </form>
+                        <p>By creating an account, you agree to Innova Furniture <button type="button" class="condition-btn" data-toggle="modal" data-target=".bd-example-modal-lg">Conditions of Use</button> </p>
                     </div>
                 </div>
             </div>
@@ -146,4 +148,6 @@
     </div>
     <!-- Register Area End -->
 </main>
+@include('partials.modal-condition')
+
 @endsection

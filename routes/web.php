@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestimonialController;
@@ -25,7 +26,10 @@ Route::get('/faq', [AllController::class, "faq"])->name('faq');
 Route::get('/moving', [AllController::class, "moving"])->name('moving');
     //Search
 Route::get('/product/search', [AllController::class, 'search'])->name('search');
-
+    // send mail
+Route::post('admin/contact/store', [ContactController::class, 'store'])->name('contact.store');
+    // add comments
+Route::post('/admin/comment/store', [CommentController::class, 'store'])->name('comment.store');
 
 //---------------------------- BACK ADMIN ----------------------------
 Route::get('/admin/dashboard', [AdminController::class, 'admin'])->middleware(['auth'])->name('admin');
@@ -44,19 +48,20 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/product/store-product/cancel', [ProductController::class, 'cancel'])->name('product.cancel');
         // Users
     Route::get('/admin/users', [AdminController::class, "users"])->name('users.index');
-        // Comments
-    Route::post('/admin/comment/store', [CommentController::class, 'store'])->name('comment.store');
         //OPIGNION
     Route::resource('/admin/testimonial', TestimonialController::class);
         //FAQ
     Route::resource('/admin/faq', FaqController::class);
     //Parteners
-    //About
+        //About
     Route::resource('/admin/about', AboutController::class);
-        //Moving
         //Contact
-        
+    Route::get('/admin/contact', [ContactController::class, 'index'])->name('contact.index');
+    // Route::put('/admin/contact/open/{id}', [ContactController::class, 'open']);
+    
 });
+// Route::resource('/admin/contact', ContactController::class);
+
 
 
 

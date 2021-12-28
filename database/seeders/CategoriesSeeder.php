@@ -17,22 +17,49 @@ class CategoriesSeeder extends Seeder
         DB::table('categories')->insert([
 
             [
-                "name" => "Sofa",
+                "name" => "Baby",
                 "created_at" => now()
             ],
             [
-                "name" => "Table",
+                "name" => "Kantoor",
                 "created_at" => now()
             ],
             [
-                "name" => "Bed",
+                "name" => "slaapkamer",
                 "created_at" => now()
             ],
             [
                 "name" => "Decore",
                 "created_at" => now()
             ],
-
+            [
+                "name" => "Dressing",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Hal",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Lelies",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Matrassen",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Eetkamer",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Tapijten",
+                "created_at" => now()
+            ],
+            [
+                "name" => "woonkamer",
+                "created_at" => now()
+            ],
         ]);
     }
 }

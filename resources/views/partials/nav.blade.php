@@ -35,18 +35,6 @@
     
 
                 <li class="sidebar-title">Innova Web</li>
-                {{-- <li class="sidebar-item  {{ request()->path() == 'admin/products-indoor' ? 'active' : '' }}">
-                    <a href="{{ route('product.index') }}" class="sidebar-link ">
-                        <i class="bi bi-collection-fill"></i>
-                        <span>Indoor</span>
-                    </a>
-                </li>
-                <li class="sidebar-item  ">
-                    <a href="index.html" class='sidebar-link'>
-                        <i class="bi bi-collection-fill"></i>
-                        <span>Outdoor</span>
-                    </a>
-                </li> --}}
 
                 <li class="sidebar-item {{ request()->path() == 'admin/products-indoor' ? 'active' : '' }} has-sub">
                     <a href="#" class='sidebar-link'>
@@ -90,19 +78,26 @@
                         <span>About</span>
                     </a>
                 </li>
-                <li class="sidebar-item  ">
-                    <a href="ui-file-uploader.html" class='sidebar-link'>
-                        <i class="bi bi-truck"></i>
-                        <span>Moving</span>
-                    </a>
-                </li>
-                <li class="sidebar-item  ">
-                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                    {{-- @php
+                        use App\Models\Contact;
+                        $contact = Contact::all();
+                        $count_close = [];
+                        foreach ($contact as $value) {
+                            if ($value->open === 0) {
+                                array_push($count_close, $value);
+                                # code...
+                            }
+                        }
+                    @endphp --}}
+
+                <li class="sidebar-item {{ request()->path() == 'admin/contact' ? 'active' : '' }} nbr-close-parent">
+                    <a href="{{ route('contact.index') }}" class='sidebar-link'>
                         <i class="bi bi-envelope-fill"></i>
                         <span>Contact</span>
                     </a>
+                    {{-- <span class="nbr-close">{{ count($count_close) }}</span> --}}
                 </li>
-
+              
           
 
 

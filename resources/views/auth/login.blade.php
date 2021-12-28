@@ -79,16 +79,21 @@
                             <div class="input-box">
                                 <div class="single-input-fields">
                                     <label>Email</label>
-                                    <input  type="text" placeholder="Email address" name="email" value="{{ old('email') }}" required autofocus>
-                                    
+                                    <input  type="text" placeholder="Email address" name="email" value="{{ old('email') }}" required autofocus class="@error('email') is-invalid @enderror">
+                                    @error('email')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 
                                 </div>
                                 <div class="single-input-fields">
                                     <label>Password</label>
                                     
-                                    <input  type="password" placeholder="Enter Password"
+                                    <input   type="password" placeholder="Enter Password"
                                         name="password"
-                                        required autocomplete="current-password">
+                                        required autocomplete="current-password" class="@error('password') is-invalid @enderror">
+                                        @error('password')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                        
                                 </div>
                                 <div class="single-input-fields login-check">
@@ -103,7 +108,7 @@
                                     </a>
                                 @endif
                                 </div>
-                                @if ($errors->any())
+                                {{-- @if ($errors->any())
                                     <div  class="alert alert-danger">
                                         <ul>
                                             @foreach ($errors->all() as $error)
@@ -111,7 +116,7 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                @endif
+                                @endif --}}
                             </div>
                             <!-- form Footer -->
                             <div class="login-footer ">

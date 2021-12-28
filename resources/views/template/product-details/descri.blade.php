@@ -58,7 +58,7 @@
                                     <div class="review_item">
                                         <div class="media">
                                             <div class="d-flex">
-                                                <img src="assets/img/gallery/review-1.png" alt="" />
+                                                {{-- <img src="assets/img/gallery/review-1.png" alt="" /> --}}
                                             </div>
                                             <div class="media-body">
                                                 <h4>{{ $item->user }}</h4>

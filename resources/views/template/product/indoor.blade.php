@@ -1,69 +1,43 @@
-@php
-            $price = ["50-100", "100-250", "250-500", "1000-2000", "2000-5000"];
 
-@endphp
 <div id="portfolio" class="portfolio section-bg">
     <div class="container">
         
-        <div class="row" data-aos="fade-up">
+        <div class="row other-one" data-aos="fade-up">
             <div class="filter-parent col-lg-12 d-flex justify-content-center">
                 
+              
                 <ul id="portfolio-flters">
-                    <li data-filter="*" class="filter-active">All</li>
+                    <li class="event-product" data-filter="*" class="filter-active">All</li>
                     @foreach ($cat as $item)
-                        <li data-filter=".filter-{{ $item->name }}">{{ $item->name }}</li>
+                        @if ($loop->iteration <= 6)
+                            <li  data-filter=".filter-{{ $item->name }}" class="event-product">{{ $item->name }}</li>
+                            
+                        @endif
                     @endforeach
                 </ul>
                 {{-- <div class="category-listing mb-50 X"> --}}
-                <div class="categories-wrapper top-50 end-0 translate-middle-y position-absolute">
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Select km items start -->
-                            <div class="select-categories">
-                                <form class="range-form" action="{{ route('ayhan') }}" method="post">
-                                    @csrf
-                                    <select name="select">
-                                        <option  value="">Price range </option>
-                                        @foreach ($price as $item)
-                                            <option {{ $data == $item ? "selected" : "" }} value="{{ $item }}">
-                                                {{ $item}} €
-                                            </option>
-                                        @endforeach
-                                        {{-- <option {{ $data = "50-100" ? "selected" : "" }} value="50-100">50€ to 100€</option>
-                                        <option value="250-500">250€ to 500€</option>
-                                        <option value="1000-2000">1000€ to 2000€</option>
-                                        <option value="2000-5000">2000€ to 5000€</option> --}}
-                                    </select>
-                                    <button class="btn-range"><i class="ti-search"></i></button>
-                                </form>
-                            </div>
-                            <!--  Select km items End-->
-                        </div>
-                    </div>
-                </div>
                 {{-- </div> --}}
             </div>
         </div>
 
-        <div style={{ count($products) == 0 ? "" : "height:80px;" }} class="row portfolio-container" data-aos="fade-up" data-aos-delay="100" >
+        <div style={{ count($products) == 0 ? "" : "height:80px;" }} class="row portfolio-container parent_child" data-aos="fade-up" data-aos-delay="100" >
             @forelse ($products as $item)
-            <div class="col-lg-3 col-md-6 portfolio-item filter-{{ $item->categories[0]->name }}">
+            <div id="product_child" class="col-lg-3 col-md-6 portfolio-item filter-{{ $item->categories[0]->name }}">
                 <div class="portfolio-wrap img-parent">
-                    @foreach ($item->images as $img)
-                        @if ($loop->first)
-                            @if (File::exists(public_path('img/productUpload/' . $img->img)))
-                                <a href="{{ asset('img/productUpload/' . $img->img) }}" data-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
-                                    <img  src="{{ asset('img/productUpload/' . $img->img) }}" alt="{{ $item->name }}">
+                    {{-- @foreach ($item->images as $img) --}}
+                        {{-- @if ($loop->first) --}}
+                            @if (File::exists(public_path('img/productUpload/' . $item->images[0]->img)))
+                                <a href="{{ asset('img/productUpload/' . $item->images[0]->img) }}" data-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
+                                    <img  src="{{ asset('img/productUpload/' . $item->images[0]->img) }}" alt="{{ $item->name }}">
                                 </a>
                             @else
-                                <a href="{{ asset('img/innovaImg/' . $img->img) }}" ata-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
-                                    <img  src="{{ asset('img/innovaImg/' . $img->img) }}" alt="{{ $item->name }}">
+                                <a href="{{ asset('img/innovaImg/' . $item->images[0]->img) }}" ata-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
+                                    <img  src="{{ asset('img/innovaImg/' . $item->images[0]->img) }}" alt="{{ $item->name }}">
                                 </a>
                             @endif
-                        @endif
+                        {{-- @endif --}}
 
-                    @endforeach
-                    {{-- @dump($item->images[0]->img) --}}
+                    {{-- @endforeach --}}
                     <div class="portfolio-links">
                         {{-- <a href="{{ asset('img/innovaImg/' . $item->images[0]->img) }}"
                             data-gall="portfolioGallery" class="venobox" title="{{ $item->name }}"><i

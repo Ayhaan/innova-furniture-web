@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Contact;
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -25,6 +27,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('mail-post', function ( $user, $data) {
+            return $data->type == "moving" || $data->type == "furniture";
+        });
     }
 }

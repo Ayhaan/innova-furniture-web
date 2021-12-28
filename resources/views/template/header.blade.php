@@ -20,7 +20,7 @@
                             <ul id="navigation">
                                 <li><a href="{{ route('home') }}">Home</a></li>
                                 {{-- <li><a href="{{ route('product') }}">Product</a></li> --}}
-                                <li><a href="###">Product</a>
+                                <li><a href="###">Products</a>
                                     <ul class="submenu">
                                         <li><a href="{{ route('indoor') }}">indoor</a></li>
                                         <li><a href={{ route('outdoor') }}>outdoor</a></li>
@@ -70,7 +70,8 @@
                                     </button>
                                   </form> --}}
                             </li>
-                            <li>
+                            {{-- PARTIE LOGIN --}}
+                            {{-- <li>
                                 @if (Auth::user())
                                     <a href="{{ route('admin') }}" class="account-btn">My Account</a>
                                 @else
@@ -84,7 +85,7 @@
                                         <span>0</span>
                                     </div>
                                 </li>
-                            @endif
+                            @endif --}}
                         </ul>
                     </div>
                 </div>
