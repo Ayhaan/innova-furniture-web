@@ -36,7 +36,7 @@
                             </div>
                             <div class="popular-caption">
                                 <h3>
-                                    <a href="{{ route('product', $item->id) }}">{{ $item->name }} /
+                                    <a href="{{ route('product', $item->name) }}">{{ $item->name }} /
                                         {{ $item->categories[0]->name }}
                                     </a>
                                 </h3>

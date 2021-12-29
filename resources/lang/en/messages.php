@@ -10,7 +10,7 @@ return [
     'about' => 'About',
     'popular' => 'Popular products',
     'popular_into' => 'EN Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
-    'arrival' => 'new',
+    'arrival' => 'arrival',
     'arrival_into' => 'EN Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
     'insta' => "Get Inspired with Instagram",
     'insta_into' => "EN Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",

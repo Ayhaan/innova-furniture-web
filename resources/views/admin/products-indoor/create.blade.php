@@ -70,7 +70,7 @@
                                     <label for="first-name-column">Name Furniture</label>
                                     <input type="text" id="first-name-column" class="form-control"
                                         placeholder="Furniture" name="name"
-                                        value="{{ $provisoire ? $provisoire->name : '' }}">
+                                        value="{{ $provisoire ? $provisoire->name : '' }}" required>
 
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                     <label for="city-column">Pric€</label>
                                     <input type="number" id="city-column" class="form-control"
                                         placeholder="10k ?" name="price"
-                                        value="{{ $provisoire ? $provisoire->price : '' }}">
+                                        value="{{ $provisoire ? $provisoire->price : '' }}" required>
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
@@ -100,13 +100,24 @@
                                 <fieldset class="form-group">
                                     <select class="form-select" id="basicSelect" name="popular">
                                         <option
-                                            {{ $provisoire ? ($provisoire->popular == 1 ? 'selected' : '') : '' }}
-                                            value="1">true</option>
-                                        <option
                                             {{ $provisoire ? ($provisoire->popular == 0 ? 'selected' : '') : '' }}
                                             value="0">false</option>
+                                        <option
+                                            {{ $provisoire ? ($provisoire->popular == 1 ? 'selected' : '') : '' }}
+                                            value="1">true</option>
                                     </select>
                                 </fieldset>
+                            </div>
+                            <div class="col-12">
+                                <select class="form-select" multiple aria-label="multiple select example" name="cat[]" required>
+                                    {{-- <option selected>Open this select menu</option> --}}
+                                    @foreach ($cat as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        
+                                    @endforeach
+                                    {{-- <option value="2">Two</option>
+                                    <option value="3">Three</option> --}}
+                                  </select>
                             </div>
                             <div class="col-12">
                                 <div class="form-group mb-3">
@@ -114,7 +125,7 @@
                                         class="form-label">Description</label>
                                     <textarea name="description" class="form-control"
                                         id="exampleFormControlTextarea1"
-                                        rows="3">{{ $provisoire ? $provisoire->description : '' }}</textarea>
+                                        rows="3" placeholder="Description" required>{{ $provisoire ? $provisoire->description : '' }}</textarea>
                                 </div>
                             </div>
                             <div class="col-12 d-flex justify-content-end">
@@ -150,6 +161,11 @@
                             <button class="btn btn-primary">Add</button>
                         </form>
                         <input class="form-control w-50 m-auto my-3 image-add-store cbx-ciblig d-none" type="file" name="image" id="image-crop">
+                        <div class="w-50 mx-auto">
+                            @include('layouts.flash')
+
+                        </div>
+                        
                     </div>
 
                     {{-- Zone où les images se raj avec jquery --}}
@@ -188,6 +204,7 @@
                             <input type="hidden" name="page" value="images">
                             
                         </form>
+
                     </div>
                 @elseif($page === "speci")
                     <h2 class="text-center mb-0">Détails product</h2>
@@ -200,22 +217,22 @@
                         <div class="group-speci">
                                 <div class="from-group">
                                     <label for="">Détails</label>
-                                    <input placeholder="Color ?" class="form-control" type="text" name="speci">
+                                    <input required placeholder="Color ?" class="form-control" type="text" name="speci">
                                 </div>
                                 <div class="from-group">
                                     <label for="">Reponse</label>
-                                    <input placeholder="red, blue, orange, ..." class="form-control" type="text" name="rep">
+                                    <input required placeholder="red, blue, orange, ..." class="form-control" type="text" name="rep">
                                 </div>
                         </div>
                             <hr class="hr-speci">
                         <div class="group-speci">
                                 <div class="from-group">
                                     <label for="">Détails</label>
-                                    <input class="form-control" type="text" name="speci2">
+                                    <input required class="form-control" type="text" name="speci2">
                                 </div>
                                 <div class="from-group">
                                     <label for="">Reponse</label>
-                                    <input class="form-control" type="text" name="rep2">
+                                    <input required class="form-control" type="text" name="rep2">
                                 </div>
                                 {{-- <i class="bi bi-dash-circle-fill minus-speci"></i> --}}
                         </div>

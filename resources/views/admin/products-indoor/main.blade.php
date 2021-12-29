@@ -35,7 +35,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($products as $item)
+                    @foreach ($products->reverse()  as $item)
                     <tr>
                         @if (File::exists(public_path('img/productUpload/' . $item->images[0]->img)))
                                 <td ><img height="60px" src="{{ asset('img/productUpload/'.$item->images[0]->img ) }}" alt="a"></td>

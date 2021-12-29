@@ -18,7 +18,7 @@ Route::get('/', [AllController::class, 'home'])->name('home');
 Route::get('/about', [AllController::class, 'about'])->name('about');
 Route::get('/contact', [AllController::class, 'contact'])->name('contact');
 Route::get('/product-indoor', [AllController::class, 'productIndoor'])->name('indoor');
-Route::get('/product-indoor/{product}', [AllController::class, 'productShow'])->name('product');
+Route::get('/product-indoor/{slug}', [AllController::class, 'productShow'])->name('product');
 Route::get('/product-outdoor', [AllController::class, 'productOutdoor'])->name('outdoor');
     //range price
 Route::post('/product-indoor/range', [AllController::class, 'range'])->name('ayhan');
@@ -48,6 +48,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('remove-img/{i}', [ProductController::class, "destroy_img"])->name('img.destroy');
     Route::get('admin/product/store-product/rollback/{name}', [ProductController::class, 'rollback'])->name('product.rollback');
     Route::get('admin/product/store-product/cancel', [ProductController::class, 'cancel'])->name('product.cancel');
+        //Porduct crud edit
+    Route::put('admin/product/{id}/update', [ProductController::class, 'update'])->name('product.update');
         // Users
     Route::get('/admin/users', [AdminController::class, "users"])->name('users.index');
         //OPIGNION
@@ -59,8 +61,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('/admin/about', AboutController::class);
         //Contact
     Route::get('/admin/contact', [ContactController::class, 'index'])->name('contact.index');
-    // Route::put('/admin/contact/open/{id}', [ContactController::class, 'open']);
-    
+
 });
 // Route::resource('/admin/contact', ContactController::class);
 

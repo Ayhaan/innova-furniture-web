@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categories;
+use App\Models\Comment;
 use App\Models\Product;
 use App\Models\Image;
 use App\Models\Provisoire;
@@ -27,7 +28,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(3);
+        
+        $products = Product::paginate(20);
+
+   
+
         return view('admin/products-indoor/main', compact('products'));
     }
     public function search(Request $request)
@@ -65,33 +70,54 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $page = request()->page;
+        $cat_array = $request->cat;
+
         if ($page === "product") {   // ETAPE 1
             $page = "images";
             //Stocke toutes les données dans une table provisoire 
             // verifie si la table est vide pour le rollback
             if (Provisoire::count() === 0) {
                 $provisoire = new Provisoire();
-                $provisoire->name = "ppp";
-                $provisoire->type = "outdoor";
-                $provisoire->popular = 0;
-                $provisoire->price = 30;
-                $provisoire->description = 'lorem lorem lorem';
+                $provisoire->name = $request->name;
+                $provisoire->type = $request->type;
+                $provisoire->popular = $request->popular;
+                $provisoire->price = $request->price;
+                $provisoire->description = $request->description;
+                // $cat = json_encode($request->cat);
+                $provisoire->cat = json_encode($request->cat);
                 $provisoire->save();
                 # code...
             } else {
                 $provisoire = Provisoire::first();
-                $provisoire->name = "EDIIIIT";
-                $provisoire->type = "indoor";
-                $provisoire->popular = 1;
-                $provisoire->price = 30;
-                $provisoire->description = 'lorem lorem lorem';
+                $provisoire->name = $request->name;
+                $provisoire->type = $request->type;
+                $provisoire->popular = $request->popular;
+                $provisoire->price = $request->price;
+                $provisoire->description = $request->description;
                 $provisoire->save();
             }
 
             return view('admin/products-indoor/create', compact("page"));
         } elseif ($page === 'images') {   // ETAPE 2
-            $page = "speci";
-            return view('admin/products-indoor/create', compact("page"));
+            $productImg =  DB::table('provisoires')->select('img1', 'img2', 'img3' ,'img4', 'img5')->get();
+            // dd(gettype($test[0]));
+            $arrayImg = (array) $productImg[0];
+            $compt = 0;
+            foreach ($arrayImg as $value) {
+                if(is_null($value)) {
+                    $compt++;
+                }
+            }
+            if ($compt == 5) {
+                return redirect()->back()->with("warning", 'Oups, forgotten images  ');
+            } else {
+                $page = "speci";
+                return view('admin/products-indoor/create', compact("page"));
+                # code...
+            }
+            
+            // dump($compt);
+            // dd($arrayImg);
 
         } elseif ($page === "speci") {    // ETAPE 3
             // //récupere les données dans la tablea provisoire et les palces dans chacun de ses table respective
@@ -104,8 +130,9 @@ class ProductController extends Controller
             $product->popular = $provisoire->popular;
             $product->price = $provisoire->price;
             $product->description = $provisoire->description;
+            // dd(json_decode($provisoire->cat));
             $product->save();
-            $product->categories()->attach([1,3]);
+            $product->categories()->attach(json_decode($provisoire->cat));
 
             // $images mis à jour
             $productImg =  DB::table('provisoires')->select('img1', 'img2', 'img3' ,'img4', 'img5')->get();
@@ -280,7 +307,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('admin/products-indoor/show', compact('product'));
+        $cat = Categories::all();
+        return view('admin/products-indoor/show', compact('product', "cat"));
     }
 
     /**
@@ -291,7 +319,6 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
     }
 
     /**
@@ -301,9 +328,69 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request)
     {
-        //
+        // dd($request);
+        $product = Product::find($request->route('id'));
+        if ($request->info == "info") {
+            $product->name = $request->name;
+            $product->type = $request->type;
+            $product->popular = $request->popular;
+            $product->price = $request->price;
+            $product->description = $request->description;
+            $product->categories()->sync($request->cat);
+
+            $product->save();
+            return redirect()->back()->with('success', 'Product update !');
+            
+        } else if($request->specifi == "specifi"){
+            $speci = Specification::find($request->id);
+                        // coupe   request transdo to array
+            $new_speci = array_slice($request->all(),3);
+
+               //recup les donnée speci et stock dans un tableau
+               $arraySpeci = [];
+               for ($i = 0; $i < count($new_speci); $i += 2) {  // chop les données pair
+                   $repSpeci = array_values($new_speci)[$i];
+                   array_push($arraySpeci, $repSpeci);
+               }
+            //    dump($arraySpeci);
+               //recup les donnée rep aux speci et stock dans un tableau
+               $arrayRep = [];
+               for ($i = 0; $i < count($new_speci); $i++) {  // chop les données impair
+                   if ($i % 2) {
+                       $rep = array_values($new_speci)[$i];
+                       array_push($arrayRep, $rep);
+                   }
+               }
+               $jsonData = array();
+               for ($i = 0; $i < count($new_speci) / 2; $i++) {
+                   $jsonData[$arraySpeci[$i]] =$arrayRep[$i] ;
+               }
+
+                //Transforme en JSON
+                $jsonData = json_encode($jsonData);
+                $speci->data = $jsonData; 
+                // dd($product->specification);
+                $speci->save();
+                return redirect()->back()->with('success', 'details product update');
+            // dump($speci_current);
+            // dd($new_speci);
+
+        } else if($request->delnocheck == "delnocheck"){
+
+            $comment = Comment::find($request->id);
+            $comment->delete();
+            return redirect()->back()->with('warning', 'comment delete');
+            
+        } else if($request->validate == "validate"){
+            $comment = Comment::find($request->id);
+            $comment->validate = 1;
+            $comment->save();
+            return redirect()->back()->with('success', 'comment validate');
+
+        }
+        
     }
 
     /**

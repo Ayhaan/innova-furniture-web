@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
                 // "like" => true,
                 "price" => 1050,
                 // "categories" => 'Sofa',
-                "description" => 'lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem',
+                "description" => 'lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ayh nates teaj lorem lorem lorem',
                 "created_at" => now()
             ],
             [

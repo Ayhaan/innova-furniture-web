@@ -4,7 +4,7 @@
             <div class="col-lg-5">
                 <div class="product_slider_img">
                     <div id="vertical">
-                        <div data-thumb="{{ asset("img/innovaImg/" . $product->images[0]->img) }}">
+                        {{-- <div data-thumb="{{ asset("img/innovaImg/" . $product->images[0]->img) }}">
                             @if (File::exists(public_path('img/productUpload/' . $product->images[0]->img)))
                                 <a href="{{ asset("img/productUpload/" . $product->images[0]->img) }}" data-gall="portfolioGallery" class="venobox" title="">
                                     <img src="{{ asset("img/productUpload/" . $product->images[0]->img) }}"  class="w-100">
@@ -14,9 +14,9 @@
                                     <img src="{{ asset("img/innovaImg/" . $product->images[0]->img) }}"  class="w-100">
                                 </a>
                             @endif
-                        </div>
+                        </div> --}}
 
-                        @for ($i = 1; $i < count($product->images); $i++)
+                        @for ($i = 0; $i < count($product->images); $i++)
                             @if (File::exists(public_path('img/productUpload/' . $product->images[$i]->img)))
                                 <div data-thumb="{{ asset("img/productUpload/" . $product->images[$i]->img) }}">
                                     <a href="{{ asset("img/productUpload/" . $product->images[$i]->img) }}" data-gall="portfolioGallery" class="venobox" title="">
@@ -54,8 +54,16 @@
                         </li> --}}
                     </ul>
                     <p>
-                        {{-- FAIRE une description coupé  --}}
-                        {{$product->description}}
+                        @php
+                            $descri = $product->description;
+                            if (strlen($descri) > 250) {
+                                $coup = substr($descri, 0, 250 );
+                                $coup = $coup . ' ...';
+                            }else{
+                                $coup = $descri;
+                            }
+                        @endphp
+                        {{$coup}}
                     </p>
                 {{-- @auth
                     

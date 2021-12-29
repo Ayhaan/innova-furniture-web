@@ -12,10 +12,9 @@
             </div>
         </div>
         <div class="row">
-            @forelse ($random_product as $item)
-                {{-- @if ($item->popular && $loop->iteration <= 4) --}}
-                {{-- @dump($loop) --}} 
-                
+            
+            @forelse ($products->shuffle() as $item)
+                @if ($loop->iteration <= 4)
                     
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s"
@@ -40,16 +39,16 @@
                             </div>
                             <div class="popular-caption">
                                 <h3>
-                                    <a href="{{ route('product', $item->id) }}">{{ $item->name }} / {{ $item->categories[0]->name }}</a>
+                                    <a href="{{ route('product', $item->name) }}">{{ $item->name }} / {{ $item->categories[0]->name }}</a>
                                 </h3>
                                 <span>{{ $item->price }}€</span>
                             </div>
                         </div>
                     </div>
 
-                {{-- @endif --}}
+                @endif
             @empty
-                <h3>Geen producteren
+                <h3 class="text-center my-4 col-12">Geen producteren
                 </h3>
             @endforelse
 

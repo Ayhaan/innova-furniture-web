@@ -20,9 +20,8 @@ class AllController extends Controller
         $spec = Specification::all();
         $testi = Testimonial::all()->random(3);
         $products = Product::all();
-        $products_popular = $products->where('popular');
-        $random_product = $products_popular->random(4);
-        return view('home', compact('products', 'spec', 'random_product', "testi"));
+
+        return view('home', compact('products', 'spec', "testi"));
     }
     //Product
     public function productIndoor()
@@ -61,9 +60,10 @@ class AllController extends Controller
 
         return view('product-outdoor', compact('products'));
     }
-    public function productShow(Product $product)
+    public function productShow($slug)
     {
-        // dd($product);
+        $product = Product::where('name', $slug)->firstOrfail();
+        // dd($product->images);
         return view('product-details', compact("product"));
     }
     public function search(Request $request)

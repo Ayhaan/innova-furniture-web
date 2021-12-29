@@ -111,7 +111,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <input type="text" class="form-control @error('number') is-invalid @enderror"
-                                            id="number" name="number" placeholder="Phone Number (optionnel)"
+                                            id="number" name="number" placeholder="{{ __('messages.form.num') }}"
                                             value="{{ old('number') }}" />
                                         @error('number')
                                             <span class="invalid-feedback">

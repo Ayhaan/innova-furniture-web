@@ -11,8 +11,9 @@
 
 @endsection
 @section('content')
-    <div class="row">
-        <div class="col-lg-5 col-md-6 col-sm-12">
+    <div class="row ">
+        @include('layouts.flash')
+        <div class="col-lg-5 col-md-6 col-sm-12 design-detail d-flex align-items-center">
             <div id="carouselShowProduct" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     @foreach ($product->images as $item)
@@ -45,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-7 col-md-6 col-sm-12 ">
+        <div class="col-lg-7 col-md-6 col-sm-12 design-detail">
             <div class="w-75 mx-auto">
                 <p><b>Name</b> : {{ $product->name }}</p>
                 <p><b>Price</b> : {{ $product->price }} €</p>
@@ -57,7 +58,7 @@
                     <span>{{ $item->name }}, </span>
                     @endforeach
                 </p>
-                <p><b>Date add</b> : {{ $product->created_at }}</p>
+                <p><b>Date add</b> : {{ $product->created_at->format("d M Y") }}</p>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#image">
                     Edit image
                 </button>
@@ -68,7 +69,7 @@
         </div>
     </div>
     <div class="row my-5">
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 design-detail">
             <h5 class="text-center">Spécifications product</h5>
             <div class="d-flex justify-content-center mb-4">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#speci">
@@ -94,9 +95,9 @@
 
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 comment-party">
-            <h5 class="text-center">Comments product : {{ count($product->comments) }}</h5>
-            <div class="d-flex justify-content-center mb-4">
+        <div class="col-lg-6 col-md-6 col-sm-12 comment-party design-detail">
+            <h5 class="text-center">Nbr comments: {{ count($product->comments) }}</h5>
+            <div class="d-flex  justify-content-center">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentnocheck">
                     Comment no check (nbr)
                 </button>
@@ -104,29 +105,6 @@
                     All comment
                 </button>
             </div>
-                <div class="d-flex justify-content-around flex-wrap">
-                    @forelse ($product->comments->reverse() as $item)
-                        @if ($item->validate)
-                            @if ($loop->iteration <=4)
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p class="m-0">User : {{ $item->user }}</p>
-                                        <p class="m-0">Email :{{ $item->email }}</p>
-                                        <p class="m-0">Number : {{ $item->number }}</p>
-                                        <p class="m-0">Date : {{ $item->created_at }}</p>
-                                        <hr>
-                                        <p>{{ $item->commentaire }}</p>
-                                    </div>
-
-                                </div>
-                                
-                            @endif
-                        @endif
-                        {{-- @dump($item) --}}
-                    @empty
-                        <p>Aucun commentaire disponnible</p>
-                    @endforelse
-                </div>
         </div>
     </div>
     @include('partials.modal-product-edit')

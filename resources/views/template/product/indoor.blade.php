@@ -42,7 +42,7 @@
                         {{-- <a href="{{ asset('img/innovaImg/' . $item->images[0]->img) }}"
                             data-gall="portfolioGallery" class="venobox" title="{{ $item->name }}"><i
                                 class="bx bx-plus"></i></a> --}}
-                        <a  href="{{ route('product', $item->id) }}" title="More Details"><i
+                        <a  href="{{ route('product', $item->name) }}" title="More Details"><i
                             class="bx bx-plus"></i></a>
                     </div>
                 </div>

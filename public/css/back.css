@@ -189,6 +189,10 @@
 }
 
 /* Show product */
+.design-detail{
+    background-color: white;
+    padding: 25px 15px;
+}
 #carouselShowProduct .carousel-inner {
     height: 400px !important;
 }

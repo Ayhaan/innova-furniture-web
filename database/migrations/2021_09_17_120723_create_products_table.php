@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->boolean('popular');
             // $table->boolean('like');
             $table->integer('price');
-            $table->text('description');
+            $table->longText('description');
             $table->timestamps();
         });
     }

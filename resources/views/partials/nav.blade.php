@@ -72,12 +72,12 @@
                         <span>Parteners</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ request()->path() == 'admin/about' ? 'active' : '' }}">
+                {{-- <li class="sidebar-item {{ request()->path() == 'admin/about' ? 'active' : '' }}">
                     <a href="{{ route('about.index') }}" class='sidebar-link'>
                         <i class="bi bi-info-circle-fill"></i>
                         <span>About</span>
                     </a>
-                </li>
+                </li> --}}
                     {{-- @php
                         use App\Models\Contact;
                         $contact = Contact::all();
