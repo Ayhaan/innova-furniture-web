@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\CategoEn;
+use App\Models\CategoFr;
 use App\Models\Categories;
 use App\Models\Faq;
 use App\Models\Partener;
@@ -23,7 +25,10 @@ class AllController extends Controller
         $testi = Testimonial::all()->random(3);
         $products = Product::all();
         $parteners = Partener::all();
-        return view('home', compact('products', 'spec', "testi", "parteners"));
+        $cat = Categories::all();
+        $cat_fr = CategoFr::all();
+        $cat_en = CategoEn::all();
+        return view('home', compact('products', 'spec', "testi", "parteners", 'cat', 'cat_fr', "cat_en"));
     }
     //Product
     public function productIndoor()
@@ -31,9 +36,11 @@ class AllController extends Controller
         $products = Product::all();
         $count_product = count(DB::table('products')->where('type', 'indoor')->get());
         $cat = Categories::all();
+        $cat_fr = CategoFr::all();
+        $cat_en = CategoEn::all();
         $parteners = Partener::all();
         $data = null;
-        return view('product-indoor', compact('products', 'cat','data', 'parteners', 'count_product'));
+        return view('product-indoor', compact('products', 'cat','data', 'parteners', 'count_product', "cat_fr", "cat_en"));
     }
     public function range(Request $request)
     {
@@ -64,14 +71,19 @@ class AllController extends Controller
         $count_product = count(DB::table('products')->where('type', 'outdoor')->get());
         $parteners = Partener::all();
         $cat = Categories::all();
-        return view('product-outdoor', compact('products',"parteners", "cat", "count_product"));
+        $cat_fr = CategoFr::all();
+        $cat_en = CategoEn::all();
+        return view('product-outdoor', compact('products',"parteners", "cat", "count_product", "cat_fr", "cat_en"));
     }
     public function productShow($slug)
     {
+        $cat = Categories::all();
+        $cat_fr = CategoFr::all();
+        $cat_en = CategoEn::all();
         $product = Product::where('name', $slug)->firstOrfail();
         $parteners = Partener::all();
 
-        return view('product-details', compact("product", "parteners"));
+        return view('product-details', compact("product", "parteners", "cat", "cat_fr", "cat_en"));
     }
     public function search(Request $request)
     {

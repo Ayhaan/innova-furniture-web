@@ -19,13 +19,13 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item {{ request()->path() == 'admin/dashboard' ? 'active' : '' }} ">
+                <li class="sidebar-item {{ request()->path() == 'admin/dashboard' ? 'active' : '' }}">
                     <a href="{{ route('admin') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="sidebar-item ">
+                <li class="sidebar-item {{ request()->path() == 'admin/users' ? 'active' : '' }}">
                     <a href="{{ route('users.index') }}" class='sidebar-link'>
                         <i class="bi bi-people-fill"></i>
                         <span>Users</span>
@@ -36,13 +36,13 @@
 
                 <li class="sidebar-title">Innova Web</li>
 
-                        @php
-                            use App\Models\Comment;
-                            $comment = DB::table('comments')->where('validate', 0)->get();
-                           
-                   
-                        @endphp
-                <li class="sidebar-item {{ request()->path() == 'admin/products-indoor' ? 'active' : '' }} has-sub">
+                @php
+                    use App\Models\Comment;
+                    $comment = DB::table('comments')->where('validate', 0)->get();
+                    
+            
+                @endphp
+                <li class="sidebar-item {{ request()->path() == 'admin/products-indoor' ? 'active' :  request()->path() == 'admin/products-outdoor' ? 'active' :  request()->path() == 'admin/comments-products' ? 'active' : '' }} has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-pen-fill"></i>
                         <span>Products</span>
@@ -75,7 +75,7 @@
                         <span>FAQ</span>
                     </a>
                 </li>
-                <li class="sidebar-item  ">
+                <li class="sidebar-item {{ request()->path() == 'admin/parteners' ? 'active' : '' }}">
                     <a href="{{ route('parteners.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-ppt-fill"></i>
                         <span>Parteners</span>

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+
 use App\Models\Categories;
 use App\Models\Specification;
 use Illuminate\Database\Seeder;
@@ -29,6 +30,8 @@ class DatabaseSeeder extends Seeder
             TestimonialSeeder::class,
             AboutSeeder::class,
             PartenerSeeder::class,
+            CategoFrSeeder::class,
+            CategoEnSeeder::class,
         ]);
     }
 }

@@ -37,17 +37,60 @@
                                 <h3>
                                     <a class="mb-0" href="{{ route('product', $item->name) }}">{{ $item->name }} </a>
                                         <p class="font-italic">
-                                            @if (count($item->categories) == 1)
-                                            @foreach ($item->categories as $cat)
-                                                {{ $cat->name }}
+                                            {{-- @if (count($item->categories) == 1)
+                                                @foreach ($item->categories as $cat)
+                                                    {{ $cat->name }}
+                                                    
+                                                @endforeach
+                                            @else 
+                                                @foreach ($item->categories as $cat)
+                                                    {{ $cat->name }},
                                                 
-                                            @endforeach
-                                        @else 
-                                            @foreach ($item->categories as $cat)
-                                                {{ $cat->name }},
-                                            
-                                            @endforeach
-                                        @endif
+                                                @endforeach
+                                            @endif --}}
+                                            @php
+                                                //LOGIQUE pour récuperer les cat selectionné dans un tab
+                                                $selected = [];
+                                                foreach ($item->categories as $prod) {
+                                                    foreach ($cat as $value) {
+                                                        if ($prod->name == $value->name) {
+                                                            array_push($selected, $prod->id);
+                                                        }
+                                                    }
+                                                }
+                                                //LOGIQUE pour analyser et chooper les cat qui sont à la meme plce via l'id et le push. Pour mettre les cat en bonne langue 
+                                                $cat_lang = [];
+                                                if (App::getLocale() === "fr") {
+                                                    foreach ($cat_fr as $key => $value) {
+                                                        foreach ($selected as $key => $sel) {
+                                                            if ($sel == $value->id) {
+                                                                array_push($cat_lang, $value->name);
+                                                            }
+                                                            
+                                                        }
+                                                    }
+                                                } else if (App::getLocale() === "en") {
+                                                    foreach ($cat_en as $key => $value) {
+                                                        foreach ($selected as $key => $sel) {
+                                                            if ($sel == $value->id) {
+                                                                array_push($cat_lang, $value->name);
+                                                            }
+                                                            
+                                                        }
+                                                    }
+                                                }
+                                                
+                                            @endphp
+                                            @if (App::getLocale() === "nl")
+                                                @foreach ($item->categories as $ndl)
+                                                    {{ $ndl->name }},&nbsp;
+                                                @endforeach
+                                                
+                                            @else
+                                                @foreach ($cat_lang as $lg)
+                                                    {{ $lg }},&nbsp;
+                                                @endforeach
+                                            @endif
                                         </p>
                                 </h3>
                                 <span>{{ $item->price }}€</span>

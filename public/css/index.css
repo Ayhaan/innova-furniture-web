@@ -246,7 +246,9 @@
     color: #096a09;
     margin: 0 5px;
 }
-
+.product_description_area .tab-content .table tbody tr td {
+    padding-left: 0px !important;
+}
 /* --------------------------- slider footer  --------------------------- */
 
 @keyframes scroll {

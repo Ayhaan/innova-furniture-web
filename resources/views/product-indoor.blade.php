@@ -64,6 +64,9 @@
                     </div>
                 </div>
             </div> --}}
+
+            
+            {{-- BTN AUTRE PAGE PC avec ce qu'il manque --}}
             <div class="categories-wrapper  translate-middle-y other-one d-md-block" id="rangeSearch">
                 <div class="row justify-content-sm-center">
                     <div class="col-12">
@@ -75,13 +78,35 @@
                                     {{ __('messages.other') }}
                                 </button>
                                 <ul class="dropdown-menu" id="portfolio-flters">
-                                    @foreach ($cat as $item)
-                                    @if ($loop->iteration > 6 & $loop->iteration < 14)
-                                        <li class="dropdown-item event-product" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
-                                        </li>
 
+                                    {{-- LANG LOGIQUE --}}
+                                    @if (App::getLocale() === "fr")
+                                        @foreach ($cat_fr as $item)
+                                            @if ($loop->iteration > 6 & $loop->iteration < 14)
+                                                <li class="dropdown-item event-product" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                                </li>
+
+                                            @endif
+                                        @endforeach
+
+                                    @elseif (App::getLocale() === "en")
+                                        @foreach ($cat_en as $item)
+                                            @if ($loop->iteration > 6 & $loop->iteration < 14)
+                                                <li class="dropdown-item event-product" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                                </li>
+
+                                            @endif
+                                        @endforeach
+                                    @else 
+                                        @foreach ($cat as $item)
+                                            @if ($loop->iteration > 6 & $loop->iteration < 14)
+                                                <li class="dropdown-item event-product" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                                </li>
+
+                                            @endif
+                                        @endforeach
                                     @endif
-                                    @endforeach
+                                    
                                 </ul>
 
                             </div>
@@ -89,6 +114,9 @@
                     </div>
                 </div>
             </div>
+
+
+            {{-- BTN AUTRE GSM avec tous --}}
             <div class="categories-wrapper  translate-middle-y other-two d-sm-block d-md-none" id="rangeSearch">
                 {{-- <div class="row justify-content-sm-center"> --}}
                     {{-- <div class="col-3 mx-auto"> --}}
@@ -97,17 +125,38 @@
                             <div class="dropdown">
                                 <button class="dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    Other
+                                    {{ __('messages.other') }}
                                 </button>
                                 <ul class="dropdown-menu" id="portfolio-flters" aria-expanded="false">
-                                    @foreach ($cat as $item)
-                                        @if ($loop->iteration < 14)
-                                            <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
-                                            </li>
-                                            
-                                        @endif
+                                    @if (App::getLocale() === "fr")
+                                        @foreach ($cat_fr as $item)
+                                            @if ($loop->iteration < 14)
+                                                <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                                </li>
+                                                
+                                            @endif
 
-                                    @endforeach
+                                        @endforeach
+                                    @elseif (App::getLocale() === "en")
+                                        @foreach ($cat_en as $item)
+                                            @if ($loop->iteration < 14)
+                                                <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                                </li>
+                                                
+                                            @endif
+
+                                        @endforeach
+                                    @else 
+                                        @foreach ($cat as $item)
+                                            @if ($loop->iteration < 14)
+                                                <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                                </li>
+                                                
+                                            @endif
+
+                                        @endforeach
+                                    @endif
+                                    
                                 </ul>
 
                             </div>

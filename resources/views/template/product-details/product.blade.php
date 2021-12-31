@@ -53,10 +53,51 @@
                     <ul class="list">
                         <li>
                             <a class="active" href="#">
-                                <span>{{ __('messages.cat') }}</span> :
-                                 @foreach ($product->categories as $item)
-                                    {{ $item->name }}
-                                @endforeach
+                                <span style="width: max-content">{{ __('messages.cat') }} :</span> 
+                                @php
+                                    //LOGIQUE pour récuperer les cat selectionné dans un tab
+                                    $selected = [];
+                                    foreach ($product->categories as $item) {
+                                        foreach ($cat as $value) {
+                                            if ($item->name == $value->name) {
+                                                array_push($selected, $item->id);
+                                            }
+                                        }
+                                    }
+
+                                    //LOGIQUE pour analyser et chooper les cat qui sont à la meme plce via l'id et le push. Pour mettre les cat en bonne langue 
+                                    $cat_lang = [];
+                                    if (App::getLocale() === "fr") {
+                                        foreach ($cat_fr as $key => $value) {
+                                            foreach ($selected as $key => $sel) {
+                                                if ($sel == $value->id) {
+                                                    array_push($cat_lang, $value->name);
+                                                }
+                                                
+                                            }
+                                        }
+                                    } else if (App::getLocale() === "en") {
+                                        foreach ($cat_en as $key => $value) {
+                                            foreach ($selected as $key => $sel) {
+                                                if ($sel == $value->id) {
+                                                    array_push($cat_lang, $value->name);
+                                                }
+                                                
+                                            }
+                                        }
+                                    }
+                                    
+                                @endphp
+                                @if (App::getLocale() === "nl")
+                                    @foreach ($product->categories as $item)
+                                        {{ $item->name }},&nbsp;
+                                    @endforeach
+                                    
+                                @else
+                                    @foreach ($cat_lang as $item)
+                                        {{ $item }},&nbsp;
+                                    @endforeach
+                                @endif
                             </a>
                         </li>
                         {{-- <li>
@@ -65,14 +106,14 @@
                     </ul>
                     <p>
                         @php
-                        if (App::getLocale() === "fr") {
-                            $descri = $product->description_fr;
-                        } else if (App::getLocale() === "en") {
-                            $descri = $product->description_en;
-                        } else {
-                            $descri = $product->description;
+                            if (App::getLocale() === "fr") {
+                                $descri = $product->description_fr;
+                            } else if (App::getLocale() === "en") {
+                                $descri = $product->description_en;
+                            } else {
+                                $descri = $product->description;
 
-                        }
+                            }
                         
                             if (strlen($descri) > 250) {
                                 $coup = substr($descri, 0, 750 );

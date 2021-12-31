@@ -35,14 +35,35 @@
                                 Catégories
                             </button>
                             <ul class="dropdown-menu" id="portfolio-flters" aria-expanded="false">
-                                @foreach ($cat as $item)
-                                    @if ($loop->iteration >=14)
-                                        <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
-                                        </li>
-                                        
-                                    @endif
+                                @if (App::getLocale() === "fr")
+                                    @foreach ($cat_fr as $item)
+                                        @if ($loop->iteration >=14)
+                                            <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                            </li>
+                                            
+                                        @endif
 
-                                @endforeach
+                                    @endforeach
+                                @elseif (App::getLocale() === "en")
+                                    @foreach ($cat_en as $item)
+                                        @if ($loop->iteration >=14)
+                                            <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                            </li>
+                                            
+                                        @endif
+
+                                    @endforeach
+                                @else 
+                                    @foreach ($cat as $item)
+                                        @if ($loop->iteration >=14)
+                                            <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                            </li>
+                                            
+                                        @endif
+
+                                    @endforeach
+                                @endif
+                                
                             </ul>
 
                         </div>
