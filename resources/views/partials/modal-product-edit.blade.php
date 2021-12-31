@@ -57,18 +57,54 @@
                         </div>
                         <div class="col-12">
                             <select class="form-select" multiple aria-label="multiple select example" name="cat[]" required>
-                                @foreach ($cat as $item)
-                                    <option {{ $product->categories[0]->name == $item->name ? "selected" : "" }} value="{{ $item->id }}">{{ $item->name }}</option>
+                                @php
+                                    //LOGIQUE pour récuperer les cat selectionné dans un tab
+                                    $selected = [];
+                                    foreach ($product->categories as $item) {
+                                        foreach ($cat as $value) {
+                                            if ($item->name == $value->name) {
+                                                array_push($selected, $item->name);
+                                            }
+                                        }
+                                    }
+                                @endphp
+                                @foreach ($cat as $iteem)
+                                        {{-- verifie si une cat de la list exist dans le tableau qui comporte nos cat à nous --}}
+                                    @if (in_array($iteem->name, $selected)) 
+                                                {{-- si oui, on l'affiche avec le select --}}
+                                        <option selected value="{{ $iteem->id }}">{{ $iteem->name }}</option>    
+                                    @else  
+                                                {{-- si non, on l'affiche le reste de la list sans le select --}}
+                                        <option value="{{ $iteem->id }}">{{ $iteem->name }}</option>  
+                                    @endif
+                             
+        
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 mt-2">
                             <div class="form-group mb-3">
                                 <label for="arearoduct"
                                     class="form-label">Description</label>
                                 <textarea name="description" class="form-control"
                                     id="arearoduct"
-                                    rows="3">{{$product->description }}</textarea>
+                                    rows="8">{{$product->description }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="collapsed btn btn-primary fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                      Price reduce ?
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseOne" class="accordion-collapse collapse {{ $product->price_reduce == null? "" : "show" }}" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <input type="number" id="city-column" class="form-control"
+                                        placeholder="reduce ?" name="reduce"
+                                        value="{{ $product->price_reduce }}">
+                                  </div>
+                                </div>
                             </div>
                         </div>
               
@@ -95,26 +131,50 @@
                     <i data-feather="x"></i>
                 </button>
             </div>
-            <div class="modal-body">
-                I love tart cookie cupcake. I love chupa chups biscuit. I
-                love
-                marshmallow apple pie wafer
-                liquorice. Marshmallow cotton candy chocolate. Apple pie
-                muffin tart.
-                Marshmallow halvah pie
-                marzipan lemon drops jujubes. Macaroon sugar plum cake icing
-                toffee.
+            <div class="modal-body ">
+                <form class="d-flex align-items-center justify-content-center cbx-ciblig" action="{{ route('image.update', $product->id) }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input class="form-control w-50 mx-4 my-3 image-add-store " type="file" name="image">
+                    <button class="btn btn-primary">Add</button>
+                </form>
+                <div class="modal-body d-flex flex-wrap modal-img-edit h-100 justify-content-around">
+                    @foreach ($product->images as $item)
+                        @if (File::exists(public_path('img/productUpload/' .$item->img )))
+                            <div class="div-img-show test mx-1 d-flex flex-column align-items-center my-1">
+                                <img  src="{{ asset('img/productUpload/' .$item->img) }}" class=" w-100" alt="{{ $loop->index }}"> 
+                                <form class="py-1" action="{{ route('product.update', $item->id) }}" method="POST">
+                                    @csrf
+                                    <input type="text" name="editImage" value="editImage" style="display: none">
+                                    @method("PUT")
+                                    <button class="btn btn-danger">X</button>
+                                </form>
+                            </div>
+                                            
+                        @else 
+                            <div class="div-img-show mx-1 d-flex flex-column align-items-center my-1">
+                                <img  src="{{ asset("img/innovaImg/" . $item->img) }}" class=" w-100" alt="{{ $loop->index }}">
+                                <form class="py-1" action="{{ route('product.update', $item->id) }}" method="POST">
+                                    @csrf
+                                    <input type="text" name="editImage" value="editImage" style="display: none">
+                                    @method("PUT")
+                                    <button class="btn btn-danger">X</button>
+                                </form>
+                            </div>
+                        @endif
+                    @endforeach
+
+                </div>
+                <script>
+                    let nbrImg = document.querySelectorAll('.img-js').length
+                    let imgInput = document.querySelector('.image-add-store')
+                    if (nbrImg) {
+                        if (nbrImg === 5) {
+                            imgInput.setAttribute("disabled", "")
+                        }
+                    }
+                </script>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                    <i class="bx bx-x d-block d-sm-none"></i>
-                    <span class="d-none d-sm-block">Close</span>
-                </button>
-                <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                    <i class="bx bx-check d-block d-sm-none"></i>
-                    <span class="d-none d-sm-block">Accept</span>
-                </button>
-            </div>
+      
         </div>
     </div>
 </div>
@@ -193,7 +253,7 @@
 
                             </div>
                             <div class="col">
-                                <p class="m-0">Number : {{ $item->number }}</p>
+                                <p class="m-0">Number : {{ $item->number ? $item->number: "not specified" }}</p>
                                 <p class="m-0">Date : {{ $item->created_at->format("d M Y") }}</p>
                             </div>
                             <div class="col-2 d-flex">
@@ -213,6 +273,8 @@
                         </div>
 
                         <hr>
+      
+
                     @endif
                 @empty
                     <p>no comments</p>
@@ -260,9 +322,10 @@
                         </div>
 
                         <hr>
+                    
                     @endif
-                @empty
-                    <p>no comments</p>
+                    @empty
+                        <p>no comments</p>
                 @endforelse
               </div>
         </div>
@@ -274,7 +337,11 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body d-flex justify-content-center">
-                <a class="btn btn-outline-danger" href="">Definitive</a>
+                <form action="{{ route('product.delete', $product->id) }}" method="POST">
+                    @csrf
+                    @method("DELETE")
+                    <button class="btn btn-outline-danger" >Definitive</button>
+                </form>
 
             </div>
       

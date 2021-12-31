@@ -7,8 +7,14 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+    public function index()
+    {
+        $comments = Comment::all();
+        return view('admin.comment.main', compact('comments'));
+    }
     public function store(Request $request)
     {
+        // dd($request);
         request()->validate([
             "name" => "required",
             "email" => "required|email",

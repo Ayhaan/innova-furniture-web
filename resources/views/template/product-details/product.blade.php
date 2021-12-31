@@ -20,7 +20,7 @@
                             @if (File::exists(public_path('img/productUpload/' . $product->images[$i]->img)))
                                 <div data-thumb="{{ asset("img/productUpload/" . $product->images[$i]->img) }}">
                                     <a href="{{ asset("img/productUpload/" . $product->images[$i]->img) }}" data-gall="portfolioGallery" class="venobox" title="">
-                                        <img src={{ asset("img/productUpload/" . $product->images[$i]->img) }}  class="w-100">
+                                        <img src={{ asset("img/productUpload/" . $product->images[$i]->img) }}  class="w-100" >
                                     </a>
                                 </div>
                             @else
@@ -39,7 +39,17 @@
             <div class="col-lg-5 offset-lg-1">
                 <div class="s_product_text">
                     <h3>{{ $product->name }}</h3>
-                    <h2>{{ $product->price }}€</h2>
+                    @if ($product->price_reduce == null)
+                        <h2>{{ $product->price }} €</h2>
+                        @else 
+                        
+                        <h2>
+                            <span class="price-previous">{{ $product->price }}€ </span>
+                                 
+                            <span class="new-price">{{ $product->price_reduce }}€</span>
+                        </h2>
+                        
+                    @endif
                     <ul class="list">
                         <li>
                             <a class="active" href="#">

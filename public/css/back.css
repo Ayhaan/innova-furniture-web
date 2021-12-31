@@ -202,6 +202,17 @@
 .comment-party .card {
     width: 45%;
 }
+.div-img-show{
+    height: 100%;
+    display: flex;
+    width: 25%;
+}
+.div-img-show img{
+    object-fit: cover;
+}
+.modal-img-edit{
+    padding: 50px 0 100px 0;
+}
 
 /* ----------------------------- CONTACT  ----------------------------- */
 .email-title{

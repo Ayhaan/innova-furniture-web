@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpecificationsTable extends Migration
+class CreatePartenersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateSpecificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('specifications', function (Blueprint $table) {
+        Schema::create('parteners', function (Blueprint $table) {
             $table->id();
-            $table->json('data');
-            $table->foreignId('product_id')->constrained('products', 'id')->onDelete('cascade');
-            $table->timestamps(); 
+            $table->string("img");
+            $table->timestamps();
         });
     }
 
@@ -28,6 +27,6 @@ class CreateSpecificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('specifications');
+        Schema::dropIfExists('parteners');
     }
 }

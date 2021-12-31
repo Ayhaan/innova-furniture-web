@@ -6,80 +6,13 @@
                 <div class="row justify-content-between">
                     <div class="col-12 slider">
                         <div class="slide-track">
+                            @foreach ($parteners as $item)
                             <div class="slide">
-                                <img src={{ asset('img/partners/bambi.jfif') }} height="100" width="250" alt="" />
+                                <img src={{ asset('img/partners/' . $item->img) }}  alt="{{ $item->img }}" />
                             </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100"
-                                    width="250" alt="" />
-                                {{-- <img src={{ asset("img/partners/bambi.jfif") }} height="100" width="250" alt="" /> --}}
-
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100"
-                                    width="250" alt="" />
-                                {{-- <img src={{ asset("img/partners/bauwens.jfif") }} height="100" width="250" alt="" /> --}}
-
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100"
-                                    width="250" alt="" />
-                                {{-- <img src={{ asset("img/partners/bambi.jfif") }} height="100" width="250" alt="" /> --}}
-
-
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100"
-                                    width="250" alt="" />
-                                {{-- <img src={{ asset("img/partners/eiken.jfif") }} height="100" width="250" alt="" /> --}}
-
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100"
-                                    width="250" alt="" />
-                                {{-- <img src={{ asset("img/partners/lands.jfif") }} height="100" width="250" alt="" /> --}}
-
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100"
-                                    width="250" alt="" />
-                                {{-- <img src={{ asset("img/partners/meubar.jfif") }} height="100" width="250" alt="" /> --}}
-
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100"
-                                    width="250" alt="" />
-                                {{-- <img src={{ asset("img/partners/neyt.jfif") }} height="100" width="250" alt="" /> --}}
-
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100"
-                                    width="250" alt="" />
-                                {{-- <img src={{ asset("img/partners/rousseau.jfif") }} height="100" width="250" alt="" /> --}}
-
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100"
-                                    width="250" alt="" />
-                                {{-- <img src={{ asset("img/partners/wieman.jfif") }} height="100" width="250" alt="" /> --}}
-
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100"
-                                    width="250" alt="" />
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100"
-                                    width="250" alt="" />
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100"
-                                    width="250" alt="" />
-                            </div>
-                            <div class="slide">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100"
-                                    width="250" alt="" />
-                            </div>
+                                
+                            @endforeach
+       
                         </div>
                     </div>
                 </div>

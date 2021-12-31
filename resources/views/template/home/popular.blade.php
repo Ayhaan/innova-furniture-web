@@ -7,7 +7,6 @@
             <div class="col-xl-7 col-lg-8 col-md-10">
                 <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
                     <h2>{{ __('messages.popular') }}</h2>
-                    <P>{{__('messages.popular_into')}}</P>
                 </div>
             </div>
         </div>
@@ -39,13 +38,25 @@
                             </div>
                             <div class="popular-caption">
                                 <h3>
-                                    <a href="{{ route('product', $item->name) }}">{{ $item->name }} / {{ $item->categories[0]->name }}</a>
+                                    <a class="mb-0" href="{{ route('product', $item->name) }}">{{ $item->name }} </a>
+                                    <p class="font-italic">
+                                        @if (count($item->categories) == 1)
+                                            @foreach ($item->categories as $cat)
+                                                {{ $cat->name }}
+                                                
+                                            @endforeach
+                                        @else 
+                                            @foreach ($item->categories as $cat)
+                                                {{ $cat->name }},
+                                            
+                                            @endforeach
+                                        @endif
+                                    </p>
+                                    <span>{{ $item->price }}€</span>
                                 </h3>
-                                <span>{{ $item->price }}€</span>
                             </div>
                         </div>
                     </div>
-
                 @endif
             @empty
                 <h3 class="text-center my-4 col-12">Geen producteren

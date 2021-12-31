@@ -3,7 +3,7 @@
 
 return [
     //HOME
-    'welcome' => 'EN Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
+    'welcome' => "Active in the furniture market since November 2019 Innova Furniture, a 1000m² furniture and decoration shop, located in the heart of Merchtem wants to be 'innovative' in this sector where the 'traditional' has always been the winner. From baroque to industrial, from entry-level to top-of-the-range, Innova Furniture is the furniture and decoration shop that suits all tastes.",
     'btn_welcome' => 'Discover More',
     'home' => 'Home',
     'products' => 'Products',
@@ -16,15 +16,17 @@ return [
     'insta_into' => "EN Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
     'insta_btn' => "Follow Us!",
     "delivery" => "Fast & Free Delivery",
-    "delivery_into" => "Delivery and assembly feasible",
+    "delivery_into" => "Delivery and assembly options",
     "payment" => "Secure Payment",
-    "payment_into" => "EN lorem lorem",
+    "payment_into" => "Credit possibilities",
     "guarantee" => "Guarantee",
-    "guarantee_into" => "EN lorem lorem",
+    "guarantee_into" => "legal guarantee on all our products",
     "support" => "Online Support",
     "support_into" => "EN lorem lorem",
     //PRODUCT-ALL
-    'title_product' => "PRODUCT INDOOR",
+    'title_product' => "PRODUCTS INDOOR",
+    'title_outdoor' => "PRODUCTS OUTDOOR ",
+
     'found' => "product found",
     'other' => "other",
     //PRODUCT-SHOW

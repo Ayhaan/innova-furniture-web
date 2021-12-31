@@ -18,8 +18,8 @@
                 <div class="col-xl-7 col-lg-8 col-md-10">
                     <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="1s"
                         data-wow-delay=".2s">
-                        <h2>{{ __('messages.title_product') }}r</h2>
-                        <p id="countProduct">{{ count($products) }} {{ __('messages.found') }}</p>
+                        <h2>{{ __('messages.title_product') }}</h2>
+                        <p id="countProduct">{{ $count_product }} {{ __('messages.found') }}</p>
                     </div>
 
                 </div>
@@ -76,7 +76,7 @@
                                 </button>
                                 <ul class="dropdown-menu" id="portfolio-flters">
                                     @foreach ($cat as $item)
-                                    @if ($loop->iteration > 6)
+                                    @if ($loop->iteration > 6 & $loop->iteration < 14)
                                         <li class="dropdown-item event-product" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
                                         </li>
 
@@ -101,8 +101,11 @@
                                 </button>
                                 <ul class="dropdown-menu" id="portfolio-flters" aria-expanded="false">
                                     @foreach ($cat as $item)
-                                        <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
-                                        </li>
+                                        @if ($loop->iteration < 14)
+                                            <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                            </li>
+                                            
+                                        @endif
 
                                     @endforeach
                                 </ul>

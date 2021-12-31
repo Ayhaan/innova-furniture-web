@@ -57,16 +57,14 @@
                                 @if ($item->validate)
                                     <div class="review_item">
                                         <div class="media">
-                                            <div class="d-flex">
-                                                {{-- <img src="assets/img/gallery/review-1.png" alt="" /> --}}
-                                            </div>
+                                         
                                             <div class="media-body">
                                                 <h4>{{ $item->user }}</h4>
-                                                <h5>{{ $item->date }}</h5>
+                                                <h5>{{ $item->created_at->format('d M, Y' ) }}</h5>
                                                 {{-- <a class="reply_btn" href="#">Reply</a> --}}
                                             </div>
                                         </div>
-                                        <p>
+                                        <p class="pl-2">
                                             {{ $item->commentaire }}
                                         </p>
                                     </div>
@@ -84,8 +82,8 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
                                             id="name" name="name"
-                                            placeholder=" {{ Auth::check() ? Auth::user()->name . ' ' . Auth::user()->firstname : __('messages.form.name') }}"
-                                            {{ Auth::check() ? 'readonly' : '' }} value="{{ old('name') }}" />
+                                            placeholder="{{__('messages.form.name') }}"
+                                             value="{{ old('name') }}" />
                                         @error('name')
                                             <span class="invalid-feedback">
                                                 <strong>{{ $message }}</strong>
@@ -99,8 +97,8 @@
                                     <div class="form-group">
                                         <input type="email" class="form-control @error('email') is-invalid @enderror"
                                             id="email" name="email"
-                                            placeholder=" {{ Auth::check() ? Auth::user()->email : __('messages.form.email') }}"
-                                            {{ Auth::check() ? 'readonly' : '' }} value="{{ old('email') }}" />
+                                            placeholder="{{__('messages.form.email') }}"
+                                            value="{{ old('email') }}" />
                                         @error('email')
                                             <span class="invalid-feedback">
                                                 <strong>{{ $message }}</strong>

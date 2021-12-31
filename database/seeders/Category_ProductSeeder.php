@@ -22,8 +22,30 @@ class Category_ProductSeeder extends Seeder
                 "created_at" => now()
 
             ],
-  
-  
+            [
+                "product_id" => 1,
+                "categories_id" => 2,
+                "created_at" => now()
+
+            ],
+            [
+                "product_id" => 1,
+                "categories_id" => 3,
+                "created_at" => now()
+
+            ],
+            [
+                "product_id" => 1,
+                "categories_id" => 4,
+                "created_at" => now()
+
+            ],
+            [
+                "product_id" => 1,
+                "categories_id" => 5,
+                "created_at" => now()
+
+            ],
             [
                 "product_id" => 2,
                 "categories_id" => 2,
@@ -44,7 +66,19 @@ class Category_ProductSeeder extends Seeder
             ],
             [
                 "product_id" => 5,
-                "categories_id" => 4,
+                "categories_id" => 16,
+                "created_at" => now()
+
+            ],
+            [
+                "product_id" => 5,
+                "categories_id" => 17,
+                "created_at" => now()
+
+            ],
+            [
+                "product_id" => 6,
+                "categories_id" => 18,
                 "created_at" => now()
 
             ],

@@ -20,33 +20,34 @@
             </div>
         </div>
 
-        <div style={{ count($products) == 0 ? "" : "height:80px;" }} class="row portfolio-container parent_child" data-aos="fade-up" data-aos-delay="100" >
-            @forelse ($products as $item)
-            <div id="product_child" class="col-lg-3 col-md-6 portfolio-item filter-{{ $item->categories[0]->name }}">
-                <div class="portfolio-wrap img-parent">
-                    {{-- @foreach ($item->images as $img) --}}
-                        {{-- @if ($loop->first) --}}
-                            @if (File::exists(public_path('img/productUpload/' . $item->images[0]->img)))
-                                <a href="{{ asset('img/productUpload/' . $item->images[0]->img) }}" data-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
-                                    <img  src="{{ asset('img/productUpload/' . $item->images[0]->img) }}" alt="{{ $item->name }}">
-                                </a>
+        <div style={{ $count_product  == 0 ? "" : "height:80px;" }} class="row portfolio-container parent_child" data-aos="fade-up" data-aos-delay="100" >
+            @forelse ($products->reverse() as $item)
+                @if ($item->type == "indoor")
+                <div id="product_child" class="col-lg-3 col-md-6 portfolio-item @foreach ($item->categories as $fil) filter-{{ $fil->name }} @endforeach ">
+                        <div class="portfolio-wrap img-parent">
+                            @if (isset($item->images[0]->img))
+                                @if (File::exists(public_path('img/productUpload/' . $item->images[0]->img)))
+                                    <a href="{{ asset('img/productUpload/' . $item->images[0]->img) }}" data-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
+                                        <img  src="{{ asset('img/productUpload/' . $item->images[0]->img) }}" alt="{{ $item->name }}">
+                                    </a>
+                                @else
+                                    <a href="{{ asset('img/innovaImg/' . $item->images[0]->img) }}" ata-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
+                                        <img  src="{{ asset('img/innovaImg/' . $item->images[0]->img) }}" alt="{{ $item->name }}">
+                                    </a>
+                                @endif
+                                
                             @else
-                                <a href="{{ asset('img/innovaImg/' . $item->images[0]->img) }}" ata-gall="portfolioGallery" class="venobox" title="{{ $item->name }}">
-                                    <img  src="{{ asset('img/innovaImg/' . $item->images[0]->img) }}" alt="{{ $item->name }}">
-                                </a>
+                                <p>photo does not exist</p>
                             @endif
-                        {{-- @endif --}}
 
-                    {{-- @endforeach --}}
-                    <div class="portfolio-links">
-                        {{-- <a href="{{ asset('img/innovaImg/' . $item->images[0]->img) }}"
-                            data-gall="portfolioGallery" class="venobox" title="{{ $item->name }}"><i
-                                class="bx bx-plus"></i></a> --}}
-                        <a  href="{{ route('product', $item->name) }}" title="More Details"><i
-                            class="bx bx-plus"></i></a>
+                            <div class="portfolio-links">
+                                <a  href="{{ route('product', $item->name) }}" title="More Details"><i
+                                    class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                @endif
+
             @empty
             <div class="col-12 py-5 my-5">
                 <h1 class="text-center">is not available</h1>

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Categories;
 use App\Models\Faq;
+use App\Models\Partener;
 use App\Models\Product;
 use App\Models\Specification;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\QueryBuilder\QueryBuilder;
 
 
@@ -20,16 +22,18 @@ class AllController extends Controller
         $spec = Specification::all();
         $testi = Testimonial::all()->random(3);
         $products = Product::all();
-
-        return view('home', compact('products', 'spec', "testi"));
+        $parteners = Partener::all();
+        return view('home', compact('products', 'spec', "testi", "parteners"));
     }
     //Product
     public function productIndoor()
     {
         $products = Product::all();
+        $count_product = count(DB::table('products')->where('type', 'indoor')->get());
         $cat = Categories::all();
+        $parteners = Partener::all();
         $data = null;
-        return view('product-indoor', compact('products', 'cat','data'));
+        return view('product-indoor', compact('products', 'cat','data', 'parteners', 'count_product'));
     }
     public function range(Request $request)
     {
@@ -57,14 +61,17 @@ class AllController extends Controller
     public function productOutdoor()
     {
         $products = Product::all();
-
-        return view('product-outdoor', compact('products'));
+        $count_product = count(DB::table('products')->where('type', 'outdoor')->get());
+        $parteners = Partener::all();
+        $cat = Categories::all();
+        return view('product-outdoor', compact('products',"parteners", "cat", "count_product"));
     }
     public function productShow($slug)
     {
         $product = Product::where('name', $slug)->firstOrfail();
-        // dd($product->images);
-        return view('product-details', compact("product"));
+        $parteners = Partener::all();
+
+        return view('product-details', compact("product", "parteners"));
     }
     public function search(Request $request)
     {
@@ -74,13 +81,14 @@ class AllController extends Controller
         // ]);
 
         //valeur de l'input
+        $parteners = Partener::all();
         $value = array_values(request()->filter)[0];
         //product trouvé avec package spatie-querybuilder
         if ($value) {
             $products = QueryBuilder::for(Product::class)
                 ->allowedFilters('name')
                 ->get();
-            return view('search', compact('products', 'value'));
+            return view('search', compact('products', 'value', "parteners"));
         } else {
             return redirect()->back()->with('warning', 'champs vide...');
         }
@@ -91,21 +99,25 @@ class AllController extends Controller
     public function about()
     {
         $abouts = About::all();
-        return view('about', compact('abouts'));
+        $parteners = Partener::all();
+        return view('about', compact('abouts', "parteners"));
     }
     //Contact
     public function contact()
     {
-        return view('contact');
+        $parteners = Partener::all();
+        return view('contact', compact("parteners"));
     }
     //Faq
     public function faq()
     {
+        $parteners = Partener::all();
         $faqs = Faq::all();
-        return view('faq', compact('faqs'));
+        return view('faq', compact('faqs', "parteners"));
     }
     public function moving()
     {
-        return view('moving');
+        $parteners = Partener::all();
+        return view('moving', compact("parteners"));
     }
 }

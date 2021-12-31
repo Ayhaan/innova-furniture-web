@@ -16,6 +16,18 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
+                "name" => "Preston - Salon 3 ReXRe + 2XX",
+                "type" => "indoor",
+                "popular" => true,
+                // "like" => true,
+                "price" => 28,
+                // "categories" => 'Sofa',
+                "description" => 'A la recherche d’une solution pour dégager le stress du quotidien ? Relaxez-vous, car le salon « Preston » doté de deux relax électriques est votre allié ! 
+                Ce merveilleux salon en tissus existe en 3 couleurs ; anthracite, gris clair et brun.
+                Les relax électriques se trouvent initialement sur le canapé de trois places. Le canapé de deux places n’en dispose pas. Il est possible de commander ce salon avec plus de relax électriques (notamment le canapé de deux places) si vous souhaitez que vos invités vivent avec vous cette expérience incroyable.',
+                "created_at" => now()
+            ],
+            [
                 "name" => "mySalon",
                 "type" => "indoor",
                 // "img" => "img/innovaImg/salon-1.jfif",

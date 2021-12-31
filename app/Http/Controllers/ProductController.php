@@ -30,11 +30,16 @@ class ProductController extends Controller
     {
         
         $products = Product::paginate(20);
-
-   
-
         return view('admin/products-indoor/main', compact('products'));
     }
+    public function outdoor()
+    {
+        
+        $products = Product::paginate(20);
+        return view('admin/products-indoor/outdoor', compact('products'));
+    }
+
+
     public function search(Request $request)
     {
         $value = array_values(request()->filter)[0];
@@ -339,6 +344,12 @@ class ProductController extends Controller
             $product->price = $request->price;
             $product->description = $request->description;
             $product->categories()->sync($request->cat);
+            // dd($request->reduce);
+            if ($product->reduce == "null") {
+               $product->price_reduce = null;
+            }else {
+                $product->price_reduce = $request->reduce;
+            }
 
             $product->save();
             return redirect()->back()->with('success', 'Product update !');
@@ -389,18 +400,50 @@ class ProductController extends Controller
             $comment->save();
             return redirect()->back()->with('success', 'comment validate');
 
+        } else if ($request->editImage= "editImage"){
+            $images = Image::find($request->id);
+            $destination = "/img/productUpload/".$images->img;
+            Storage::disk('public')->delete($destination);
+            $images->delete();
+            return redirect()->back()->with('warning', "image delete");
         }
         
     }
 
+    public function image_update(Request $request)
+    {
+        $path = 'img/productUpload/';
+        $file = $request->file('image');
+        $new_image_name = 'UIMG'.date('Ymd').uniqid().'.jpg';
+        $file->move(public_path($path), $new_image_name);
+
+        $images = new Image();
+        $images->product_id = $request->id;
+        $images->img = $new_image_name;
+        $images->save();
+        return redirect()->back()->with('success', "new image add");
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($product)
     {
-        //
+        $product = Product::find($product);
+        foreach ($product->images as $value) {
+            $destination = "/img/productUpload/".$value->img;
+            Storage::disk('public')->delete($destination);
+            # code...
+        }
+
+
+
+        $product->delete();
+        return redirect()->to('/admin/products-indoor')->with('warning', "product delete");
+
+        dd($product);
     }
+
 }

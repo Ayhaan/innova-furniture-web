@@ -2,7 +2,8 @@
 
 @section('title-page')
     <h3 class="d-flex justify-content-between flex-wrap">
-        Product : {{ $product->name }}
+        <a href="{{ route('product', $product->name) }}">Product : {{ $product->name }}</a>
+        
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#small">
             Delete this product
         </button>
@@ -13,10 +14,10 @@
 @section('content')
     <div class="row ">
         @include('layouts.flash')
-        <div class="col-lg-5 col-md-6 col-sm-12 design-detail d-flex align-items-center">
+        <div class="col-lg-5 col-md-6 col-sm-12 design-detail d-flex align-items-center flex-column">
             <div id="carouselShowProduct" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    @foreach ($product->images as $item)
+                    @forelse ($product->images as $item)
                         @if (File::exists(public_path('img/productUpload/' .$item->img )))
                             @if ($loop->first)
                                 <div class="carousel-item active">
@@ -42,9 +43,28 @@
                             @endif
 
                         @endif
-                    @endforeach
+                    @empty 
+                        <p>not image available</p>
+                    @endforelse
                 </div>
             </div>
+            <div class="d-flex my-1">
+                @forelse ($product->images as $item)
+                    @if (File::exists(public_path('img/productUpload/' .$item->img )))
+                        <div class="div-img-show img-js mx-1">
+                            <img  src="{{ asset('img/productUpload/' .$item->img) }}" class=" w-100" alt="{{ $loop->index }}"> 
+                        </div>
+                                        
+                    @else 
+                        <div class="div-img-show mx-1">
+                            <img  src="{{ asset("img/innovaImg/" . $item->img) }}" class=" w-100" alt="{{ $loop->index }}">
+                        </div>
+                    @endif
+                @empty 
+                    <p>not image available</p>
+                @endforelse
+            </div>
+           
         </div>
         <div class="col-lg-7 col-md-6 col-sm-12 design-detail">
             <div class="w-75 mx-auto">
@@ -98,8 +118,8 @@
         <div class="col-lg-6 col-md-6 col-sm-12 comment-party design-detail">
             <h5 class="text-center">Nbr comments: {{ count($product->comments) }}</h5>
             <div class="d-flex  justify-content-center">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentnocheck">
-                    Comment no check (nbr)
+                <button type="button" class="btn btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#commentnocheck">
+                    Comment no check 
                 </button>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentall">
                     All comment

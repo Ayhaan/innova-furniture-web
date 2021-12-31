@@ -7,8 +7,8 @@
     @yield('title-page')
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <link rel="manifest" href="site.webmanifest"> --}}
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="{{ url('img/innovaImg/logo-hd.png') }}">
+
     {{-- CSS  Filter product --}}
     <link rel="stylesheet" href={{ asset('css/isotope/bootstrap.min.css') }}>
     <link href={{ asset('css/isotope/boxicons.min.css') }} rel="stylesheet">

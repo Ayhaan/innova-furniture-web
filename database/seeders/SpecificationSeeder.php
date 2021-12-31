@@ -18,8 +18,8 @@ class SpecificationSeeder extends Seeder
 
 
         $jsonData = array(
-            'hauteur' => '1m78',
-            'largeur' => '1m',
+            'Dimensions' => '3 places dont deux relax électriques : 203 x H98 x 89 cm, 2 places sans relax électriques : 158 x H98 x 89 cm ',
+            'Couleur sur la photo ' => 'Anthracite',
         );
         $jsonData = json_encode($jsonData);
 
@@ -48,6 +48,11 @@ class SpecificationSeeder extends Seeder
             [
                 "data" => $jsonData,
                 "product_id" => 5,
+                "created_at" => now()
+            ],
+            [
+                "data" => $jsonData,
+                "product_id" => 6,
                 "created_at" => now()
             ],
         ]);

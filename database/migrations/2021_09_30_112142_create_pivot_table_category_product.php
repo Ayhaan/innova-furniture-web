@@ -15,7 +15,7 @@ class CreatePivotTableCategoryProduct extends Migration
     {
         Schema::create('categories_product', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('products', 'id');
+            $table->foreignId('product_id')->constrained('products', 'id')->onDelete('cascade');
             $table->foreignId('categories_id')->constrained('categories', 'id');
             $table->timestamps();
         });

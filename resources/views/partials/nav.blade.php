@@ -36,6 +36,12 @@
 
                 <li class="sidebar-title">Innova Web</li>
 
+                        @php
+                            use App\Models\Comment;
+                            $comment = DB::table('comments')->where('validate', 0)->get();
+                           
+                   
+                        @endphp
                 <li class="sidebar-item {{ request()->path() == 'admin/products-indoor' ? 'active' : '' }} has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-pen-fill"></i>
@@ -46,10 +52,13 @@
                             <a href="{{ route('product.index') }}">Indoor</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="form-editor-ckeditor.html">Outdoor</a>
+                            <a href="{{ route('product.outdoor') }}">Outdoor</a>
                         </li>
-                        <li class="submenu-item ">
-                            <a href="form-editor-summernote.html">Comments</a>
+                        <li class="submenu-item position-relative">
+                            <a href="{{ route('comment.index') }}">Comments</a>
+                            {{-- <span class="nbr-close">{{ count($count_close) }}</span> --}}
+                            <span class="nbr-close">{{ count($comment) }}</span>
+
                         </li>
                     </ul>
                 </li>
@@ -67,7 +76,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item  ">
-                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                    <a href="{{ route('parteners.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-ppt-fill"></i>
                         <span>Parteners</span>
                     </a>

@@ -7,7 +7,7 @@
                         <div class="hero__caption">
                             <span>Merchtem </span>
                             <h1 data-animation="fadeInUp" data-delay=".4s">Innova Furniture</h1>
-                            <p data-animation="fadeInUp" data-delay=".6s">{{__('messages.welcome')}}.</p>
+                            <p data-animation="fadeInUp" data-delay=".6s">{{__('messages.welcome')}}</p>
                             <!-- Hero-btn -->
                             <div class="hero__btn" data-animation="fadeInUp" data-delay=".7s">
                                 <a href="{{ route('indoor') }}" class="btn hero-btn text-white">{{ __('messages.btn_welcome') }}</a>

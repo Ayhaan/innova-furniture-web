@@ -2,7 +2,9 @@
 <?php
 
 return [
-    'welcome' => 'NL Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
+    'welcome' => "Actief op de meubelmarkt sinds november 2019 Innova Furniture, een meubel- en decoratiezaak van 1000m², gelegen in het hartje van Merchtem wil 'vernieuwend' zijn in deze sector waar het 'traditionele' altijd de winnaar is geweest.
+
+    Van barok tot industrieel, van instapmodel tot high-end, Innova Furniture is de meubel- en decoratiewinkel voor elke smaak.",
     'btn_welcome' => 'Ontdek meer',
     'home' => 'Home',
     'products' => 'Products',
@@ -15,15 +17,17 @@ return [
     'insta_into' => "NL Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
     'insta_btn' => "Volg Ons!",
     "delivery" => "Snelle & gratis levering",
-    "delivery_into" => "Levering en montage mogelijk",
+    "delivery_into" => "Leverings & installatiemogelijkheden",
     "payment" => "Beveiligde betaling",
-    "payment_into" => "NL lorem lorem",
+    "payment_into" => "Kredietmogelijkheden",
     "guarantee" => "Garantie",
-    "guarantee_into" => "NL lorem lorem",
+    "guarantee_into" => "Wettelijke garantie op al onze producten",
     "support" => "Online ondersteuning",
     "support_into" => "NL lorem lorem",
     //PRODUCT
-    'title_product' => "PRODUCT BINNEN",
+    'title_product' => "PRODUCTEN BINNEN",
+    'title_outdoor' => "PRODUCTEN BUITEN",
+
     'found' => "producten gevonden",
     'other' => "andere",
     //PRODUCT-SHOW

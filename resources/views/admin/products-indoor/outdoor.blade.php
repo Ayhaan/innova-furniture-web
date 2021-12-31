@@ -1,7 +1,7 @@
 @extends('layouts.back')
 
 @section('title-page')
-    <h3>Products Indoor</h3>
+    <h3>Products Outdoor</h3>
 
 @endsection
 @section('content')
@@ -36,7 +36,7 @@
                 </thead>
                 <tbody>
                     @foreach ($products->reverse()  as $item)
-                    @if ($item->type == 'indoor')
+                    @if ($item->type == 'outdoor')
                         <tr>
                             @if (File::exists(public_path('img/productUpload/' . $item->images[0]->img)))
                                     <td ><img height="60px" src="{{ asset('img/productUpload/'.$item->images[0]->img ) }}" alt="a"></td>

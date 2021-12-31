@@ -20,7 +20,7 @@ class CommentSeeder extends Seeder
             [
                 "user" => "Ayhan",
                 "email" => "test@test.com",
-                'number' => 458684,
+                'number' => "458684",
                 "commentaire" => "trop bien",
                 'product_id' => 1,
                 'validate' => true,
@@ -35,7 +35,7 @@ class CommentSeeder extends Seeder
                 "email" => "test@test.com",
                 'product_id' => 1,
                 'validate' => false,
-                'number' => 458684,
+                'number' => "458684",
                 "date" => now(),
                 "created_at" => now()
 
@@ -47,7 +47,7 @@ class CommentSeeder extends Seeder
                 "email" => "test@test.com",
                 'product_id' => 2,
                 'validate' => true,
-                'number' => 458684,
+                'number' => "458684",
                 "date" => now(),
                 "created_at" => now()
 
@@ -60,7 +60,7 @@ class CommentSeeder extends Seeder
                 'product_id' => 3,
                 'validate' => false,
                 "date" => now(),
-                'number' => 458684,
+                'number' => "458684",
                 "created_at" => now()
             ],
             [
@@ -70,7 +70,7 @@ class CommentSeeder extends Seeder
                 'product_id' => 4,
                 'validate' => true,
                 "date" => now(),
-                'number' => 458684,
+                'number' => "458684",
                 "created_at" => now()
             ],
             [
@@ -80,7 +80,7 @@ class CommentSeeder extends Seeder
                 'product_id' => 5,
                 'validate' => true,
                 "date" => now(),
-                'number' => 458684,
+                'number' => "458684",
                 "created_at" => now()
             ],
 

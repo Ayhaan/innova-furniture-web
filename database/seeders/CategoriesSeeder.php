@@ -17,35 +17,7 @@ class CategoriesSeeder extends Seeder
         DB::table('categories')->insert([
 
             [
-                "name" => "Baby",
-                "created_at" => now()
-            ],
-            [
-                "name" => "Kantoor",
-                "created_at" => now()
-            ],
-            [
-                "name" => "slaapkamer",
-                "created_at" => now()
-            ],
-            [
-                "name" => "Decore",
-                "created_at" => now()
-            ],
-            [
-                "name" => "Dressing",
-                "created_at" => now()
-            ],
-            [
-                "name" => "Hal",
-                "created_at" => now()
-            ],
-            [
-                "name" => "Lelies",
-                "created_at" => now()
-            ],
-            [
-                "name" => "Matrassen",
+                "name" => "Salon",
                 "created_at" => now()
             ],
             [
@@ -53,11 +25,68 @@ class CategoriesSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                "name" => "Tapijten",
+                "name" => "Keuken",
                 "created_at" => now()
             ],
             [
-                "name" => "woonkamer",
+                "name" => "Wasserij",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Kantoor",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Slaapkamer",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Baby-kinderkamers",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Inkomhal",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Decoratie",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Tapijt",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Armatuur",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Textiel",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Audio",
+                "created_at" => now()
+            ],
+            //CAT OUTDOOR
+            [
+                "name" => "Terras",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Tuin",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Decoratie-out",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Tapijt",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Audio-out",
                 "created_at" => now()
             ],
         ]);

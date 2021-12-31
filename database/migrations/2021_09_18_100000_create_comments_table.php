@@ -17,11 +17,11 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->string('user');
             $table->string('email');
-            $table->bigInteger('number')->nullable();
+            $table->string('number');
             $table->text('commentaire');
             $table->boolean('validate');
             $table->date('date');
-            $table->foreignId('product_id')->constrained('products', 'id');
+            $table->foreignId('product_id')->constrained('products', 'id')->onDelete('cascade');
             $table->timestamps();
         });
     }

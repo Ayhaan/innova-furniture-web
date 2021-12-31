@@ -19,10 +19,39 @@
                     <div class="col-xl-7 col-lg-8 col-md-10">
                         <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="1s"
                             data-wow-delay=".2s">
-                            <h2>Product outdoor <br> <br> Coming soon</h2>
+                            <h2>{{ __('messages.title_outdoor') }}</h2>
+                            <p id="countProduct">{{ $count_product }} {{ __('messages.found') }}</p>
                         </div>
                     </div>
                 </div>
+
+                {{-- ---- btn cat GSM ---- --}}
+                <div class="categories-wrapper  translate-middle-y other-two d-sm-block d-md-none" id="rangeSearch">
+                    <div class="select-categories cat-other d-flex justify-content-center">
+
+                        <div class="dropdown">
+                            <button class="dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Catégories
+                            </button>
+                            <ul class="dropdown-menu" id="portfolio-flters" aria-expanded="false">
+                                @foreach ($cat as $item)
+                                    @if ($loop->iteration >=14)
+                                        <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                        </li>
+                                        
+                                    @endif
+
+                                @endforeach
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                {{-- ---- PARTI body du outdoor ---- --}}
+                @include('template.product.outdoor')
+                
             </div>
         </section>
     </main>

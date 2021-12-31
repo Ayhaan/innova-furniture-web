@@ -41,7 +41,7 @@
                     </div>
                     <div class="cat-cap">
                         <h5>{{ __('messages.support') }}</h5>
-                        <p>{{ __('messages.support_into') }}</p>
+                        {{-- <p>{{ __('messages.support_into') }}</p> --}}
                     </div>
                 </div>
             </div>

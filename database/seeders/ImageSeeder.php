@@ -17,6 +17,11 @@ class ImageSeeder extends Seeder
         DB::table('images')->insert([
 
             [
+                "img" => "salon-one.png",
+                "product_id" => 1,
+                "created_at" => now()
+            ],
+            [
                 "img" => "salon-1.jfif",
                 "product_id" => 1,
                 "created_at" => now()
@@ -28,16 +33,6 @@ class ImageSeeder extends Seeder
             ],
             [
                 "img" => "tapis.jfif",
-                "product_id" => 1,
-                "created_at" => now()
-            ],
-            [
-                "img" => "table.jfif",
-                "product_id" => 1,
-                "created_at" => now()
-            ],
-            [
-                "img" => "table.jfif",
                 "product_id" => 1,
                 "created_at" => now()
             ],
@@ -58,7 +53,7 @@ class ImageSeeder extends Seeder
             ],
             [
                 "img" => "table.jfif",
-                "product_id" => 2,
+                "product_id" => 3,
                 "created_at" => now()
             ],
             [
@@ -78,16 +73,6 @@ class ImageSeeder extends Seeder
             ],
             [
                 "img" => "table.jfif",
-                "product_id" => 3,
-                "created_at" => now()
-            ],
-            [
-                "img" => "table.jfif",
-                "product_id" => 4,
-                "created_at" => now()
-            ],
-            [
-                "img" => "tapis.jfif",
                 "product_id" => 4,
                 "created_at" => now()
             ],
@@ -102,11 +87,6 @@ class ImageSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                "img" => "table.jfif",
-                "product_id" => 5,
-                "created_at" => now()
-            ],
-            [
                 "img" => "tapis.jfif",
                 "product_id" => 5,
                 "created_at" => now()
@@ -118,7 +98,7 @@ class ImageSeeder extends Seeder
             ],
             [
                 "img" => "salon-1.jfif",
-                "product_id" => 5,
+                "product_id" => 6,
                 "created_at" => now()
             ],
 
