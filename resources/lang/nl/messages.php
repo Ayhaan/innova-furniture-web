@@ -2,9 +2,7 @@
 <?php
 
 return [
-    'welcome' => "Actief op de meubelmarkt sinds november 2019 Innova Furniture, een meubel- en decoratiezaak van 1000m², gelegen in het hartje van Merchtem wil 'vernieuwend' zijn in deze sector waar het 'traditionele' altijd de winnaar is geweest.
-
-    Van barok tot industrieel, van instapmodel tot high-end, Innova Furniture is de meubel- en decoratiewinkel voor elke smaak.",
+    'welcome' => "Van barok tot industrieel, van instapmodel tot high-end, Innova Furniture is de meubel- en decoratiewinkel voor elke smaak.",
     'btn_welcome' => 'Ontdek meer',
     'home' => 'Home',
     'products' => 'Products',
@@ -16,17 +14,17 @@ return [
     'insta' => "Laat je inspireren door Instagram",
     'insta_into' => "NL Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
     'insta_btn' => "Volg Ons!",
-    "delivery" => "Snelle & gratis levering",
-    "delivery_into" => "Leverings & installatiemogelijkheden",
-    "payment" => "Beveiligde betaling",
-    "payment_into" => "Kredietmogelijkheden",
-    "guarantee" => "Garantie",
-    "guarantee_into" => "Wettelijke garantie op al onze producten",
+    "delivery" => "Leverings & installatiemogelijkheden",
+    "delivery_into" => "",
+    "payment" => "Kredietmogelijkheden",
+    "payment_into" => "",
+    "guarantee" => "Wettelijke garantie op al onze producten",
+    "guarantee_into" => "",
     "support" => "Online ondersteuning",
     "support_into" => "NL lorem lorem",
     //PRODUCT
-    'title_product' => "PRODUCTEN BINNEN",
-    'title_outdoor' => "PRODUCTEN BUITEN",
+    'title_product' => "PRODUCTEN",
+    'title_outdoor' => "PRODUCTEN",
 
     'found' => "producten gevonden",
     'other' => "andere",
@@ -50,12 +48,12 @@ return [
     //MOVING
     "title_moving" => "NATIONALE VERHUIZING",
     "pack" => [
-        "lift" => "Lift",
-        "montage" => "Montage & Demontage",
-        "packaging" => "Verpakking",
-        "cleaning" => "Cleaning",
+        "lift" => "- Lift",
+        "montage" => "- Montage & Demontage",
+        "packaging" => "- Verpakking",
+        "cleaning" => "- Cleaning",
     ],
-    "contact_name" => "Een offerte ?",
+    "contact_name" => "Un devis ?",
     //CONTACT-FORM
     "form" => [
         'name' => "Vul uw naam",
@@ -70,9 +68,9 @@ return [
     "num_contact" => "Maandag tot vrijdag van 9u tot 18u",
     "mail_contact" => "Stuur ons uw vraag wanneer u maar wilt!",
     "opening" => [
-        "monday" => "Maandag gesloten",
+        "monday" => "Openingsuren",
         "tuesday" => "Dinsdag van 10.00 tot 19.00",
-        "wednesday" => "Woensdag van 08.00 tot 17.00",
+        "wednesday" => "Woensdag van 10.00 tot 19.00",
         "thursday" => "Donderdag van 10.00 tot 19.00",
         "friday" => "Vrijdag van 10.00 tot 19.00",
         "saturday" => "Zaterdag van 10.00 tot 19.00",

@@ -134,7 +134,7 @@
             <div class="modal-body ">
                 <form class="d-flex align-items-center justify-content-center cbx-ciblig" action="{{ route('image.update', $product->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <input class="form-control w-50 mx-4 my-3 image-add-store " type="file" name="image">
+                    <input required class="form-control w-50 mx-4 my-3 image-add-store " type="file" name="image">
                     <button class="btn btn-primary">Add</button>
                 </form>
                 <div class="modal-body d-flex flex-wrap modal-img-edit h-100 justify-content-around">

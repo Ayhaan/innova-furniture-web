@@ -97,6 +97,10 @@
 .lSSlideWrapper #vertical {
     height: 270px !important;
 }
+.lSSlideWrapper #vertical img {
+    height: 270px;
+    object-fit: contain;
+}
 /* petites images sur le produit  */
 /* .lSSlideWrapper #vertical .lslide  {
     height: 280px;
@@ -225,6 +229,7 @@
 
 .price-previous{
     position: relative;
+    color: rgb(170, 0, 0);
 }
 .price-previous::before{
     content: "";
@@ -233,12 +238,12 @@
     width: 109%;
     height: 3px;
     left: -7px;
-    background-color: #048b9a;
+    background-color: #096a09;
     transform: rotate(159deg);
 
 }
 .new-price{
-    color: #048b9a;
+    color: #096a09;
     margin: 0 5px;
 }
 

@@ -8,7 +8,7 @@
                     </div>
                     <div class="cat-cap">
                         <h5>{{ __('messages.delivery') }}</h5>
-                        <p>{{ __('messages.delivery_into') }}</p>
+                        {{-- <p>{{ __('messages.delivery_into') }}</p> --}}
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="cat-cap">
                         <h5>{{ __('messages.payment') }}</h5>
-                        <p>{{ __('messages.payment_into') }}</p>
+                        {{-- <p>{{ __('messages.payment_into') }}</p> --}}
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="cat-cap">
                         <h5>{{ __('messages.guarantee') }}e</h5>
-                        <p>{{ __('messages.guarantee_into') }}</p>
+                        {{-- <p>{{ __('messages.guarantee_into') }}</p> --}}
                     </div>
                 </div>
             </div>

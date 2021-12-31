@@ -44,21 +44,21 @@
         <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-home"></i></span>
             <div class="media-body">
-                <h3>Merchtem, Belgique.</h3>
-                <p> Krekelendries 11, 1785</p>
+                <h3> Krekelendries 11, 1785</h3>
+                <p>Merchtem, Belgique.</p>
             </div>
         </div>
         <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
             <div class="media-body">
-                <h3>052 51 87 12</h3>
-                <p>{{ __('messages.num_contact') }}</p>
+                <h3><a href="tel:+3252518712">+32 (0) 52 51 87 12</a></h3>
+                <p><a style="color: #8a8a8a !important" href="tel:+32468040237">+32 (0) 468 04 02 37</a></p>
             </div>
         </div>
         <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
-                <h3>info@innovafurniture.be</h3>
+                <h3><a href="mailto:info@innovafurniture.be">info@innovafurniture.be</a></h3>
                 <p>{{ __('messages.mail_contact') }}</p>
             </div>
         </div>
@@ -66,7 +66,7 @@
             <span class="contact-info__icon"><i class="ti-timer"></i></span>
             <div class="media-body">
                 {{-- <h3>innova@info.be</h3> --}}
-                <p>{{ __('messages.opening.monday') }}</p>
+                <h3>{{ __('messages.opening.monday') }}</h3>
                 <p>{{ __('messages.opening.tuesday') }}</p>
                 <p>{{ __('messages.opening.wednesday') }}</p>
                 <p>{{ __('messages.opening.thursday') }}</p>
