@@ -21,7 +21,14 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <p>
+                @if (App::getLocale() === "fr")
+                    {{ $product->description_fr }}
+                @elseif (App::getLocale() === "en")
+                    {{ $product->description_en }}
+                @else
                     {{ $product->description }}
+                @endif
+
                 </p>
             </div>
             <div class="tab-pane fade  " id="profile" role="tabpanel" aria-labelledby="profile-tab">

@@ -88,6 +88,8 @@ class ProductController extends Controller
                 $provisoire->popular = $request->popular;
                 $provisoire->price = $request->price;
                 $provisoire->description = $request->description;
+                $provisoire->description_fr = $request->description_fr;
+                $provisoire->description_en = $request->description_en;
                 // $cat = json_encode($request->cat);
                 $provisoire->cat = json_encode($request->cat);
                 $provisoire->save();
@@ -135,6 +137,8 @@ class ProductController extends Controller
             $product->popular = $provisoire->popular;
             $product->price = $provisoire->price;
             $product->description = $provisoire->description;
+            $product->description_fr = $provisoire->description_fr;
+            $product->description_en = $provisoire->description_en;
             // dd(json_decode($provisoire->cat));
             $product->save();
             $product->categories()->attach(json_decode($provisoire->cat));
@@ -343,6 +347,8 @@ class ProductController extends Controller
             $product->popular = $request->popular;
             $product->price = $request->price;
             $product->description = $request->description;
+            $product->description_fr = $request->description_fr;
+            $product->description_en = $request->description_en;
             $product->categories()->sync($request->cat);
             // dd($request->reduce);
             if ($product->reduce == "null") {

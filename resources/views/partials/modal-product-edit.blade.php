@@ -17,7 +17,7 @@
                         <div class="col-md-6 col-12">
                             <div class="form-group">
                                 <label for="first-name-column">Name Furniture</label>
-                                <input type="text" id="first-name-column" class="form-control"
+                                <input required type="text" id="first-name-column" class="form-control"
                                     placeholder="Furniture" name="name"
                                     value="{{ $product->name }}">
 
@@ -26,7 +26,7 @@
                         <div class="col-md-6 col-12">
                             <label for="first-name-column">Type</label>
                             <fieldset class="form-group">
-                                <select class="form-select" id="basicSelect" name="type">
+                                <select required class="form-select" id="basicSelect" name="type">
                                     <option value="indoor" {{ $product->type == 'indoor' ? "selected" : "" }}>
                                         indoor</option>
                                     <option  value="outdoor" {{ $product->type == 'outdoor' ? "selected" : "" }}>
@@ -37,7 +37,7 @@
                         <div class="col-md-6 col-12">
                             <div class="form-group">
                                 <label for="city-column">Pric€</label>
-                                <input type="number" id="city-column" class="form-control"
+                                <input required type="number" id="city-column" class="form-control"
                                     placeholder="10k ?" name="price"
                                     value="{{ $product->price }}">
                             </div>
@@ -45,7 +45,7 @@
                         <div class="col-md-6 col-12">
                             <label for="first-name-column">Popular</label>
                             <fieldset class="form-group">
-                                <select class="form-select" id="basicSelect" name="popular">
+                                <select required class="form-select" id="basicSelect" name="popular">
                                     <option {{ $product->popular == true ? "selected" : "" }}
                                         
                                         value="1">true</option>
@@ -56,7 +56,7 @@
                             </fieldset>
                         </div>
                         <div class="col-12">
-                            <select class="form-select" multiple aria-label="multiple select example" name="cat[]" required>
+                            <select required class="form-select" multiple aria-label="multiple select example" name="cat[]" required>
                                 @php
                                     //LOGIQUE pour récuperer les cat selectionné dans un tab
                                     $selected = [];
@@ -82,13 +82,75 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-12 mt-2">
+                        {{-- <div class="col-12 mt-2">
                             <div class="form-group mb-3">
                                 <label for="arearoduct"
                                     class="form-label">Description</label>
                                 <textarea name="description" class="form-control"
                                     id="arearoduct"
                                     rows="8">{{$product->description }}</textarea>
+                            </div>
+                        </div> --}}
+                        <div class="col-12 mt-4">
+                            <div class="accordion" id="accordionExample">
+                                <div class="d-flex justify-content center">
+                                    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Description NL
+                                      </button>
+                                      <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                         Description FR
+    
+                                      </button>
+                                      <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                         Description EN
+                                      </button>
+
+                                </div>
+                                {{-- DESCRIPTION NL --}}
+                                <div class="accordion-item">
+                
+                                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="form-group mb-3">
+                                            <label for="arearoduct"
+                                                class="form-label">Description</label>
+                                            <textarea required name="description" class="form-control"
+                                                id="arearoduct"
+                                                rows="8">{{$product->description }}</textarea>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {{-- DESCRIPTION FR --}}
+                                <div class="accordion-item">
+                                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="form-group mb-3">
+                                            <label for="arearoduct"
+                                                class="form-label">Description</label>
+                                            <textarea required name="description_fr" class="form-control"
+                                                id="arearoduct"
+                                                rows="8">{{$product->description_fr }}</textarea>
+                                        </div>                                    
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {{-- DESCRIPTION EN --}}
+                                <div class="accordion-item">
+                                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="form-group mb-3">
+                                            <label for="arearoduct"
+                                                class="form-label">Description</label>
+                                            <textarea required name="description_en" class="form-control"
+                                                id="arearoduct"
+                                                rows="8">{{$product->description_en }}</textarea>
+                                        </div>                                     
+                                    </div>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">

@@ -35,9 +35,9 @@
 
                                     <!-- social -->
                                     <div class="footer-social mx-35">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="ti-linkedin"></i></a>
+                                        <a target="_blank" href="https://www.instagram.com/innovafurnituremerchtem"><i class="ti-instagram"></i></a>
+                                        <a target="_blank" href="https://www.facebook.com/innovafurnituremerchtem"><i class="fab fa-facebook-f"></i></a>
+                                        <a target="_blank" href="https://www.linkedin.com/company/innovafurnituremerchtem"><i class="ti-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>

@@ -21,6 +21,8 @@ class CreateProvisoiresTable extends Migration
             $table->boolean('popular')->nullable();
             $table->integer('price')->nullable();
             $table->text('description')->nullable();
+            $table->text('description_fr')->nullable();
+            $table->text('description_en')->nullable();
             $table->json('cat')->nullable();
             $table->string('img1')->nullable();
             $table->string('img2')->nullable();

@@ -25,6 +25,14 @@ class CategoriesSeeder extends Seeder
                 "created_at" => now()
             ],
             [
+                "name" => "Slaapkamer",
+                "created_at" => now()
+            ],
+            [
+                "name" => "Baby-kinderkamers",
+                "created_at" => now()
+            ],
+            [
                 "name" => "Keuken",
                 "created_at" => now()
             ],
@@ -34,14 +42,6 @@ class CategoriesSeeder extends Seeder
             ],
             [
                 "name" => "Kantoor",
-                "created_at" => now()
-            ],
-            [
-                "name" => "Slaapkamer",
-                "created_at" => now()
-            ],
-            [
-                "name" => "Baby-kinderkamers",
                 "created_at" => now()
             ],
             [
@@ -82,7 +82,7 @@ class CategoriesSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                "name" => "Tapijt",
+                "name" => "Tapijt-out",
                 "created_at" => now()
             ],
             [

@@ -65,9 +65,17 @@
                     </ul>
                     <p>
                         @php
+                        if (App::getLocale() === "fr") {
+                            $descri = $product->description_fr;
+                        } else if (App::getLocale() === "en") {
+                            $descri = $product->description_en;
+                        } else {
                             $descri = $product->description;
+
+                        }
+                        
                             if (strlen($descri) > 250) {
-                                $coup = substr($descri, 0, 250 );
+                                $coup = substr($descri, 0, 750 );
                                 $coup = $coup . ' ...';
                             }else{
                                 $coup = $descri;

@@ -16,7 +16,11 @@ class CreateFaqsTable extends Migration
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
             $table->string('ask');
+            $table->string('ask_fr');
+            $table->string('ask_en');
             $table->longText('reponse');
+            $table->longText('reponse_fr');
+            $table->longText('reponse_en');
             $table->timestamps();
         });
     }

@@ -22,6 +22,8 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('price_reduce')->nullable();
             $table->longText('description');
+            $table->longText('description_fr');
+            $table->longText('description_en');
             $table->timestamps();
         });
     }

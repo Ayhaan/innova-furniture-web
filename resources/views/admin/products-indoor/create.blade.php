@@ -120,12 +120,72 @@
                                   </select>
                             </div>
                             <div class="col-12">
-                                <div class="form-group mb-3">
+                                {{-- <div class="form-group mb-3">
                                     <label for="exampleFormControlTextarea1"
                                         class="form-label">Description</label>
                                     <textarea name="description" class="form-control"
                                         id="exampleFormControlTextarea1"
                                         rows="3" placeholder="Description" required>{{ $provisoire ? $provisoire->description : '' }}</textarea>
+                                </div> --}}
+                                <div class="accordion" id="accordionExample">
+                                    <div class="d-flex justify-content center">
+                                        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Description NL
+                                          </button>
+                                          <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                             Description FR
+        
+                                          </button>
+                                          <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                             Description EN
+                                          </button>
+    
+                                    </div>
+                                    {{-- DESCRIPTION NL --}}
+                                    <div class="accordion-item">
+                    
+                                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-group mb-3">
+                                                <label for="arearoduct"
+                                                    class="form-label">Description</label>
+                                                <textarea required name="description" class="form-control"
+                                                    id="arearoduct" placeholder="Description NL ?"
+                                                    rows="8">{{ $provisoire ? $provisoire->description : '' }}</textarea>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+    
+                                    {{-- DESCRIPTION FR --}}
+                                    <div class="accordion-item">
+                                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-group mb-3">
+                                                <label for="arearoduct"
+                                                    class="form-label">Description</label>
+                                                <textarea required name="description_fr" class="form-control"
+                                                    id="arearoduct" placeholder="Description FR ?"
+                                                    rows="8">{{ $provisoire ? $provisoire->description_fr : '' }}</textarea>
+                                            </div>                                    
+                                        </div>
+                                      </div>
+                                    </div>
+    
+                                    {{-- DESCRIPTION EN --}}
+                                    <div class="accordion-item">
+                                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-group mb-3">
+                                                <label for="arearoduct"
+                                                    class="form-label">Description</label>
+                                                <textarea required name="description_en" class="form-control"
+                                                    id="arearoduct" placeholder="Description EN ?"
+                                                    rows="8">{{ $provisoire ? $provisoire->description_en : '' }}</textarea>
+                                            </div>                                     
+                                        </div>
+                                      </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-12 d-flex justify-content-end">
