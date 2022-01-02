@@ -4,7 +4,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6">
                 <div class="instra-tittle mb-40">
                     <div class="section-tittle">
-                        <img src={{ asset("img/gallery/insta.png") }} alt="">
+                        <img src={{ asset("img/gallery/insta.png") }} alt="instagram-icon">
                         <h2>{{ __('messages.insta') }}</h2>
                         {{-- <P class="mb-35">{{__('messages.insta_into')}}.</P> --}}
                         <a target="_blank" href="https://www.instagram.com/innovafurnituremerchtem" class="border-btn">{{ __('messages.insta_btn') }}</a>

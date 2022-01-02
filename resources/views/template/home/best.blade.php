@@ -12,9 +12,9 @@
                             <div class="row">
                                 <div class="col-6 d-flex align-items-center card-testi-img ">
                                     @if (File::exists(public_path('img/testi-img/' . $item->img)))
-                                        <img src="{{ asset('img/testi-img/' . $item->img) }}" alt="testi-img">
+                                        <img src="{{ asset('img/testi-img/' . $item->img) }}" alt="avis-img">
                                     @else
-                                        <img src="{{ asset('img/innovaImg/' . $item->img) }}" alt="testi-img">
+                                        <img src="{{ asset('img/innovaImg/' . $item->img) }}" alt="avis-img">
                                     @endif
                                 </div>
                                 <div class="col-6">

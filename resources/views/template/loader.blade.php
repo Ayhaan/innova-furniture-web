@@ -3,7 +3,7 @@
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="{{ asset("img/innova/innovalogo.jpg") }}" alt="">
+                <img src="{{ asset("img/innovaImg/logo-hd.png") }}" alt="logo-innova">
             </div>
         </div>
     </div>

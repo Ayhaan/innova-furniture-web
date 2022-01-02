@@ -19,23 +19,23 @@ class UserSeeder extends Seeder
             [
                 'name' => "Uslu",
                 'firstname' => "Emilie Ecem",
-                'age' => 23,
+                'age' => 24,
                 'postalcode' => 1785,
                 'role_id' => 1,
                 'city' => "merchtem",
-                'email' => "innova@gmail.com",
-                'password' => Hash::make('testtest'),
+                'email' => "info@innovafurniture.be",
+                'password' => Hash::make('F-urniture19'),
                 "created_at" => now()
             ],
             [
                 'name' => "Caliskan",
                 'firstname' => "Ayhan",
-                'age' => 24,
+                'age' => 25,
                 'postalcode' => 1070,
-                'role_id' => 2,
+                'role_id' => 1,
                 'city' => "anderlecht",
-                'email' => "test@gmail.com",
-                'password' => Hash::make('testtest'),
+                'email' => "ayhan.cln1997@gmail.com",
+                'password' => Hash::make('F-urniture19'),
                 "created_at" => now()
             ],
         ]);

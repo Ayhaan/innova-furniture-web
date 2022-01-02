@@ -20,10 +20,10 @@
                 <div class="col-lg-12">
                     <div class="about-img pb-bottom">
                         @if ($loop->iteration == 1)
-                            <img src={{ asset("img/gallery/about1.png") }} alt="" class="w-100">
+                            <img src={{ asset("img/gallery/about1.png") }} alt="Mission" class="w-100">
                     
                         @elseif ($loop->iteration == 2)
-                            <img src={{ asset("img/gallery/about2.png") }} alt="" class="w-100">
+                            <img src={{ asset("img/gallery/about2.png") }} alt="Vision" class="w-100">
                         @endif
                     </div>
                 </div>
