@@ -67,10 +67,10 @@
             <div class="media-body">
                 {{-- <h3>innova@info.be</h3> --}}
                 <h3>{{ __('messages.opening.monday') }}</h3>
-                <p class="m-1">{{ __('messages.opening.tuesday') }}</p>
-                <p>{{ __('messages.opening.sunday') }}</p> 
-           
-               
+                <p class="m-0">{{ __('messages.opening.tuesday') }}</p>
+                <p >{{ __('messages.opening.hour') }}</p>
+                <p class="mb-1">{{ __('messages.opening.sunday') }}</p> 
+                <p>{{ __('messages.opening.hour_sund') }}</p> 
             </div>
         </div>
     </div>

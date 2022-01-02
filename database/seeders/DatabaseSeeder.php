@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             PartenerSeeder::class,
             CategoFrSeeder::class,
             CategoEnSeeder::class,
+            InstaSeeder::class,
         ]);
     }
 }

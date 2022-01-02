@@ -7,6 +7,7 @@ use App\Models\CategoEn;
 use App\Models\CategoFr;
 use App\Models\Categories;
 use App\Models\Faq;
+use App\Models\Insta;
 use App\Models\Partener;
 use App\Models\Product;
 use App\Models\Specification;
@@ -28,7 +29,8 @@ class AllController extends Controller
         $cat = Categories::all();
         $cat_fr = CategoFr::all();
         $cat_en = CategoEn::all();
-        return view('home', compact('products', 'spec', "testi", "parteners", 'cat', 'cat_fr', "cat_en"));
+        $instas = Insta::all();
+        return view('home', compact('products', 'spec', "testi", "parteners", 'cat', 'cat_fr', "cat_en", "instas"));
     }
     //Product
     public function productIndoor()

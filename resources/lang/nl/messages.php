@@ -53,7 +53,7 @@ return [
         "packaging" => "- Verpakking",
         "cleaning" => "- Cleaning",
     ],
-    "contact_name" => "Un devis ?",
+    "contact_name" => "Een offer ?",
     //CONTACT-FORM
     "form" => [
         'name' => "Vul uw naam",
@@ -64,16 +64,14 @@ return [
         'btn' => "Verzenden",
     ],
     //CONTACT
-    'page_contact_name' => "Get in Touch",
+    'page_contact_name' => "Get in touch",
     "num_contact" => "Maandag tot vrijdag van 9u tot 18u",
     "mail_contact" => "Stuur ons uw verzoek op elk gewenst moment !",
     "opening" => [
         "monday" => "Openingsuren",
-        "tuesday" => "Dinsdag tot zaterdag : 10.00 t.e.m 19.00 uur",
-        "wednesday" => "Woensdag van 10.00 tot 19.00",
-        "thursday" => "Donderdag van 10.00 tot 19.00",
-        "friday" => "Vrijdag van 10.00 tot 19.00",
-        "saturday" => "Zaterdag van 10.00 tot 19.00",
-        "sunday" => "Zondag : 12.00 t.e.m 18.00",
+        "tuesday" => "Dinsdag tot zaterdag : ",
+        "hour" => "10.00 t.e.m 19.00 uur",
+        "sunday" => "Zondag : ",
+        "hour_sund" => "12.00 t.e.m 18.00",
     ],
 ];

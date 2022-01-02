@@ -12,8 +12,8 @@
             </ul>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 div-img">
-            <img  src="{{ asset('/img/moving/carton.jpg') }}" alt="ouvrier">
-            <img class="respo-img-none"  src="{{ asset('/img/moving/truck.jpg') }}" alt="truck">
+            <img  src="{{ asset('/img/moving/carton2.jpg') }}" alt="carton">
+            <img class="respo-img-none"  src="{{ asset('/img/moving/humain.jpg') }}" alt="humain">
         </div>
     </div>
     <hr class="my-5 py-5" id="movingContact">

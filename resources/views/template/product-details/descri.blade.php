@@ -1,4 +1,4 @@
-<section class="product_description_area" id="test">
+<section class="product_description_area" id="seed">
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">

@@ -71,17 +71,16 @@ return [
         'btn' => "Send",
     ],
     //CONTACT
-    'page_contact_name' => "Get in Touch",
+    'page_contact_name' => "Get in touch",
     "num_contact" => "Mon to Fri 9am to 6pm",
     "mail_contact" => "Send us your query anytime!",
     "mail_contact" => "Stuur ons uw vraag wanneer u maar wilt!",
     "opening" => [
         "monday" => "Schedule",
-        "tuesday" => "Thuesday - Saturday : 10.00 till 19.00",
-        "wednesday" => "Wednesday from 10.00 to 19.00",
-        "thursday" => "Thursday from 10.00 to 19.00",
-        "friday" => "Friday from 10.00 to 19.00",
-        "saturday" => "Saturday from 10.00 to 19.00",
-        "sunday" => "Sunday : 10.00 till 19.00",
+        "tuesday" => "Thuesday - Saturday : ",
+        "hour" => "10.00 till 19.00",
+        "sunday" => "Sunday : ",
+        "hour_sund" => "10.00 till 19.00",
+
     ],
 ];

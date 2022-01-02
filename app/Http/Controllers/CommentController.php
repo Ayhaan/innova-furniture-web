@@ -30,6 +30,6 @@ class CommentController extends Controller
         $comment->validate = false;
         $comment->date = now();
         $comment->save();
-        return redirect()->to(url()->previous(). '#test')->with('success', 'Commentaire posté !');
+        return redirect()->to(url()->previous(). '#seed')->with('success', 'Commentaire posté !');
     }
 }

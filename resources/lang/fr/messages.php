@@ -53,7 +53,7 @@ return [
         "packaging" => "- Emballage",
         "cleaning" => "- Nettoyage",
     ],
-    "contact_name" => "Une offre ?",
+    "contact_name" => "Un devis ?",
     //CONTACT-FORM
     "form" => [
         'name' => "Entrez votre nom",
@@ -69,12 +69,11 @@ return [
     "mail_contact" => "Envoyez-nous votre demande à tout moment !",
     "opening" => [
         "monday" => "Horaire",
-        "tuesday" => "Mardi à samedi : 10.00 à 19.00",
-        "wednesday" => "Mercredi de 10.00 à 19.00",
-        "thursday" => "Jeudi de 10.00 à 19.00",
-        "friday" => "Vendredi de 10.00 à 19.00",
-        "saturday" => "Samedi de 10.00 à 19.00",
-        "sunday" => "Dimanche : 12.00 à 18.000",
+        "tuesday" => "Mardi à samedi : ",
+        "hour" => "10.00 à 19.00",
+        "sunday" => "Dimanche : ",
+        "hour_sund" => "12.00 à 18.000",
+
     ],
 
 ];
