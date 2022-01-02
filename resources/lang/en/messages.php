@@ -19,7 +19,7 @@ return [
     "delivery_into" => "",
     "payment" => "Credit possibilities",
     "payment_into" => "",
-    "guarantee" => "legal guarantee on all our products",
+    "guarantee" => "Legal guarantee on all our products",
     "guarantee_into" => "",
     "support" => "Online Support",
     "support_into" => "EN lorem lorem",

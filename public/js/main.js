@@ -34,7 +34,7 @@
     $('.cat-scrool').on("click", function () {
       console.log('test');
       $('body,html').animate({
-        scrollTop: 450
+        scrollTop: 560
       }, 500);
       return false;
     });
