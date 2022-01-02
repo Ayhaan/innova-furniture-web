@@ -33,7 +33,7 @@ return [
     "descri" => "Description",
     "speci" => "Spécifications",
     "comments" => "Commentaires",
-    "post" => "Poster un commentaire",
+    "post" => "Postez un commentaire",
 
     //ABOUT
     'mission' => "MISSION",
@@ -69,12 +69,12 @@ return [
     "mail_contact" => "Envoyez-nous votre demande à tout moment !",
     "opening" => [
         "monday" => "Horaire",
-        "tuesday" => "Mardi de 10h00 à 19h00",
+        "tuesday" => "Mardi à samedi : 10.00 à 19.00",
         "wednesday" => "Mercredi de 10.00 à 19.00",
         "thursday" => "Jeudi de 10.00 à 19.00",
         "friday" => "Vendredi de 10.00 à 19.00",
         "saturday" => "Samedi de 10.00 à 19.00",
-        "sunday" => "Dimanche de 12h00 à 18h00",
+        "sunday" => "Dimanche : 12.00 à 18.000",
     ],
 
 ];

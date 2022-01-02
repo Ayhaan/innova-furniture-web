@@ -94,14 +94,14 @@
                         <div class="col-12 mt-4">
                             <div class="accordion" id="accordionExample">
                                 <div class="d-flex justify-content center">
-                                    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-primary mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                             Description NL
                                       </button>
-                                      <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                      <button class="btn btn-primary mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                          Description FR
     
                                       </button>
-                                      <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                      <button class="btn btn-primary mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                          Description EN
                                       </button>
 
@@ -160,6 +160,7 @@
                                     <button class="collapsed btn btn-primary fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                       Price reduce ?
                                     </button>
+                                    <span class="fs-6 fw-light fst-italic">Si tu ne souhaites pas de réduction, laisse le champ vide</span>
                                   </h2>
                                   <div id="flush-collapseOne" class="accordion-collapse collapse {{ $product->price_reduce == null? "" : "show" }}" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <input type="number" id="city-column" class="form-control"
@@ -170,7 +171,7 @@
                             </div>
                         </div>
               
-                        <div class="col-12 d-flex justify-content-end">
+                        <div class="col-12 d-flex justify-content-end my-3">
                             <button type="submit" class="btn btn-primary ml-1">
                                 Update
                             </button>

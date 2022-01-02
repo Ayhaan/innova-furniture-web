@@ -39,6 +39,10 @@ class FaqController extends Controller
         $faq = new Faq();
         $faq->ask = $request->ask;
         $faq->reponse = $request->reponse;
+        $faq->ask_fr = $request->ask_fr;
+        $faq->reponse_fr = $request->reponse_fr;
+        $faq->ask_en = $request->ask_en;
+        $faq->reponse_en = $request->reponse_en;
         $faq->save();
         return redirect()->back()->with('success', 'Ask create ! ');
     }
@@ -76,6 +80,10 @@ class FaqController extends Controller
     {
         $faq->ask = $request->ask;
         $faq->reponse = $request->reponse;
+        $faq->ask_fr = $request->ask_fr;
+        $faq->reponse_fr = $request->reponse_fr;
+        $faq->ask_en = $request->ask_en;
+        $faq->reponse_en = $request->reponse_en;
         $faq->save();
         return redirect()->back()->with('success', 'Ask update ! ');
 

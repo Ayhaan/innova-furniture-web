@@ -43,8 +43,8 @@
                         </div>
                     </div>
                     <hr class="my-3">
+                    @foreach ($testi as $item)
                     <div class="row mb-5 ">
-                        @foreach ($testi as $item)
                         @include('partials.modal-testi')
 
                             @php
@@ -52,7 +52,7 @@
                                 $result = substr($test, 0, 65);
                                 $result2 = $result . " ...";
                             @endphp
-                            <div class="col-sm-12 col-md-1 ">
+                            <div class="col-sm-12 col-md-1 respo-none">
                                 <span>{{ $item->id }}.</span>
                             </div>
                             <div class="col-sm-12 col-md-5">
@@ -63,7 +63,7 @@
                                 <span>{{ $item->user }}</span>
 
                             </div>
-                            <div class="col-sm-12 col-md-2">
+                            <div class="col-sm-12 col-md-2 respo-none">
                                 <span>{{ $item->etoile }}</span>
 
                             </div>
@@ -81,8 +81,8 @@
 
 
                             </div>
+                        </div>
                         @endforeach
-                    </div>
                 </div>
             </div>
             @if (!isset($value))

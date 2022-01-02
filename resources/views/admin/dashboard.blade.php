@@ -5,5 +5,6 @@
 @endsection
 @section('content')
     @include('partials.mini-stats')
+    <p>Coming soon</p>
 
 @endsection

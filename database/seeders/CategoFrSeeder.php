@@ -45,7 +45,7 @@ class CategoFrSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                "name" => "Hall-entrée",
+                "name" => "Entrée",
                 "created_at" => now()
             ],
             [

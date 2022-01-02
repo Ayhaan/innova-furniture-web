@@ -10,7 +10,7 @@
                             <p data-animation="fadeInUp" data-delay=".6s">{{__('messages.welcome')}}</p>
                             <!-- Hero-btn -->
                             <div class="hero__btn" data-animation="fadeInUp" data-delay=".7s">
-                                <a href="{{ route('indoor') }}" class="btn hero-btn text-white">{{ __('messages.btn_welcome') }}</a>
+                                <a href="{{ route('indoor') }}" class="btn hero-btn text-white btn-home-color">{{ __('messages.btn_welcome') }}</a>
                             </div>
                         </div>
                     </div>

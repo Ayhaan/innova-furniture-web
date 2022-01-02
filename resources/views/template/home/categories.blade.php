@@ -29,7 +29,7 @@
                         <img class="respo-mini-service-icon" src={{ asset("img/icon/services3.svg") }} alt="">
                     </div>
                     <div class="cat-cap">
-                        <h5>{{ __('messages.guarantee') }}e</h5>
+                        <h5>{{ __('messages.guarantee') }}</h5>
                         {{-- <p>{{ __('messages.guarantee_into') }}</p> --}}
                     </div>
                 </div>

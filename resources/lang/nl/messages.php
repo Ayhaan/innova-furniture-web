@@ -14,7 +14,7 @@ return [
     'insta' => "Laat je inspireren door Instagram",
     'insta_into' => "NL Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
     'insta_btn' => "Volg Ons!",
-    "delivery" => "Leverings & installatiemogelijkheden",
+    "delivery" => "Leverings- en Installatiemogelijkheden",
     "delivery_into" => "",
     "payment" => "Kredietmogelijkheden",
     "payment_into" => "",
@@ -29,10 +29,10 @@ return [
     'found' => "producten gevonden",
     'other' => "andere",
     //PRODUCT-SHOW
-    'cat' => "categorieënd",
+    'cat' => "categorieën",
     //PRODUCT-DETAIL
     "descri" => "Beschrijving",
-    "speci" => "Specificatie",
+    "speci" => "specificaties",
     "comments" => "Opmerkingen",
     "post" => "Plaats een reactie",
     // ABOUT
@@ -49,7 +49,7 @@ return [
     "title_moving" => "NATIONALE VERHUIZING",
     "pack" => [
         "lift" => "- Lift",
-        "montage" => "- Montage & Demontage",
+        "montage" => "- Montage en demontage",
         "packaging" => "- Verpakking",
         "cleaning" => "- Cleaning",
     ],
@@ -66,14 +66,14 @@ return [
     //CONTACT
     'page_contact_name' => "Get in Touch",
     "num_contact" => "Maandag tot vrijdag van 9u tot 18u",
-    "mail_contact" => "Stuur ons uw vraag wanneer u maar wilt!",
+    "mail_contact" => "Stuur ons uw verzoek op elk gewenst moment !",
     "opening" => [
         "monday" => "Openingsuren",
-        "tuesday" => "Dinsdag van 10.00 tot 19.00",
+        "tuesday" => "Dinsdag tot zaterdag : 10.00 t.e.m 19.00 uur",
         "wednesday" => "Woensdag van 10.00 tot 19.00",
         "thursday" => "Donderdag van 10.00 tot 19.00",
         "friday" => "Vrijdag van 10.00 tot 19.00",
         "saturday" => "Zaterdag van 10.00 tot 19.00",
-        "sunday" => "Zondag van 12.00 tot 18.00",
+        "sunday" => "Zondag : 12.00 t.e.m 18.00",
     ],
 ];

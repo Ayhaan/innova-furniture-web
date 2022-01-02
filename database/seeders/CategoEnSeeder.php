@@ -17,7 +17,7 @@ class CategoEnSeeder extends Seeder
         DB::table('catego_ens')->insert([
 
             [
-                "name" => "Salon",
+                "name" => "Livingroom",
                 "created_at" => now()
             ],
             [
@@ -45,7 +45,7 @@ class CategoEnSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                "name" => "Entrance-Hall",
+                "name" => "Entrance",
                 "created_at" => now()
             ],
             [
@@ -57,11 +57,11 @@ class CategoEnSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                "name" => "Fixture",
+                "name" => "Lighting",
                 "created_at" => now()
             ],
             [
-                "name" => "Textiel",
+                "name" => "Textile ",
                 "created_at" => now()
             ],
             [
@@ -78,11 +78,11 @@ class CategoEnSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                "name" => "Decoratie-out",
+                "name" => "Decoration-out",
                 "created_at" => now()
             ],
             [
-                "name" => "carpet-out",
+                "name" => "Carpet-out",
                 "created_at" => now()
             ],
             [

@@ -87,7 +87,7 @@
 
         </div>
         <div class="text-center">
-            <p class="h1 py-5 my-5">
+            <p class="h1 py-5 my-5 blue-central">
                 {{ __('messages.faq.ask') }}
                 <br>
                 {{ __('messages.faq.call') }}

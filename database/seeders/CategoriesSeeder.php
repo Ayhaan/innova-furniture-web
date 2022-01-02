@@ -57,7 +57,7 @@ class CategoriesSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                "name" => "Armatuur",
+                "name" => "Verlichting",
                 "created_at" => now()
             ],
             [

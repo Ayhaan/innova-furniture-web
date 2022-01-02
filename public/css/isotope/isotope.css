@@ -34,11 +34,9 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
-    text-transform: uppercase;
-    color: #272829;
+    color: #1D2547;
     margin-bottom: 5px;
     transition: all 0.3s ease-in-out;
-    text-transform: capitalize;
 }
 
 .portfolio #portfolio-flters li:hover,

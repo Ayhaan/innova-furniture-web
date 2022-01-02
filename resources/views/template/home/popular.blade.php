@@ -38,7 +38,7 @@
                             </div>
                             <div class="popular-caption">
                                 <h3>
-                                    <a class="mb-0" href="{{ route('product', $item->name) }}">{{ $item->name }} </a>
+                                    <a class="mb-0 blue-central" href="{{ route('product', $item->name) }}">{{ $item->name }} </a>
                                     <p class="font-italic">
                                         {{-- @if (count($item->categories) == 1)
                                             @foreach ($item->categories as $cat)

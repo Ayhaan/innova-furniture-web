@@ -1,3 +1,9 @@
+.btn-home-color{
+    background-color: #1D2547;
+}
+.blue-central {
+    color: #1D2547;
+}
 /* --------------------------- REGISTER --------------------------- */
 .condition-btn{
     border: 0;
@@ -446,7 +452,7 @@
     padding-bottom: 75px;
 }
 .moving h1 {
-    color: #54595f;
+    color: #1D2547;
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -466,15 +472,15 @@
     letter-spacing: 2px;
 }
 .moving p {
-    color: #4d4051;
+    color: #1D2547;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 10px;
     margin: 50px 0;
 }
 .moving ul li {
-    text-transform: capitalize;
     font-size: 2rem;
+    color: #1D2547;
 }
 .div-img {
     position: relative;

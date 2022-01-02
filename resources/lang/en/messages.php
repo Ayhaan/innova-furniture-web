@@ -10,7 +10,7 @@ return [
     'about' => 'About',
     'popular' => 'Popular products',
     'popular_into' => 'EN Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
-    'arrival' => 'NEW',
+    'arrival' => 'NEW IN',
     'arrival_into' => 'EN Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
     'insta' => "Get Inspired with Instagram",
     'insta_into' => "EN Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.",
@@ -56,7 +56,7 @@ return [
     "title_moving" => "NATIONAL RELOCATION",
     "pack" => [
         "lift" => "- Lift",
-        "montage" => "- Assembly & Disassembly",
+        "montage" => "- Assembly and disassembly",
         "packaging" => "- Packaging",
         "cleaning" => "- Cleaning",
     ],
@@ -77,11 +77,11 @@ return [
     "mail_contact" => "Stuur ons uw vraag wanneer u maar wilt!",
     "opening" => [
         "monday" => "Schedule",
-        "tuesday" => "Tuesday from 10.00 to 19.00",
+        "tuesday" => "Thuesday - Saturday : 10.00 till 19.00",
         "wednesday" => "Wednesday from 10.00 to 19.00",
         "thursday" => "Thursday from 10.00 to 19.00",
         "friday" => "Friday from 10.00 to 19.00",
         "saturday" => "Saturday from 10.00 to 19.00",
-        "sunday" => "Sunday from 12.00 to 18.00",
+        "sunday" => "Sunday : 10.00 till 19.00",
     ],
 ];

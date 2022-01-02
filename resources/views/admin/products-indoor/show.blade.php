@@ -70,6 +70,7 @@
             <div class="w-75 mx-auto">
                 <p><b>Name</b> : {{ $product->name }}</p>
                 <p><b>Price</b> : {{ $product->price }} €</p>
+                <p><b>Price reduce</b> : {{ $product->price_reduce != null ? $product->price_reduce . " €" : "not activated" }}</p>
                 <p><b>Type</b> : {{ $product->type }}</p>
                 <p><b>Popular</b> : {{ $product->popular == 0 ? "False" : "True" }}</p>
                 <p><b>Description</b> : {!! $product->description !!}</p>
@@ -79,10 +80,10 @@
                     @endforeach
                 </p>
                 <p><b>Date add</b> : {{ $product->created_at->format("d M Y") }}</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#image">
-                    Edit image
+                <button type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#image">
+                    Edit images
                 </button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#informations">
+                <button type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#informations">
                     Edit informations
                 </button>
             </div>
@@ -93,7 +94,7 @@
             <h5 class="text-center">Spécifications product</h5>
             <div class="d-flex justify-content-center mb-4">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#speci">
-                    Edit specification
+                    Edit specifications
                 </button>
             </div>
             <div class="table-responsive">
@@ -122,7 +123,7 @@
                     Comment no check 
                 </button>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentall">
-                    All comment
+                    Comments validate
                 </button>
             </div>
         </div>
