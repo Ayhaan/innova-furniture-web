@@ -30,7 +30,7 @@ return [
     'found' => "product found",
     'other' => "other",
     //PRODUCT-SHOW
-    'cat' => "category",
+    'cat' => "categories",
     //PRODUCT-DETAIL
     "descri" => "Description",
     "speci" => "Specifications",

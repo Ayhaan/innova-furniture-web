@@ -29,7 +29,7 @@ return [
     'found' => "producten gevonden",
     'other' => "andere",
     //PRODUCT-SHOW
-    'cat' => "categorie",
+    'cat' => "categorieënd",
     //PRODUCT-DETAIL
     "descri" => "Beschrijving",
     "speci" => "Specificatie",

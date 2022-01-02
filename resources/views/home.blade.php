@@ -7,7 +7,7 @@
 
 @section('content')
     <header>
-        {{-- @include('template.loader') --}}
+        @include('template.loader')
         @include('template.header')
     </header>
     <main>

@@ -21,7 +21,7 @@
             <div class="table-responsive">
 
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row respo-none">
                         <div class="col-1">
                             <span class="fw-bold">Nbr</span>
                         </div>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <hr class="my-3">
-                    <div class="row ">
+                    <div class="row mb-5 ">
                         @foreach ($testi as $item)
                         @include('partials.modal-testi')
 
@@ -52,18 +52,18 @@
                                 $result = substr($test, 0, 65);
                                 $result2 = $result . " ...";
                             @endphp
-                            <div class="col-1 mb-5 ">
+                            <div class="col-sm-12 col-md-1 ">
                                 <span>{{ $item->id }}.</span>
                             </div>
-                            <div class="col-5">
+                            <div class="col-sm-12 col-md-5">
                                 <span>{{ $result2 }}</span>
 
                             </div>
-                            <div class="col-2">
+                            <div class="col-sm-12 col-md-2">
                                 <span>{{ $item->user }}</span>
 
                             </div>
-                            <div class="col-2">
+                            <div class="col-sm-12 col-md-2">
                                 <span>{{ $item->etoile }}</span>
 
                             </div>

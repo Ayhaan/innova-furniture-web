@@ -104,6 +104,8 @@
                             <label for="formFile" class="form-label">Add an image ? (optional)</label>
                             <input class="form-control" name="img"  type="file" id="formFile" >
                         </div>
+                        <p class="text-center">Avant d'upload, compresse tes images sur <a target="_blank" class="d-inline" style="color: blue" href="https://tinypng.com/">tinypng.com</a></p>
+
                     </div>
                
                 </div>

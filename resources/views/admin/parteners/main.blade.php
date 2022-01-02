@@ -15,13 +15,14 @@
                 <input required class="form-control w-50 mx-4 my-3 image-add-store " type="file" name="image">
                 <button class="btn btn-primary">Add</button>
             </form>
+            <p class="text-center">Avant d'upload, compresse tes images sur <a target="_blank" class="d-inline" style="color: blue" href="https://tinypng.com/">tinypng.com</a></p>
 
         </div>
         <div class="card-content">
             <div class="card-body">
                <div class="row">
                    @foreach ($parteners as $item)
-                    <div class="col-3 block-image text-center">
+                    <div class="col-sm-12 col-md-3 block-image text-center">
                         <img width="150" src={{ asset('img/partners/' . $item->img) }}  alt="{{ $item->img }}"/>
                         <div class="block-overlay rounded">
                             <div class="block-btn-addcart">

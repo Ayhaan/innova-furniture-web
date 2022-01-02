@@ -8,7 +8,7 @@
     @include('layouts.flash')
     <div class="card">
         <div class="card-header">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between flex-wrap">
                 <a href="{{ route('product.create') }}"><button class="btn btn-primary">Add product</button></a>
                 <form action="{{ route('search.back') }}"  class="form-group d-flex">
                     <input name="filter[name]" class="form-control w-auto" type="text" placeholder="product ?">
@@ -24,7 +24,7 @@
         <div class="card-body">
             <table class="table table-striped" id="table1">
                 <thead>
-                    <tr>
+                    <tr class="respo-tel">
                         <th><i class="bi bi-image"></i></th>
                         <th>NAME</th>
                         <th>PRIC€</th>
@@ -37,7 +37,7 @@
                 <tbody>
                     @foreach ($products->reverse()  as $item)
                     @if ($item->type == 'indoor')
-                        <tr>
+                        <tr class="respo-body-tel">
                             @if (File::exists(public_path('img/productUpload/' . $item->images[0]->img)))
                                     <td ><img height="60px" src="{{ asset('img/productUpload/'.$item->images[0]->img ) }}" alt="a"></td>
                                 @else
@@ -74,5 +74,5 @@
             </div>    
         @endif
     </div>
-      
+
 @endsection

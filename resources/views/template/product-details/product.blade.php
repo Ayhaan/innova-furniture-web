@@ -50,7 +50,7 @@
                         </h2>
                         
                     @endif
-                    <ul class="list">
+                    <ul class="list" style="border-bottom: 1px dotted #d5d5d5;padding: 10px 0;margin: 10px 0 ">
                         <li>
                             <a class="active" href="#">
                                 <span style="width: max-content">{{ __('messages.cat') }} :</span> 
@@ -104,7 +104,7 @@
                             <a href="#"> <span>Availibility</span> : In Stock</a>
                         </li> --}}
                     </ul>
-                    <p>
+                    {{-- <p> --}}
                         @php
                             if (App::getLocale() === "fr") {
                                 $descri = $product->description_fr;
@@ -114,16 +114,15 @@
                                 $descri = $product->description;
 
                             }
-                        
-                            if (strlen($descri) > 250) {
+                            if (strlen($descri) > 750) {
                                 $coup = substr($descri, 0, 750 );
                                 $coup = $coup . ' ...';
                             }else{
                                 $coup = $descri;
                             }
                         @endphp
-                        {{$coup}}
-                    </p>
+                        {!! $coup !!}
+                    {{-- </p> --}}
                 {{-- @auth
                     
                 <div class="card_area">

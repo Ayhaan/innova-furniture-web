@@ -20,24 +20,24 @@
                 <div class="table-responsive">
 
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-1">
+                        <div class="row respo-none">
+                            <div class="col-sm-6 col-md-1">
                                 <span class="fw-bold">Nbr</span>
                             </div>
-                            <div class="col-4">
+                            <div class="col-sm-6 col-md-4">
                                 <span class="fw-bold">ASK</span>
 
                             </div>
-                            <div class="col-5">
+                            <div class="col-sm-6 col-md-5">
                                 <span class="fw-bold">RESPONSE</span>
                             </div>
-                            <div class="col-2">
+                            <div class="col-sm-6 col-md-2">
                                 <span class="fw-bold">ACTION</span>
                             </div>
                         </div>
                         <hr class="my-3">
                         @foreach ($faq as $item)
-                            <div class="row ">
+                            <div class="row mb-5">
                                 @include('partials.modal-faq')
 
                                 @php
@@ -45,19 +45,19 @@
                                     $result = substr($test, 0, 50);
                                     $result2 = $result . ' ...';
                                 @endphp
-                                <div class="col-1 mb-5 ">
+                                <div class="col-sm-12 col-md-1 ">
                                     <span>{{ $item->id }}.</span>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-sm-12 col-md-4">
                                     <span>{{ $item->ask }}</span>
 
                                 </div>
-                                <div class="col-5">
+                                <div class="col-sm-12 col-md-5">
                                     <span>{{ $result2 }}</span>
 
                                 </div>
 
-                                <div class="col-2 d-flex align-items-start">
+                                <div class="col-sm-12 col-md-2 d-flex align-items-start">
 
                                     <button type="button" class="btn btn-primary mx-1" data-bs-toggle="modal"
                                         data-bs-target="#large-{{ $item->id }}">

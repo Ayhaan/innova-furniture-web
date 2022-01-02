@@ -4,8 +4,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel17">Edit information</h4>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
+                <button type="button" class="close text-danger" data-bs-dismiss="modal" aria-label="Close">
+                    <i data-feather="x">X</i>
                 </button>
             </div>
             <div class="modal-body">
@@ -115,7 +115,7 @@
                                             <label for="arearoduct"
                                                 class="form-label">Description</label>
                                             <textarea required name="description" class="form-control"
-                                                id="arearoduct"
+                                                id="editor"
                                                 rows="8">{{$product->description }}</textarea>
                                         </div>
                                     </div>
@@ -130,7 +130,7 @@
                                             <label for="arearoduct"
                                                 class="form-label">Description</label>
                                             <textarea required name="description_fr" class="form-control"
-                                                id="arearoduct"
+                                                id="editor2"
                                                 rows="8">{{$product->description_fr }}</textarea>
                                         </div>                                    
                                     </div>
@@ -145,7 +145,7 @@
                                             <label for="arearoduct"
                                                 class="form-label">Description</label>
                                             <textarea required name="description_en" class="form-control"
-                                                id="arearoduct"
+                                                id="editor3"
                                                 rows="8">{{$product->description_en }}</textarea>
                                         </div>                                     
                                     </div>
@@ -182,6 +182,7 @@
         </div>
     </div>
 </div>
+           
 
 {{-- -------------- EDIT IMAGE --}}
 <div class="modal fade text-left" id="image" tabindex="-1" aria-labelledby="myModalLabel17" style="display: none;" aria-hidden="true">
@@ -189,8 +190,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel17">Edit image</h4>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
+                <button type="button" class="close text-danger" data-bs-dismiss="modal" aria-label="Close">
+                    <i data-feather="x">X</i>
                 </button>
             </div>
             <div class="modal-body ">
@@ -300,8 +301,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel17"> comments not yet validated</h4>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
+                <button type="button" class="close text-danger" data-bs-dismiss="modal" aria-label="Close">
+                    <i data-feather="x">X</i>
                 </button>
             </div>
             <div class="modal-body">
@@ -353,8 +354,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel17">comment validate</h4>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
+                <button type="button" class="close text-danger" data-bs-dismiss="modal" aria-label="Close">
+                    <i data-feather="x">X</i>
                 </button>
             </div>
             <div class="modal-body">
@@ -411,61 +412,62 @@
     </div>
 </div>
 
+
    {{-- Script details  --}}
    <script>
-    // let nbr = document.querySelectorAll('.group-speci')
-    let btn_add_speci = document.querySelector('.add-speci');
-    let form = document.querySelector('.form-speci')
-    let action = document.querySelector('#action-speci')
-    // console.log(btn_add_speci);
+        // let nbr = document.querySelectorAll('.group-speci')
+        let btn_add_speci = document.querySelector('.add-speci');
+        let form = document.querySelector('.form-speci')
+        let action = document.querySelector('#action-speci')
+        // console.log(btn_add_speci);
 
-    //Count qui va counter le nbr de input créer et mettre a jour le name de chaque input
-    let count = 3
-    btn_add_speci.addEventListener('click', () => {
-        //création minus
-        let minus = document.createElement('i')
-        minus.className = 'bi bi-dash-circle-fill minus-speci'
-        let hr = document.createElement('hr');
-        hr.classList.add('hr-speci')
+        //Count qui va counter le nbr de input créer et mettre a jour le name de chaque input
+        let count = 3
+        btn_add_speci.addEventListener('click', () => {
+            //création minus
+            let minus = document.createElement('i')
+            minus.className = 'bi bi-dash-circle-fill minus-speci'
+            let hr = document.createElement('hr');
+            hr.classList.add('hr-speci')
 
-        let divGroup = document.createElement('div')
+            let divGroup = document.createElement('div')
 
-        //Boucle pour les labets + input en auto
-        divGroup.classList.add('group-speci');
-        countGroup = document.querySelectorAll('.group-speci').length + 1
-        // console.log(countGroup);
-        for (let i = 3; i < 5; i++) {
-            let one_div_form = document.createElement('div');
-            one_div_form.classList.add('from-group')
-            let one_label = document.createElement('label')
-            //condition pour innerText inpur
-            i % 2 == 1 ? one_label.innerText = "Détails" : one_label.innerText = "Reponse" ;
+            //Boucle pour les labets + input en auto
+            divGroup.classList.add('group-speci');
+            countGroup = document.querySelectorAll('.group-speci').length + 1
+            // console.log(countGroup);
+            for (let i = 3; i < 5; i++) {
+                let one_div_form = document.createElement('div');
+                one_div_form.classList.add('from-group')
+                let one_label = document.createElement('label')
+                //condition pour innerText inpur
+                i % 2 == 1 ? one_label.innerText = "Détails" : one_label.innerText = "Reponse" ;
 
-            let one_input = document.createElement('input')
-            one_input.classList.add('form-control')
-            one_input.setAttribute('type', "text")
-            //condition pour fournir le name
-            i % 2 == 1 ? one_input.setAttribute('name', `speci${countGroup}`) : one_input.setAttribute('name', `rep${countGroup}`) ;
-            
+                let one_input = document.createElement('input')
+                one_input.classList.add('form-control')
+                one_input.setAttribute('type', "text")
+                //condition pour fournir le name
+                i % 2 == 1 ? one_input.setAttribute('name', `speci${countGroup}`) : one_input.setAttribute('name', `rep${countGroup}`) ;
+                
 
-            one_div_form.append(one_label, one_input)
-            divGroup.append(one_div_form)
-            
-        }
-        divGroup.append(minus)
-        form.insertBefore(divGroup,action )
-        form.insertBefore(hr,divGroup )
-        // console.log(form, action);
-        // select all minus + fonctionnalité remove
-        let minusAll = document.querySelectorAll('.minus-speci')
-        minusAll.forEach(el => {
-            el.addEventListener('click', (e) => {
-                e.target.parentNode.previousElementSibling.remove();
-                e.target.parentNode.remove();
-            })    
-        });
-        // console.log(minusAll);
-        count++
-    })
+                one_div_form.append(one_label, one_input)
+                divGroup.append(one_div_form)
+                
+            }
+            divGroup.append(minus)
+            form.insertBefore(divGroup,action )
+            form.insertBefore(hr,divGroup )
+            // console.log(form, action);
+            // select all minus + fonctionnalité remove
+            let minusAll = document.querySelectorAll('.minus-speci')
+            minusAll.forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.target.parentNode.previousElementSibling.remove();
+                    e.target.parentNode.remove();
+                })    
+            });
+            // console.log(minusAll);
+            count++
+        })
 
-</script>
+    </script>

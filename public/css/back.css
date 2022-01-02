@@ -325,3 +325,33 @@
 .activeContact{
     border-left: solid 2px #5a8dee ;
 }
+
+/* RESPONSIVE */
+@media only screen and (min-width: 0px) and (max-width: 700px) {
+    td {
+        display:inline-block;
+        padding:5px;
+        width:100%;
+    }
+    .respo-tel{
+        display: none;
+    }
+    .respo-body-tel{
+        text-align: center;
+    }
+    .respo-body-tel a{
+        display: block;
+    }
+    .content-area-wrapper{
+        flex-direction: column;
+    }
+    .sidebar-content{
+        height: auto !important;
+    }
+    .content-right{
+        width: 100% !important;
+    }
+    .respo-none{
+        display: none;
+    }
+}

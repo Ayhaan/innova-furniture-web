@@ -22,11 +22,11 @@
             <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <p>
                 @if (App::getLocale() === "fr")
-                    {{ $product->description_fr }}
+                    {!! $product->description_fr !!}
                 @elseif (App::getLocale() === "en")
-                    {{ $product->description_en }}
+                    {!! $product->description_en !!}
                 @else
-                    {{ $product->description }}
+                    {!! $product->description !!}
                 @endif
 
                 </p>
@@ -79,7 +79,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-lg-6" >
+                    <div class="col-lg-6 mt-5" >
                         <div class="review_box" >
                             <h4>{{ __('messages.post') }}</h4>
                             <form class="row contact_form" action="{{ route('comment.store') }}" method="post"

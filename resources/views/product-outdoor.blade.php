@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8 col-md-10">
-                        <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="1s"
+                        <div class="section-tittle mb-60 text-center wow fadeInUp respo-title-cat" data-wow-duration="1s"
                             data-wow-delay=".2s">
                             <h2>{{ __('messages.title_outdoor') }}</h2>
                             <p id="countProduct">{{ $count_product }} {{ __('messages.found') }}</p>
@@ -30,15 +30,25 @@
                     <div class="select-categories cat-other d-flex justify-content-center">
 
                         <div class="dropdown">
-                            <button class="dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown"
+                            <button class="dropdown-toggle ayhan" type="button" id="dropdownMenu2" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                Catégories
+                                {{ __('messages.cat') }}
                             </button>
+                            <span class="cat-scrool d-none">scrool</span>
+                            <script>
+                                
+                                let test = document.querySelector('.ayhan')
+                                let catScrool = document.querySelector('.cat-scrool')
+                                test.addEventListener('click', () => {
+                                    catScrool.click()
+                                    // document.body.scrollTop='0px'
+                                })
+                            </script>
                             <ul class="dropdown-menu" id="portfolio-flters" aria-expanded="false">
                                 @if (App::getLocale() === "fr")
                                     @foreach ($cat_fr as $item)
                                         @if ($loop->iteration >=14)
-                                            <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                            <li class="dropdown-item event-product" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
                                             </li>
                                             
                                         @endif
@@ -47,7 +57,7 @@
                                 @elseif (App::getLocale() === "en")
                                     @foreach ($cat_en as $item)
                                         @if ($loop->iteration >=14)
-                                            <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                            <li class="dropdown-item event-product" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
                                             </li>
                                             
                                         @endif
@@ -56,7 +66,7 @@
                                 @else 
                                     @foreach ($cat as $item)
                                         @if ($loop->iteration >=14)
-                                            <li class="dropdown-item" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
+                                            <li class="dropdown-item event-product" data-filter=".filter-{{ $item->name }}">{{ $item->name }}
                                             </li>
                                             
                                         @endif

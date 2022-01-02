@@ -119,7 +119,7 @@
                                     <option value="3">Three</option> --}}
                                   </select>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 mt-4">
                                 {{-- <div class="form-group mb-3">
                                     <label for="exampleFormControlTextarea1"
                                         class="form-label">Description</label>
@@ -149,8 +149,8 @@
                                             <div class="form-group mb-3">
                                                 <label for="arearoduct"
                                                     class="form-label">Description</label>
-                                                <textarea required name="description" class="form-control"
-                                                    id="arearoduct" placeholder="Description NL ?"
+                                                <textarea  name="description" class="form-control"
+                                                    id="editor" placeholder="Description NL ?"
                                                     rows="8">{{ $provisoire ? $provisoire->description : '' }}</textarea>
                                             </div>
                                         </div>
@@ -164,8 +164,8 @@
                                             <div class="form-group mb-3">
                                                 <label for="arearoduct"
                                                     class="form-label">Description</label>
-                                                <textarea required name="description_fr" class="form-control"
-                                                    id="arearoduct" placeholder="Description FR ?"
+                                                <textarea  name="description_fr" class="form-control"
+                                                    id="editor2" placeholder="Description FR ?"
                                                     rows="8">{{ $provisoire ? $provisoire->description_fr : '' }}</textarea>
                                             </div>                                    
                                         </div>
@@ -179,8 +179,8 @@
                                             <div class="form-group mb-3">
                                                 <label for="arearoduct"
                                                     class="form-label">Description</label>
-                                                <textarea required name="description_en" class="form-control"
-                                                    id="arearoduct" placeholder="Description EN ?"
+                                                <textarea  name="description_en" class="form-control"
+                                                    id="editor3" placeholder="Description EN ?"
                                                     rows="8">{{ $provisoire ? $provisoire->description_en : '' }}</textarea>
                                             </div>                                     
                                         </div>
@@ -197,7 +197,7 @@
 
                 @elseif($page === "images")
                     <h2 class="text-center mb-0">Images product</h2>
-
+                    <p class="text-center">Avant d'upload, compresse tes images sur <a target="_blank" class="d-inline" style="color: blue" href="https://tinypng.com/">tinypng.com</a></p>
                     {{-- <h3>images products</h3> --}}
                     <p class="form-label text-center my-2 img-count" >0 / 5 images</p>
                     <div class="center mb-4">

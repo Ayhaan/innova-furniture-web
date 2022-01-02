@@ -6,8 +6,8 @@
                     <div class="section-tittle">
                         <img src={{ asset("img/gallery/insta.png") }} alt="">
                         <h2>{{ __('messages.insta') }}</h2>
-                        <P class="mb-35">{{__('messages.insta_into')}}.</P>
-                        <a href="product.html" class="border-btn">{{ __('messages.insta_btn') }}</a>
+                        {{-- <P class="mb-35">{{__('messages.insta_into')}}.</P> --}}
+                        <a target="_blank" href="https://www.instagram.com/innovafurnituremerchtem" class="border-btn">{{ __('messages.insta_btn') }}</a>
                     </div>
                 </div>
             </div>

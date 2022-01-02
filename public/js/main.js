@@ -29,6 +29,15 @@
       }, 800);
       return false;
     });
+
+  // Scroll cat respo
+    $('.cat-scrool').on("click", function () {
+      console.log('test');
+      $('body,html').animate({
+        scrollTop: 450
+      }, 500);
+      return false;
+    });
   
 
 

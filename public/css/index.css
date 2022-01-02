@@ -93,6 +93,17 @@
 .header-right1 {
     left: 5%;
 }
+@media screen and (max-width: 768px) {
+    .respo-title-cat{
+        margin-bottom: 25px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .respo-img-none{
+        display: none;
+    }
+}
+
 /* img principal sur produit */
 .lSSlideWrapper #vertical {
     height: 270px !important;
@@ -207,6 +218,32 @@
     }
 }
 
+
+/* --------------------------- respo 4 mini service home fin de page  --------------------------- */
+@media screen and (max-width: 768px) {
+    .respo-mini-service{
+        text-align: center;
+    }
+    .respo-mini-service-icon{
+        margin: auto;
+    }
+
+}
+@media screen and (min-width: 768px){
+    .respo-mini-service{
+        text-align: left;
+    }
+
+}
+/* --------------------------- td specifications product show  --------------------------- */
+
+@media only screen and (min-width: 0px) and (max-width: 700px) {
+    td {
+        display:inline-block;
+        padding:5px;
+        width:100%;
+    }
+}
 
 /* footer icon social */
 .footer-social i {

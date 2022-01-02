@@ -28,7 +28,7 @@ return [
     'found' => "produits trouvés",
     'other' => "autre",
     //PRODUCT-SHOW
-    'cat' => "catégorie",
+    'cat' => "catégories",
     //PRODUCT-DETAIL
     "descri" => "Description",
     "speci" => "Spécifications",

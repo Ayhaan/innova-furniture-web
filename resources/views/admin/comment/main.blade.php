@@ -24,20 +24,20 @@
                 <div class="row">
                     @forelse ($comments as $item)
                         @if ($item->validate)
-                        <div class="col-6 ">
+                        <div class="col-sm-12 col-md-6 ">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-sm-12 col-md-4">
                                     <p class="my-0"><b>User :</b> {{ $item->user }} </p>
                                     <p class="my-0"><b>Email :</b> {{ $item->email }} </p>
                                     <p class="my-0"><b>Num :</b> {{ $item->number ? $item->number : "number not given" }} </p>
                                     <p class="my-0"><b>Product :</b> {{ $item->product->name }} </p>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-sm-12 col-md-4">
                                     <p><b>Message :</b></p>
                                     <p>{{ $item->commentaire}}</p>
             
                                 </div>
-                                <div class="col-4 d-flex align-items-start">
+                                <div class="col-sm-12 col-md-4 d-flex align-items-start">
                                     <form action="{{ route('product.update', $item->id) }}" method="POST">
                                         @csrf
                                         @method("PUT")

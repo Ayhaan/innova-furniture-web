@@ -60,7 +60,8 @@
     {{-- <script src={{ asset("vendors-admin/apexcharts/apexcharts.js") }}></script> --}}
     <script src={{ asset('js/admin/pages/dashboard.js') }}></script>
     <script src={{ asset('js/admin/main.js') }}></script>
-    
+
+
     {{-- Script qui lance le crop --}}
     <script>
         // let select = document.querySelector("#ratio-cropper")
@@ -85,7 +86,7 @@
              alert(message);
            }
         });
-    </script>
+    </script>   
     {{-- Scrip qui affiche les images add --}}
     <script>
         function getallimage() {
