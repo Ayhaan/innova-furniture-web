@@ -4,6 +4,13 @@
 .blue-central {
     color: #1D2547;
 }
+@media screen and (max-width: 480px) {
+
+    .insta-none:last-of-type{
+        display: none;
+    }
+}
+
 /* --------------------------- REGISTER --------------------------- */
 .condition-btn{
     border: 0;

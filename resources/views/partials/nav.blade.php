@@ -75,6 +75,12 @@
                         <span>FAQ</span>
                     </a>
                 </li>
+                <li class="sidebar-item  {{ request()->path() == 'admin/instagram' ? 'active' : '' }}">
+                    <a href="{{ route('instagram.index') }}" class='sidebar-link'>
+                        <i class="bi bi-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </li>
                 <li class="sidebar-item {{ request()->path() == 'admin/parteners' ? 'active' : '' }}">
                     <a href="{{ route('parteners.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-ppt-fill"></i>

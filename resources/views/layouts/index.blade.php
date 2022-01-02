@@ -100,6 +100,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
 
     <script>
+        document.cookie
         let links_tel = document.querySelectorAll('.portfolio-links')
         let btn_anim = document.querySelectorAll('.venobox')
         btn_anim.forEach((el, i) => {

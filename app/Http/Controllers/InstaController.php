@@ -14,7 +14,8 @@ class InstaController extends Controller
      */
     public function index()
     {
-        //
+        $instas = Insta::all();
+        return view('admin.insta.main',compact('instas'));
     }
 
     /**
@@ -35,7 +36,11 @@ class InstaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $data = str_replace('&#8217;', "'", $request->feed);
+        $insta = new Insta();
+        $insta->feed = $request->feed;
+        $insta->save();
+        return redirect()->back()->with('succes', "new post add in your web site");
     }
 
     /**
@@ -78,8 +83,10 @@ class InstaController extends Controller
      * @param  \App\Models\Insta  $insta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Insta $insta)
+    public function destroy(Insta $insta, Request $request)
     {
-        //
+        $insta = Insta::find($request->id);
+        $insta->delete();
+        return redirect()->back()->with('warning', 'post delete in your web site');
     }
 }

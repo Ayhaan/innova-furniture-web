@@ -6,6 +6,7 @@ use App\Http\Controllers\AllController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\InstaController;
 use App\Http\Controllers\PartenerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestimonialController;
@@ -62,6 +63,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('/admin/testimonial', TestimonialController::class);
         //FAQ
     Route::resource('/admin/faq', FaqController::class);
+        //INSTA
+    // Route::resource('/admin/instagram', InstaController::class);
+    Route::get('/admin/instagram', [InstaController::class, "index"])->name('instagram.index');
+    Route::post('admin/instagram/store', [InstaController::class, 'store'])->name('instagram.store');
+    Route::post('/admin/instagram/{id}', [InstaController::class, 'destroy'])->name('instagram.destroy');
         //Parteners
     Route::get('/admin/parteners', [PartenerController::class, "index"])->name('parteners.index');
     Route::get('/admin/parteners/{id}/delete', [PartenerController::class, "destroy"])->name('parteners.destroy');

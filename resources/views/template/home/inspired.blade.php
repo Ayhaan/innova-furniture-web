@@ -16,7 +16,7 @@
                 <div class="row no-gutters">
                     @foreach ($instas->shuffle() as $item)
                         @if ($loop->iteration <= 2)
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 insta-none">
                         
                                 {!! $item->feed !!}
                             </div>
