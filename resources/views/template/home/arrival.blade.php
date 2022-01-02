@@ -102,7 +102,7 @@
 
 
             @empty
-                <h3>Geen producteren
+                <h3 class="col-12 text-center my-4">Geen producteren
                 </h3>
             @endforelse
 

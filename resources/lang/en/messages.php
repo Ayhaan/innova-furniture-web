@@ -74,13 +74,13 @@ return [
     'page_contact_name' => "Get in touch",
     "num_contact" => "Mon to Fri 9am to 6pm",
     "mail_contact" => "Send us your query anytime!",
-    "mail_contact" => "Stuur ons uw vraag wanneer u maar wilt!",
+    "mail_contact" => "Send us your request at any time!",
     "opening" => [
         "monday" => "Schedule",
         "tuesday" => "Thuesday - Saturday : ",
         "hour" => "10.00 till 19.00",
         "sunday" => "Sunday : ",
-        "hour_sund" => "10.00 till 19.00",
+        "hour_sund" => "12.00 till 18.00",
 
     ],
 ];

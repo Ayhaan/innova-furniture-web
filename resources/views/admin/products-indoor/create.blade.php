@@ -150,7 +150,7 @@
                                                 <label for="arearoduct"
                                                     class="form-label">Description</label>
                                                 <textarea  name="description" class="form-control"
-                                                    id="editor" placeholder="Description NL ?"
+                                                    id="editor" placeholder="Description NL ?" required
                                                     rows="8">{{ $provisoire ? $provisoire->description : '' }}</textarea>
                                             </div>
                                         </div>
@@ -165,7 +165,7 @@
                                                 <label for="arearoduct"
                                                     class="form-label">Description</label>
                                                 <textarea  name="description_fr" class="form-control"
-                                                    id="editor2" placeholder="Description FR ?"
+                                                    id="editor2" placeholder="Description FR ?" required
                                                     rows="8">{{ $provisoire ? $provisoire->description_fr : '' }}</textarea>
                                             </div>                                    
                                         </div>
@@ -180,7 +180,7 @@
                                                 <label for="arearoduct"
                                                     class="form-label">Description</label>
                                                 <textarea  name="description_en" class="form-control"
-                                                    id="editor3" placeholder="Description EN ?"
+                                                    id="editor3" placeholder="Description EN ?" required
                                                     rows="8">{{ $provisoire ? $provisoire->description_en : '' }}</textarea>
                                             </div>                                     
                                         </div>

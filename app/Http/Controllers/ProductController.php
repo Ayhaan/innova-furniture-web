@@ -47,7 +47,7 @@ class ProductController extends Controller
             $products = QueryBuilder::for(Product::class)
                 ->allowedFilters('name')
                 ->get();
-            return view('admin/products-indoor/main', compact('products', 'value'));
+            return view('admin/products-indoor/search', compact('products', 'value'));
         } else {
             return redirect()->back()->with('warning', 'champs vide...');
         }
@@ -197,7 +197,11 @@ class ProductController extends Controller
             $speci->data = $jsonData; 
             $speci->product_id = $product->id; 
             $speci->save();
-            return redirect()->to('admin/products-indoor');
+            if ($product->type ==  "indoor") {
+                return redirect()->to('admin/products-indoor')->with("success", "product indoor create");
+            }else if ($product->type ==  "outdoor"){
+                return redirect()->to('admin/products-outdoor')->with("success", "product outdoor create");
+            }
         }
     }
     public function store_image(Request $request)  // ETAPE 2 IMG librarie
@@ -438,6 +442,7 @@ class ProductController extends Controller
     public function destroy($product)
     {
         $product = Product::find($product);
+        $previous = $product->type;
         foreach ($product->images as $value) {
             $destination = "/img/productUpload/".$value->img;
             Storage::disk('public')->delete($destination);
@@ -447,9 +452,13 @@ class ProductController extends Controller
 
 
         $product->delete();
-        return redirect()->to('/admin/products-indoor')->with('warning', "product delete");
+        if ($previous == "indoor") {
+            return redirect()->to('/admin/products-indoor')->with('warning', "product delete");
+            # code...
+        }else if($previous == 'outdoor'){
+            return redirect()->to('/admin/products-outdoor')->with('warning', "product delete");
+        }
 
-        dd($product);
     }
 
 }

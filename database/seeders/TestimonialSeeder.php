@@ -16,14 +16,14 @@ class TestimonialSeeder extends Seeder
     {
           DB::table('testimonials')->insert([
             [
-                'img' => "chaise.jfif",
+                'img' => "salon-3.jpg",
                 "etoile" => 5,
                 "avis" => "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
                 "user" => "Jean David",
                 "created_at" => now()
             ],
             [
-                'img' => "chaise.jfif",
+                'img' => "salon-3.jpg",
                 "etoile" => 4,
                 "avis" => "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
                 "user" => "Luc Stavo",

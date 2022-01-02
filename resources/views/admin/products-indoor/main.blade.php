@@ -18,9 +18,6 @@
 
             </div>
         </div>
-        @if (isset($value))
-             <h4 class="text-center">{{ count($products) }} Product(s) found for : "{{ $value }}"</h4>
-        @endif
         <div class="card-body">
             <table class="table table-striped" id="table1">
                 <thead>
@@ -32,6 +29,7 @@
                         <th>POPULAR</th>
                         <th>CATEGORIES</th>
                         <th>ACTION</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,10 +56,29 @@
                                 <a href="{{ route('product.show', $item->id) }}">
                                     <button class="btn btn-primary">show</button>
                                 </a>
-
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#small">
+                                    x
+                                </button>
                             </td>
                         </tr>
-                        
+                            {{-- -------------- DELETE THIS PRODUCT --}}
+                            <div class="modal fade text-left" id="small" tabindex="-1" aria-labelledby="myModalLabel19" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body d-flex justify-content-center">
+                                            <form action="{{ route('product.delete', $item->id) }}" method="POST">
+                                                @csrf
+                                                @method("DELETE")
+                                                <button class="btn btn-outline-danger" >Definitive</button>
+                                            </form>
+
+                                        </div>
+                                
+                                    </div>
+                                </div>
+                            </div>
                     @endif
                 @endforeach
             

@@ -23,14 +23,15 @@ class AllController extends Controller
     public function home()
     {
         $spec = Specification::all();
-        $testi = Testimonial::all()->random(3);
+        $testi = Testimonial::all();
         $products = Product::all();
+        $popular = DB::table('products')->where('popular', 1)->get();
         $parteners = Partener::all();
         $cat = Categories::all();
         $cat_fr = CategoFr::all();
         $cat_en = CategoEn::all();
         $instas = Insta::all();
-        return view('home', compact('products', 'spec', "testi", "parteners", 'cat', 'cat_fr', "cat_en", "instas"));
+        return view('home', compact('products', 'spec', "testi", "parteners", 'cat', 'cat_fr', "cat_en", "instas", 'popular'));
     }
     //Product
     public function productIndoor()
