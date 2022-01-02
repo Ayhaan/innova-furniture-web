@@ -72,7 +72,7 @@ class ContactController extends Controller
         $contact->open = false;
         $contact->type = $request->type;
         $contact->save();
-        Mail::to('caliskanayhan@hotmail.fr')->send(new ContactSender($request));
+        Mail::to('info@innovafurniture.be')->send(new ContactSender($request));
         return redirect()->back()->with('success', 'Sent message');
         // return redirect()->to(url()->previous() . '#movingContact')->with('success', 'Sent message');
 

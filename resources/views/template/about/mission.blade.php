@@ -14,7 +14,7 @@
                             <h2>{{ __('messages.value') }}</h2>
 
                         @endif
-                        <p class="pera">{{ $item->data }}</p>
+                        {{-- <p class="pera">{{ $item->data }}</p> --}}
                     </div>
                 </div>
                 <div class="col-lg-12">
