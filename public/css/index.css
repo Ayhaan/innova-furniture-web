@@ -4,6 +4,9 @@
 .blue-central {
     color: #1D2547;
 }
+.visi{
+    visibility: collapse !important;
+}
 @media screen and (max-width: 480px) {
 
     .insta-none:last-of-type{
