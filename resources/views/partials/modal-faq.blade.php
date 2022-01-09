@@ -1,5 +1,6 @@
 {{-- ----------------- EDIT ----------------- --}}
 
+@if (isset($item))
 <div class="modal fade text-left" id="large-{{ $item->id }}" tabindex="-1" aria-labelledby="myModalLabel17"
     style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
@@ -132,6 +133,8 @@
         </div>
     </div>
 </div>
+    
+@endif
 
 {{-- ----------------- CREATE ----------------- --}}
 <div class="modal fade text-left" id="faqmodalcreate" tabindex="-1" aria-labelledby="myModalLabel17"
@@ -147,17 +150,17 @@
                 <div class="d-flex justify-content center">
                     <button class="btn btn-primary mx-1" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        ASK NL
+                        ask NL
                     </button>
 
                     <button class="btn btn-primary mx-1" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        ASK FR
+                        ask FR
                     </button>
 
                     <button class="btn btn-primary mx-1" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        ASK EN
+                        ask EN
                     </button>
 
                 </div>

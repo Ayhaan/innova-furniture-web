@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <hr class="my-3">
-                        @foreach ($faq as $item)
+                        @forelse ($faq as $item)
                         <div class="row mb-5">
                                 @include('partials.modal-faq')
 
@@ -72,7 +72,11 @@
 
                                 </div>
                             </div>
-                        @endforeach
+                        @empty 
+                            <p class="text-center">Empty for the moment . ..</p>
+                            @include('partials.modal-faq')
+
+                        @endforelse
                     </div>
                 </div>
                 @if (!isset($value))

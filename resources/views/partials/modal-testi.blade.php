@@ -1,5 +1,5 @@
 {{-- ----------------- edit ----------------- --}}
-
+@if (isset($item))
 <div class="modal fade text-left" id="large-{{ $item->id }}" tabindex="-1" aria-labelledby="myModalLabel17" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
@@ -65,14 +65,15 @@
             </form>
         </div>
     </div>
-</div>
+</div> 
+@endif
 
 {{-- ----------------- CREATE ----------------- --}}
 <div class="modal fade text-left" id="largeCreate" tabindex="-1" aria-labelledby="myModalLabel17" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel17">Testimonial nbr {{ $item->id }}</h4>
+                <h4 class="modal-title" id="myModalLabel17">new testimonial</h4>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <i data-feather="x"></i>
                 </button>

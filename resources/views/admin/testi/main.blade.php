@@ -43,9 +43,9 @@
                         </div>
                     </div>
                     <hr class="my-3">
-                    @foreach ($testi as $item)
-                    <div class="row mb-5 ">
-                        @include('partials.modal-testi')
+                    @forelse ($testi as $item)
+                        <div class="row mb-5 ">
+                            @include('partials.modal-testi')
 
                             @php
                                 $test = $item->avis;
@@ -82,7 +82,11 @@
 
                             </div>
                         </div>
-                        @endforeach
+                    @empty 
+                    <p class="text-center">Empty for the moment . ..</p>
+                    @include('partials.modal-testi')
+                        
+                    @endforelse
                 </div>
             </div>
             @if (!isset($value))
