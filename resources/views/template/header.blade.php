@@ -28,6 +28,7 @@
                                 </li>
                                 <li><a href="{{ route('about') }}">{{ __('messages.about') }}</a></li>
                                 <li><a href="{{ route('faq') }}">F.A.Q</a></li>
+                                {{-- <li><a href="{{ route('catalogue') }}">Catalogue</a></li> --}}
                                 <li><a href="{{ route('moving') }}">Moving</a></li>
                                 <li><a href="{{ route('contact') }}">Contact</a></li>
                                 <li class="ml-2">

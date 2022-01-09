@@ -135,4 +135,10 @@ class AllController extends Controller
         $parteners = Partener::all();
         return view('moving', compact("parteners"));
     }
+
+    public function catalogue()
+    {
+        $parteners = Partener::all();
+        return view('catalogue', compact("parteners"));
+    }
 }

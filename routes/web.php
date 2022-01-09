@@ -34,6 +34,8 @@ Route::post('admin/contact/store', [ContactController::class, 'store'])->name('c
 Route::post('/admin/comment/store', [CommentController::class, 'store'])->name('comment.store');
     //change lang
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+    //catalogue
+Route::get('/catalogue', [AllController::class, "catalogue"])->name('catalogue');
 
 //---------------------------- BACK ADMIN ----------------------------
 Route::get('/admin/dashboard', [AdminController::class, 'admin'])->middleware(['auth'])->name('admin');
