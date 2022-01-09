@@ -1,4 +1,4 @@
 <div  class="d-none d-sm-block pb-4">
-    <iframe width="100%" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=600&amp;height=480&amp;hl=en&amp;q=Krekelendries%2011%20Merchtem+(Innova%20Furniture)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href="https://maps-generator.com/fr">Maps-Generator</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=d27dd24de5680f5832d0215b3836bb120f76b4f7'></script>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.106326160842!2d4.227118115635554!3d50.95873837954868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3eb41372e6097%3A0x40902b8c30988bbb!2sInnova%20Furniture!5e0!3m2!1sfr!2sbe!4v1641745476811!5m2!1sfr!2sbe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 <hr id="movingContact" style="margin: 50px 0">

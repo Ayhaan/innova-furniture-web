@@ -9,10 +9,9 @@
     @include('layouts.flash')
     <div class="card">
         <div class="card-header">
-            <button type="button" class="btn btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#largeCreate">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#faqmodalcreate">
                 Add an ask
             </button>
-
         </div>
         <div class="card-content">
             <div class="card-body">
@@ -37,7 +36,7 @@
                         </div>
                         <hr class="my-3">
                         @foreach ($faq as $item)
-                            <div class="row mb-5">
+                        <div class="row mb-5">
                                 @include('partials.modal-faq')
 
                                 @php

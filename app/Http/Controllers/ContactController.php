@@ -118,8 +118,10 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        //
+        $contact = Contact::find($id);
+        $contact->delete();
+        return redirect()->back()->with("warning", "message delete");
     }
 }

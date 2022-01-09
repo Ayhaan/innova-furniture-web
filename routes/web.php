@@ -76,6 +76,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('/admin/about', AboutController::class);
         //Contact
     Route::get('/admin/contact', [ContactController::class, 'index'])->name('contact.index');
+    Route::get('/admin/contact/destroy/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
 
 });
 // Route::resource('/admin/contact', ContactController::class);

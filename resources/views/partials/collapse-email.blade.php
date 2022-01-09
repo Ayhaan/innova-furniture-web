@@ -3,12 +3,16 @@
     @forelse (array_reverse($mail_furniture) as $item)
         <li class="message open">
             <div class="user-action px-3">{{ $loop->iteration }}.</div>
+            <form action="{{ route('contact.destroy', $item->id) }}">
+                @csrf
+                <button class="btn">X</button>
+            </form>
 
             <button type="button" class="btn-msg" data-bs-toggle="modal" data-bs-target="#large{{ $item->id }}">
                 <div class="media-body">
                     <div class="user-details">
                         <div class="mail-items">
-                            <span class="list-group-item-text text-truncate ">{{$item->subject}}</span>
+                            <span class="list-group-item-text text-truncate ">{{$item->subject}} </span>
                         </div>
                         <div class="mail-meta-item">
                             <span class="float-right">
@@ -53,7 +57,10 @@
     @forelse (array_reverse($mail_moving) as $item)
         <li class="message open">
             <div class="user-action px-3">{{ $loop->iteration }}.</div>
-
+            <form action="{{ route('contact.destroy', $item->id) }}">
+                @csrf
+                <button class="btn">X</button>
+            </form>
             <button type="button" class="btn-msg" data-bs-toggle="modal" data-bs-target="#large{{ $item->id }}">
                 <div class="media-body">
                     <div class="user-details">

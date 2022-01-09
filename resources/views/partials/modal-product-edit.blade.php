@@ -106,6 +106,8 @@
                                       </button>
 
                                 </div>
+                                <p class="text-center my-1">Si tu souhaites faire un  retour à la ligne, utilise la syntaxe suivante : <strong>< br /></strong></p>
+
                                 {{-- DESCRIPTION NL --}}
                                 <div class="accordion-item">
                 

@@ -95,7 +95,7 @@
                 <a class="a-perso" href="tel:+32468040237">+32 468 04 02 37</a>
                 {{ __('messages.faq.send') }}
 
-                <a class="a-perso" href="{{ route('contact') . '#contact' }}">mail</a>.
+                <a class="a-perso" href="{{ route('contact') . '#contact' }}">e-mail</a>.
             </p>
         </div>
 

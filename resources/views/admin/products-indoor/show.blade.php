@@ -73,7 +73,7 @@
                 <p><b>Price reduce</b> : {{ $product->price_reduce != null ? $product->price_reduce . " €" : "not activated" }}</p>
                 <p><b>Type</b> : {{ $product->type }}</p>
                 <p><b>Popular</b> : {{ $product->popular == 0 ? "False" : "True" }}</p>
-                <p><b>Description</b> : {!! $product->description !!}</p>
+                <p><b>Description</b> : <br> {!! $product->description !!}</p>
                 <p><b>Catégories</b> : 
                     @foreach ($product->categories as $item)
                     <span>{{ $item->name }}, </span>
