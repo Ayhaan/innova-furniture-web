@@ -279,7 +279,10 @@
 } */
 
 /* --------------------------- product show design  --------------------------- */
-
+.new-arrival .single-new-arrival .popular-caption .price-previous{
+    position: relative;
+    color: rgb(170, 0, 0) !important;
+}
 .price-previous{
     position: relative;
     color: rgb(170, 0, 0) !important;
