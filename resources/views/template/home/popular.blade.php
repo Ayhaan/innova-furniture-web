@@ -104,7 +104,17 @@
                                                 @endforeach
                                             @endif
                                         </p>
+                                        @if ($item->price_reduce == null)
                                         <span>{{ $item->price }}€</span>
+                                    
+                                        @else
+                                        <div class="d-flex justify-content-center">
+                                            <span class="price-previous">{{ $item->price }}€ </span>
+                                            
+                                            <span class="new-price">{{ $item->price_reduce }}€</span>
+                                        </div>
+        
+                                        @endif
                                     </h3>
                                 </div>
                             </div>

@@ -282,7 +282,7 @@
 
 .price-previous{
     position: relative;
-    color: rgb(170, 0, 0);
+    color: rgb(170, 0, 0) !important;
 }
 .price-previous::before{
     content: "";
