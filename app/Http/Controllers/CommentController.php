@@ -24,7 +24,12 @@ class CommentController extends Controller
         $comment = new Comment();
         $comment->user = $request->name;
         $comment->email = $request->email;
-        $comment->number = $request->number;
+        if ($request->number) {
+            # code...
+            $comment->number = $request->number;
+        }else {
+            $comment->number = "/";
+        }
         $comment->commentaire = $request->message;
         $comment->product_id = $request->product_id;
         $comment->validate = false;
