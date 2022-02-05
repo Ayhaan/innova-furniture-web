@@ -434,7 +434,7 @@
 }
 
 .faq.active .faq-anwser {
-    max-height: 300px;
+    max-height: 2500px;
     animation: faq-fade 0.5s ease-in-out;
 }
 
